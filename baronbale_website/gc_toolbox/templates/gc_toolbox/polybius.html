@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Polybius-Cipher' %}{% endblock %}
+
+{% block content %}
+<h1>{% trans 'Polybius-Cipher' %}</h1>
+<p>{% trans 'The Polybius encryption is another encryption named after a guy long gone. It was invented 200 years before the cesar cipher but is much stronger than the cesar cipher. But it would not be here if this would not be needed for geocaching, so here it is. ' %}</p>
+
+<h1 id="encrypt">{% trans 'Encrypt' %}</h1>
+<form action="{% url 'gc_toolbox:polybius_encrypt' %}" method="POST">
+	{% csrf_token %}
+	{{ encrypt_form.as_p }}
+	<input type="submit" value="{% trans 'Encrypt' %}" />
+</form>
+
+<h1 id="decrypt">{% trans 'Decrypt' %}</h1>
+<form action="{% url 'gc_toolbox:polybius_decrypt' %}" method="POST">
+	{% csrf_token %}
+	{{ decrypt_form.as_p }}
+	<input type="submit" value="{% trans 'Decrypt' %}" />
+</form>
+{% endblock %}

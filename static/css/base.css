@@ -1,0 +1,165 @@
+@font-face {
+    font-family: roboto-regular;
+    src: url('/static/fonts/roboto/Roboto-Regular.woff');
+}
+
+html {
+	background: url('/static/img/bg.png');
+}
+body {
+	background: #f8f8f8;
+	font-family: roboto-regular, Arial, Helvetica, sans-serif;
+}
+
+/* navigation start */
+.toggle, 
+[id^=drop] {
+    display: none;
+}
+
+header nav {
+    margin: 0;
+    padding: 0;
+    background-color: #009e00;
+}
+
+#logo {
+    display: block;
+    padding: 5px 30px;
+    float: left;
+    font-size: 20px;
+    line-height: 60px;
+    max-height: 5em;
+}
+
+nav::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+header nav ul {
+    float: right;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+}
+
+header nav ul li {
+    margin: 0px;
+    display: inline-block;
+    float: left;
+    background-color: #009e00;
+}
+
+header nav ul a {
+    display: block;
+    padding: 0 20px;
+    color: #f8f8f8;
+    font-size: 20px;
+    line-height: 60px;
+    text-decoration: none;
+}
+
+header nav ul li ul li:hover { 
+    background: #007200; 
+}
+
+header nav ul a:hover { 
+    background-color: #007200; 
+}
+
+header nav ul ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+}
+
+header nav ul li:hover > ul { 
+    display: inherit; 
+}
+
+header nav ul ul li {
+    min-width: 170px;
+    float: none;
+    display: list-item;
+    position: relative;
+}
+
+header nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: 170px;
+}
+
+header nav li > a::after { 
+    content: ' +'; 
+}
+
+header nav li > a:only-child::after {
+    content: ''; 
+}
+/* navigation end */
+
+#pagefooter {
+	background: #009e00;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+main form {
+	display: inline-block;
+}
+
+main form input[type="submit"] {
+	float: right;
+}
+
+main, 
+#pagefooter {
+	padding: 1em;
+}
+
+main a {
+	color: black;
+}
+.output_box {
+    border: 1px solid #009e00;
+    max-height: 5em;
+    overflow-y: scroll;
+}
+
+.breadcrumbs {
+    list-style-type: none;
+    padding: 0 0 1em 0;
+    margin: 0;
+     
+}
+.breadcrumbs li {
+    float: left;
+}
+.breadcrumbs li+li::before{
+    content: '> ';
+}
+#sidebar {
+    display: none;
+}
+#pagefooter {
+    clear: both;
+}
+
+#pagefooter,
+#pagefooter a {
+	color: #f8f8f8;
+}
+
+#pagefooter form {
+    float: right;
+}
+
+hr {
+    border-color: #009e00;
+}

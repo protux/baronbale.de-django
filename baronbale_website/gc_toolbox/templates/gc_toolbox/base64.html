@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Base64 En-/Decoder' %}{% endblock %}
+{% block content %}
+<h1>{% trans 'Base64 En-/Decoder' %}</h1>
+<p>{% trans 'This tool helps you to en- and decode base64. You can encode text or whole files.' %}</p>
+
+<h2>{% trans 'Encode file' %}</h2>
+<p>{% trans 'If you encode a file it will be read byte by byte and then the bytes will be encoded. No files are saved on the server pemanently, in order to process them they need to be saved temporarily but they will be deleted before you download begins.' %}</p>
+<form action="{% url 'gc_toolbox:base64_encode_file' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ encode_file_form.as_p }}
+    <input type="submit" value="{% trans 'Encode' %}" />
+</form>
+
+<h2>{% trans 'Encode text' %}</h2>
+
+<form action="{% url 'gc_toolbox:base64_encode_text' %}" method="POST">
+    {% csrf_token %}
+    {{ encode_text_form.as_p }}
+    <input type="submit" value="{% trans 'Encode' %}" />
+</form>
+
+<h2>{% trans 'Decode' %}</h2>
+<p>{% trans 'To decode files you need to paste the base64 encoded file into the inputfield and check the "is file" field. Your file will then be decoded and offered to download.' %}</p>
+<form action="{% url 'gc_toolbox:base64_decode' %}" method="POST">
+    {% csrf_token %}
+    {{ decode_form.as_p }}
+    <input type="submit" value="{% trans 'Decode' %}" />
+</form>
+{% endblock %}

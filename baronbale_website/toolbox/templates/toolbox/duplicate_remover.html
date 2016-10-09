@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Duplicate-Remover' %}{% endblock %}
+{% block content %}
+<h1>{% trans 'Duplicate-Remover' %}</h1>
+<p>{% trans 'With this tool you can easily remove duplicate items from a list. You could use it e.g. for removing duplicate TB-Codes before logging them after an Event or something similar.' %}</p>
+<p>{% trans 'The Items will be split at anything what is not alphanumeric (everything what matches [^a-zA-Z0-9]+). A # introduces a comment, a line starting with # will be ignored and if anything comes before a # the line will be cut at the index of the #.' %}</p>
+
+{% if result %}
+<div>
+    <ul>
+        <li>{% trans 'Number of found duplicates' %}: {{ result.duplicate_count }}</li>
+        <li>
+            {% trans 'Found duplicates' %}: <a href="#" class="select_all">{% trans 'select all' %}</a>
+            <p class="output_box">{{ result.duplicate_items }}</p>
+        </li>
+        <li>{% trans 'Number of unique items' %}: {{ result.unique_count }}</li>
+        <li>
+            {% trans 'Unique items' %}: <a href="#" class="select_all">{% trans 'select all' %}</a>
+            <p class="output_box">{{ result.unique_items }}</p>
+        </li>
+    </ul>
+</div>
+{% endif %}
+
+<form action="{% url 'toolbox:duplicate_remover' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{% trans 'Clean Items' %}" />
+</form>
+
+{% endblock %}

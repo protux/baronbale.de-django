@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Letter Value Calculator' %}{% endblock %}
+
+{% block content %}
+<h1>{% trans 'Letter Value Calculator' %}</h1>
+
+<p>{% trans 'This tool takes a text and calculates the value of its letters. Every sign which is not a-z or A-Z will be ignored. You can provide additional values in the "extra values" field. If you tick the "Include numeric values" field the numbers 0-9 are included with their adherent value.' %}</p>
+<p>
+    {% trans 'You can also define own sign/ value pairs. Just type [sign]\=[value] into the "extra values" field.' %}<br/>
+    {% trans 'Example' %}: !:=100<br/>
+    {% trans 'Multiple extra values need to be seperated by a line break.' %}<br/> 
+    {% trans 'Example' %}:<br/>
+    !:=100<br/>
+    ?:=-20
+</p>
+
+{% if result %}
+<ul>
+    <li>{% trans 'Letter value' %}: {{ result.total_value }}</li>
+    <li>{% trans 'Total signs' %}: {{ result.total_signs }}</li>
+    <li>{% trans 'Sum of digits' %}: {{ result.sum_of_digits }}</li>
+    <li>{% trans 'Iterated sum of digits' %}: {{ result.iterated_sum_of_digits }}</li>
+    <li>{% trans 'Number of relevant signs' %}: {{ result.relevant_signs }}</li>
+    <li>{% trans 'Number of letters' %}: {{ result.letters }}</li>
+    <li>{% trans 'Number of numbers' %}: {{ result.numbers }}</li>
+    <li>{% trans 'Number of special characters' %}: {{ result.special_characters }}</li>
+    <li>{% trans 'Values of relevant signs' %}: {{ result.relevant_values }}</li>
+</ul>
+{% endif %}
+
+<form action="{% url 'gc_toolbox:lettervalues' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{% trans 'Calculate Lettervalues' %}" />
+</form>
+{% endblock %}

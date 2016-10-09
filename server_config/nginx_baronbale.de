@@ -1,0 +1,65 @@
+upstream gctoolbox {
+    server 127.0.0.1:9500;
+}
+
+server {
+    listen 80;
+    server_name gctoolbox.nischwan.de;
+
+    location / {
+        return 301 https://baronbale.de$request_uri?;
+    }
+}
+
+server {
+    listen 80;
+    server_name baronbale.de;
+
+    location /.well-known/acme-challenge {
+        alias /var/www/letsencrypt/;
+    }
+
+    location / {
+        rewrite ^ https://$server_name$request_uri? permanent;
+    }
+}
+
+server {
+    listen 443 ssl;
+    server_name baronbale.de;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubdomains";
+    
+    ssl_certificate /srv/ssl/baronbale.de/fullchain.pem;
+    ssl_certificate_key /srv/ssl/baronbale.de/privkey.pem;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    client_max_body_size 512M;
+    keepalive_timeout 7200;
+    
+    access_log /var/log/nginx/baronbale.de_access.log;
+    error_log /var/log/nginx/baronbale.de_error.log;
+    
+    location /static {
+        alias /var/www/baronbale.de/static/;
+    }
+    
+    location /favicon.ico {
+        alias /var/www/baronbale.de/static/favicon.ico;
+    }
+
+    location /media {
+        alias /var/www/baronbale.de/media_root/;
+    }
+
+    location /robots.txt {
+        alias /var/www/baronbale.de/static/robots.txt;
+    }
+
+    location / {
+        uwsgi_pass gctoolbox;
+        include /home/nico/web/gctoolbox/uwsgi_params;
+    }
+}   
+
+

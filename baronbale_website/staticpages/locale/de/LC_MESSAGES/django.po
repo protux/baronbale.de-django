@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-30 01:55+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: staticpages/templates/staticpages/contribute.html:4
+#: staticpages/templates/staticpages/contribute.html:7
+msgid "Contribute"
+msgstr "Unterstützen"
+
+#: staticpages/templates/staticpages/contribute.html:8
+msgid "You can contribute in different ways:"
+msgstr "Du kannst uns auf unterschiedliche Weise unterstützen:"
+
+#: staticpages/templates/staticpages/contribute.html:10
+msgid "You can report bugs and feedback via the contact form."
+msgstr "Über das Kontaktformular kannst du Bugs melden und Feedback geben."
+
+#: staticpages/templates/staticpages/contribute.html:11
+msgid ""
+"If you have an idea for a new tool we could chat about it and we'll see if "
+"it fits on our page."
+msgstr ""
+"Wenn du eine Idee oder einen Wunsch für ein Tool hast können wir uns darüber "
+"gerne unterhalten und ggf. gemeinsam an der Umsetzung arbeiten. Wer einen "
+"Vorschlag einreicht oder die Umsetzung sogar unterstützt wird natürlich auf "
+"der jeweiligen Seite erwähnt."
+
+#: staticpages/templates/staticpages/contribute.html:12
+msgid ""
+"You could buy something on Amazon via  <a href=\"#\">our affiliate link</a>."
+msgstr ""
+"Du könntest etwas über <a href=\"#\">unseren affiliate link</a> kaufen."
+
+#: staticpages/templates/staticpages/contribute.html:13
+msgid ""
+"You could take a look on <a href=\"https://www.amazon.de/registry/wishlist/"
+"RIVQ9H0VQV1J/\">our Amazon wishlist</a>, you know, Christmas is never far."
+msgstr ""
+"Du könntest dir <a href=\"https://www.amazon.de/registry/wishlist/"
+"RIVQ9H0VQV1J/\">unsere Amazon-Wunschliste</a> ansehen. Du weißt schon, "
+"Weihnachten ist nie weit."
+
+#: staticpages/templates/staticpages/contribute.html:14
+msgid "If you like an article or tool you could flattr it."
+msgstr "Wenn du einen Artikel oder ein Tool magst könntest du es flattrn."
+
+#: staticpages/templates/staticpages/contribute.html:15
+msgid ""
+"If you have an idea for a blogpost you could tell us or you could even write "
+"it on your own and get it published on our site under your name."
+msgstr ""
+"Wenn du etwas bloggen möchtest kannst du uns davon erzählen oder du "
+"schreibst ihn als Gastbeitrag unter deinem Namen auf unserer Seite."
+
+#: staticpages/templates/staticpages/contribute.html:17
+msgid ""
+"But just to see that people are using this site would make us happy too."
+msgstr ""
+"Aber einfach zu sehen, dass Leute die Seite benutzen macht uns auch schon "
+"glücklich."
+
+#: staticpages/templates/staticpages/imprint.html:4
+#: staticpages/templates/staticpages/imprint.html:7
+msgid "Imprint"
+msgstr "Impressum"
+
+#: staticpages/templates/staticpages/imprint.html:8
+msgid "Responsible in terms of §5 TMG"
+msgstr "Verantwortlich im Sinne des §5 TMG"
+
+#: staticpages/templates/staticpages/imprint.html:18
+msgid "§1 The Data we save"
+msgstr "§1 Daten die wir speichern"
+
+#: staticpages/templates/staticpages/imprint.html:19
+msgid ""
+"We do not save any data. If an error occurs on the page we may turn on "
+"logging which will save IP-Addresses. But due to the lack of further "
+"information we cannot match the user and his IP, therefore and due to the "
+"fact that we delete the logs as soon as we found and fixed the error IP "
+"adresses are no individual related data."
+msgstr ""
+"Wir speichern keine Daten. Tritt ein Fehler auf schalten wir das Logging "
+"ein, welches wiederum IP-Adressen speichert. Aber aufgrund mangelnder "
+"benötigter Informationen können wir die IP-Adressen keiner Person zuordnen. "
+"Deswegen und weil wir die Logs löschen sobald wir den Fehler gefunden und "
+"gefixt haben betrachten wir die IP-Adressen nicht als personenbezogene Daten."
+
+#: staticpages/templates/staticpages/imprint.html:21
+msgid "§2 Cookies"
+msgstr "§2 Cookies"
+
+#: staticpages/templates/staticpages/imprint.html:22
+msgid ""
+"We use cookies. Because without cookies the internet does not work. Deal "
+"with it."
+msgstr ""
+"Wir benutzen Cookies. Denn ohne Kekse funktioniert das Internet nicht. Is' "
+"halt so."
+
+#: staticpages/templates/staticpages/imprint.html:24
+msgid "§3 Third parties"
+msgstr "§3 Dritte Parteien"
+
+#: staticpages/templates/staticpages/imprint.html:25
+msgid ""
+"We do not share any data with third parties. We handle it Vegas-Style: "
+"everything you enter on baronbale.de stays on baronbale.de. If a tool needs "
+"to send data to another server it will say so in the description of the tool."
+msgstr ""
+"Wir teilen keine Daten mit anderen Instanzen. Wir handhaben das wie immer: "
+"alles was auf baronbale.de passiert bleibt auf baronbale.de. Sollte es in "
+"der Zukunft doch mal vorkommen, dass ein Tool Dateien zu einem anderen Server "
+"senden muss weisen wir in der Beschreibung darauf hin."
+
+#: staticpages/templates/staticpages/roadmap.html:4
+#: staticpages/templates/staticpages/roadmap.html:7
+msgid "Roadmap"
+msgstr "Roadmap"

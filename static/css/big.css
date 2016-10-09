@@ -1,0 +1,15 @@
+body {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+main form p label {
+    float: left;
+    text-align: right;
+    width: 100px;
+    margin-right: 0.5em;
+}
+
+main form {
+    display: inline-block;
+}

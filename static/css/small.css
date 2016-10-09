@@ -1,0 +1,75 @@
+header nav { 
+    margin: 0; 
+}
+
+.toggle {
+    display: block;
+    background-color: #009e00;
+    padding: 0 20px;
+    color: #f8f8f8;
+    font-size: 20px;
+    line-height: 60px;
+    text-decoration: none;
+    border: none;
+}
+
+.toggle + a,
+.menu { 
+    display: none; 
+}
+
+.toggle:hover { 
+    background-color: #007200; 
+}
+
+[id^=drop]:checked + ul {
+    display: block; 
+}
+
+header nav ul li {
+    display: block;
+    width: 100%;
+}
+
+header nav ul ul .toggle,
+header nav ul ul a { 
+    padding: 0 40px; 
+}
+
+header nav ul ul ul a { 
+    padding: 0 80px; 
+}
+
+header nav a:hover,
+header nav ul ul ul a { 
+    background-color: #007200; 
+}
+
+header nav ul li ul li .toggle,
+header nav ul ul a { 
+    background-color: #006000; 
+}
+
+header nav ul ul {
+    float: none;
+    position: static;
+    color: #f8f8f8;
+}
+
+header nav ul ul li:hover > ul,
+header nav ul li:hover > ul { 
+    display: none; 
+}
+
+header nav ul ul li {
+    display: block;
+    width: 100%;
+}
+
+header nav ul ul ul li { 
+    position: static;
+}
+
+label {
+    display: block;
+}

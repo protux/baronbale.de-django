@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n zinnia %}
+{% block title %}{% trans 'Welcome' %}{% endblock %}
+{% block content %}
+<h1>{% trans 'Welcome to baronbale.de' %}</h1>
+
+<h2>{% trans 'What is this?' %}</h2>
+{% url 'staticpages:contribute' as contribute %}
+<p>{% blocktrans %}This page is our attempt to give something to the community. I hope it is usefull for at least some of you. If you are missing something or if you want to help to keep things running you can visit <a href="{{ contribute }}">our contribute page</a> to se how to contribute.{% endblocktrans %}</p>
+
+<!--
+<h2>{% trans 'Trending tools' %}</h2>
+<p>{% trans 'The following tools are trending at the moment.' %}</p>
+-->
+<h2>{% trans 'Latest Blog-Posts' %}</h2>
+{% get_recent_entries %}
+{% endblock %}

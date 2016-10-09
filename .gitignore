@@ -1,0 +1,9 @@
+# temporary files for development and debugging
+**/tmp/**
+**/*.bak
+**/ve_baronbale.de
+
+# local stuff
+**/*geany*
+**/__pycache__
+

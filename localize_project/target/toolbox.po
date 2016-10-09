@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr "Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-29 23:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: toolbox/forms.py:7
+msgid "Items to clean"
+msgstr "Zu bereinigende Items"
+
+#: toolbox/forms.py:12
+msgid "Already existing Items"
+msgstr "Bereits vorhandene Items"
+
+#: toolbox/templates/toolbox/duplicate_remover.html:3
+#: toolbox/templates/toolbox/duplicate_remover.html:5
+msgid "Duplicate-Remover"
+msgstr "Duplikat-Entferner"
+
+#: toolbox/templates/toolbox/duplicate_remover.html:6
+msgid ""
+"With this tool you can easily remove duplicate items from a list. You could "
+"use it e.g. for removing duplicate TB-Codes before logging them after an "
+"Event or something similar."
+msgstr "Mit diesem Werkzeug kannst du ganz einfach doppelte Einträge aus einer Liste entfernen. Du kannst es z.B. zum Entfernen doppelter TB-Codes nutzen um das doppelte (Massen-)Loggen nach einem großen Event zu verhindern."
+
+#: toolbox/templates/toolbox/duplicate_remover.html:7
+msgid ""
+"The Items will be split at anything what is not alphanumeric (everything "
+"what matches [^a-zA-Z0-9]+). A # introduces a comment, a line starting with "
+"# will be ignored and if anything comes before a # the line will be cut at "
+"the index of the #."
+msgstr "Die Einträge werden an allem geteilt was nicht alphanumerisch ist (alles was mit [^a-zA-Z0-9]+ matched) Eine # kennzeichnet einen Kommentar. Eine Zeile, die mit einer # startet wird ignoriert. Wenn irgendetwas vor einer # steht wird die Zeile am Index der # geteilt."
+
+#: toolbox/templates/toolbox/duplicate_remover.html:12
+msgid "Number of found duplicates"
+msgstr "Anzahl gefundener Duplikate"
+
+#: toolbox/templates/toolbox/duplicate_remover.html:14
+msgid "Found duplicates"
+msgstr "Gefundene Duplikate"
+
+#: toolbox/templates/toolbox/duplicate_remover.html:14
+#: toolbox/templates/toolbox/duplicate_remover.html:19
+msgid "select all"
+msgstr "Alle markieren"
+
+#: toolbox/templates/toolbox/duplicate_remover.html:17
+msgid "Number of unique items"
+msgstr "Anzahl einzigartiger Items"
+
+#: toolbox/templates/toolbox/duplicate_remover.html:19
+msgid "Unique items"
+msgstr "Einzigartige Items"

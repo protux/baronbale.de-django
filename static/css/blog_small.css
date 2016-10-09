@@ -1,0 +1,7 @@
+#content,
+#sidebar {
+    float: none;
+    clear: both !important;
+    display: block;
+    width: 100%;
+}

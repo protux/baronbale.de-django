@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Cesar Cipher' %}{% endblock %}
+{% block content %}
+<h1>{% trans 'Cesar-Cipher' %}</h1>
+<p>{% trans 'Cesar-Cipher is an encryption method where the message is encrypted by rotating the lettervalues between 1 and 25.' %}</p>
+
+<div>
+    <h2>{% trans 'Encryption' %}</h2>
+    <form method="POST" action="{% url 'gc_toolbox:cesar_encrypt' %}">
+        {% csrf_token %}
+        {{ encrypt_form.as_p }}
+        <input type="submit" value="{% trans 'Encrypt' %}" />
+    </form>
+</div>
+
+<div id="decryption">
+    <h2>{% trans 'Decryption' %}</h2>
+    <form method="POST" action="{% url 'gc_toolbox:cesar_decrypt' %}">
+        {% csrf_token %}
+        {{ decrypt_form.as_p }}
+        <input type="submit" value="{% trans 'Decrypt' %}" />
+    </form>
+</div>
+{% endblock %}
