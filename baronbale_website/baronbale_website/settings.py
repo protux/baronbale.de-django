@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'gc_toolbox',
     'toolbox',
     'homepage',
+    'lab',
 ]
 
 MIDDLEWARE = [

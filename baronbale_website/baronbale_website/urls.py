@@ -33,7 +33,8 @@ urlpatterns = i18n_patterns(
     url(r'^', include('homepage.urls')),
     url(r'^blog/xmlrpc/$', handle_xmlrpc),
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('staticpages.urls')),
+    url(r'^lab/', include('lab.urls')),
+    url(r'^', include('staticpages.urls'))
 )
 
 urlpatterns += [
