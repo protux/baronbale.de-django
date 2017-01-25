@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
-import os
+import os, logging
 
 VERSION = '1.0.2'
 
@@ -29,7 +29,30 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'baronbale.de']
 
+#if DEBUG:
+LOGFILE_DJANGO = 'baronbale_django.log'
+#else:
+#    LOGFILE_DJANGO = '/var/log/nginx/baronbale_django.log'
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': LOGFILE_DJANGO,
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+    
 # Application definition
 SITE_ID = 1
 INSTALLED_APPS = [
@@ -53,7 +76,7 @@ INSTALLED_APPS = [
     'gc_toolbox',
     'toolbox',
     'homepage',
-    'lab',
+    'finya',
 ]
 
 MIDDLEWARE = [
