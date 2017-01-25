@@ -1,5 +1,5 @@
 #!/bin/bash
-$INSTALL_FILE = baronbale.de_install.tar.xz 
+INSTALL_FILE=/home/nico/baronbale.de_install.tar.xz 
 
 source ve_baronbale.de/bin/activate
 
