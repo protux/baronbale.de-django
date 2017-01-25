@@ -1,106 +1,106 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Übersicht</title>
-		<script type="text/javascript" src="{% static 'js/flot/jquery.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/flot/jquery.flot.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/flot/jquery.flot.time.js' %}"></script>
-		<script type="text/javascript">
-		$(function() {
-			{% autoescape off %}
-			var data_humidity_liv = {{ data_humidity_liv }}
-			var data_humidity_kit = {{ data_humidity_kit }}
-			var data_temperature_liv = {{ data_temperature_liv }}
-			var data_temperature_kit = {{ data_temperature_kit }}
-			{% endautoescape %}
-			
-			$.plot("#temp", [
-				{label: "Wohnzimmer", data: data_temperature_liv},
-				{label: "Küche", data: data_temperature_kit}
-			], {
-				xaxis: {
-					mode: "time",
-					minTickSize: [1, "hour"],
-					timeformat: "%d.%m.%Y %H:%M"
-				}
-			});
-			$.plot("#hum", [
-				{label: "Wohnzimmer", data: data_humidity_liv},
-				{label: "Küche", data: data_humidity_kit}
-			], {
-				xaxis: {
-					mode: "time",
-					minTickSize: [1, "hour"],
-					timeformat: "%d.%m.%Y %H:%M"
-				}
-			});
-		});
-		</script>
-		
-		<style type="text/css" rel="stylesheet">
-			#current {
-				border-collapse: collapse;
-				border: 1px solid black;
-			}
-			#current th, #current td {
-				border: 1px solid black;
-				padding: 0.5em;
-			}
-			#current .right_th {
-				text-align: right;
-			}
-			#current td {
-				text-align: center;
-			}
-		</style>
-	</head>
-	<body>
-		<h1>Aktuelle Daten</h1>
-		<table id="current">
-			<tr>
-				<th></th>
-				<th>Temperatur</th>
-				<th>Luftfeuchtigkeit</th>
-			</tr>
-			<tr>
-				<th class="right_th">Wohnzimmer</td>
-				<td>
-					{% for d in data_temperature_liv %}
-						{% if forloop.last %}
-							{{ d.1 }}°C
-						{% endif %}
-					{% endfor %}
-				</td>
-				<td>
-					{% for d in data_humidity_liv %}
-						{% if forloop.last %}
-							{{ d.1 }}%
-						{% endif %}
-					{% endfor %}
-				</td>
-			</tr>
-			<tr>
-				<th class="right_th">Küche</td>
-				<td>
-					{% for d in data_temperature_kit %}
-						{% if forloop.last %}
-							{{ d.1 }}°C
-						{% endif %}
-					{% endfor %}
-				</td>
-				<td>
-					{% for d in data_humidity_kit %}
-						{% if forloop.last %}
-							{{ d.1 }}%
-						{% endif %}
-					{% endfor %}
-				</td>
-			</tr>
-		</table>
-		<h1>Temperatur der letzten 12h</h1>
-		<div id="temp" style="width: 600px; height: 300px; margin: auto;"></div>
-		<h1>Luftfeuchtigkeit der letzten 12h</h1>
-		<div id="hum" style="width: 600px; height: 300px; margin: auto;"></div>
-	</body>
+    <head>
+        <title>Übersicht</title>
+        <script type="text/javascript" src="{% static 'js/flot/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/flot/jquery.flot.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/flot/jquery.flot.time.js' %}"></script>
+        <script type="text/javascript">
+        $(function() {
+            {% autoescape off %}
+            var data_humidity_liv = {{ data_humidity_liv }}
+            var data_humidity_kit = {{ data_humidity_kit }}
+            var data_temperature_liv = {{ data_temperature_liv }}
+            var data_temperature_kit = {{ data_temperature_kit }}
+            {% endautoescape %}
+            
+            $.plot("#temp", [
+                {label: "Wohnzimmer", data: data_temperature_liv},
+                {label: "Küche", data: data_temperature_kit}
+            ], {
+                xaxis: {
+                    mode: "time",
+                    minTickSize: [1, "hour"],
+                    timeformat: "%d.%m.%Y %H:%M"
+                }
+            });
+            $.plot("#hum", [
+                {label: "Wohnzimmer", data: data_humidity_liv},
+                {label: "Küche", data: data_humidity_kit}
+            ], {
+                xaxis: {
+                    mode: "time",
+                    minTickSize: [1, "hour"],
+                    timeformat: "%d.%m.%Y %H:%M"
+                }
+            });
+        });
+        </script>
+        
+        <style type="text/css" rel="stylesheet">
+            #current {
+                border-collapse: collapse;
+                border: 1px solid black;
+            }
+            #current th, #current td {
+                border: 1px solid black;
+                padding: 0.5em;
+            }
+            #current .right_th {
+                text-align: right;
+            }
+            #current td {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Aktuelle Daten</h1>
+        <table id="current">
+            <tr>
+                <th></th>
+                <th>Temperatur</th>
+                <th>Luftfeuchtigkeit</th>
+            </tr>
+            <tr>
+                <th class="right_th">Wohnzimmer</td>
+                <td>
+                    {% for d in data_temperature_liv %}
+                        {% if forloop.last %}
+                            {{ d.1 }}°C
+                        {% endif %}
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for d in data_humidity_liv %}
+                        {% if forloop.last %}
+                            {{ d.1 }}%
+                        {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th class="right_th">Küche</td>
+                <td>
+                    {% for d in data_temperature_kit %}
+                        {% if forloop.last %}
+                            {{ d.1 }}°C
+                        {% endif %}
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for d in data_humidity_kit %}
+                        {% if forloop.last %}
+                            {{ d.1 }}%
+                        {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+        </table>
+        <h1>Temperatur der letzten 12h</h1>
+        <div id="temp" style="width: 600px; height: 300px; margin: auto;"></div>
+        <h1>Luftfeuchtigkeit der letzten 12h</h1>
+        <div id="hum" style="width: 600px; height: 300px; margin: auto;"></div>
+    </body>
 </html>
