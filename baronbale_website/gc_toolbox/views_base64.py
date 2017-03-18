@@ -13,10 +13,12 @@ from .utils import remove_messages_from_session, CIPHER_MESSAGE_SESSION_KEY, PLA
 FILE_NAME_SESSION_KEY = 'download_file_name'
 DECODE_DIRECTORY = os.path.join(settings.MEDIA_ROOT, 'base64_decoder')
 
+
 def index(request):
     encode_file_form = Base64EncodeFileForm()
     if request.session:
-        encode_text_form = Base64EncodeTextForm(initial={'message': request.session.get(PLAINTEXT_MESSAGE_SESSION_KEY, None)})
+        encode_text_form = Base64EncodeTextForm(
+            initial={'message': request.session.get(PLAINTEXT_MESSAGE_SESSION_KEY, None)})
         decode_form = Base64DecodeForm(initial={'message': request.session.get(CIPHER_MESSAGE_SESSION_KEY, None)})
     else:
         encode_text_form = Base64EncodeTextForm()
@@ -28,7 +30,7 @@ def index(request):
         'decode_form': decode_form,
     }
 
-    if FILE_NAME_SESSION_KEY in request.session and request.session[FILE_NAME_SESSION_KEY] != None:
+    if FILE_NAME_SESSION_KEY in request.session and request.session[FILE_NAME_SESSION_KEY] is not None:
         file_name = request.session[FILE_NAME_SESSION_KEY]
         request.session[FILE_NAME_SESSION_KEY] = None
         print(file_name)
@@ -38,7 +40,8 @@ def index(request):
 
     remove_messages_from_session(request)
     return render(request, 'gc_toolbox/base64.html', render_context)
-    
+
+
 def return_download(file_name):
     if os.path.exists(file_name):
         with open(file_name, 'rb') as fh:
@@ -47,7 +50,8 @@ def return_download(file_name):
             return response
     else:
         raise Http404
-    
+
+
 def encode_file(request):
     if request.method == 'POST':
         form = Base64EncodeFileForm(request.POST or None, request.FILES or None)
@@ -55,18 +59,20 @@ def encode_file(request):
             file_to_encode = form.cleaned_data['file_to_encode']
             request.session[CIPHER_MESSAGE_SESSION_KEY] = base64.encode(file_to_encode.read())
     return HttpResponseRedirect(reverse('gc_toolbox:base64'))
-    
+
+
 def encode_text(request):
     if request.method == 'POST':
         form = Base64EncodeTextForm(request.POST)
-    
+
         if form.is_valid():
             message = form.cleaned_data['message']
             request.session[CIPHER_MESSAGE_SESSION_KEY] = base64.encode(message)
             request.session[PLAINTEXT_MESSAGE_SESSION_KEY] = message
-        
+
     return HttpResponseRedirect(reverse('gc_toolbox:base64'))
-    
+
+
 def decode(request):
     if request.method == 'POST':
         form = Base64DecodeForm(request.POST)

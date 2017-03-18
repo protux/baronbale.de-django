@@ -3,8 +3,8 @@ from django.shortcuts import render
 from .forms import DuplicateRemoverForm
 from .tools.duplicate_remover import clear_duplicates
 
+
 def duplicate_remover(request):
-    
     if request.method == 'POST':
         form = DuplicateRemoverForm(request.POST)
         if form.is_valid():
@@ -21,5 +21,5 @@ def duplicate_remover(request):
             result_context = {'form': DuplicateRemoverForm()}
     else:
         result_context = {'form': DuplicateRemoverForm()}
-        
+
     return render(request, 'toolbox/duplicate_remover.html', result_context)

@@ -42,6 +42,7 @@ NUMERIC_VALUE_DICT = {
     '9': 9,
 }
 
+
 def count(message, extras, offset, direction, include_numerics):
     extras = clean_extras(extract_extras_dict(extras))
     total_signs = len(message)
@@ -51,16 +52,16 @@ def count(message, extras, offset, direction, include_numerics):
     special_characters = 0
     total_value = 0
     relevant_values = []
-    
+
     for char in message:
-        
+
         value = get_value(char, extras, offset, direction, include_numerics)
-        
+
         if value > 0:
             relevant_values += [value]
-            
+
         total_value += value
-        
+
         if value != 0:
             relevant_signs += 1
 
@@ -70,18 +71,19 @@ def count(message, extras, offset, direction, include_numerics):
             numbers += 1
         else:
             special_characters += 1
-    
+
     return {
-        'total_signs': total_signs, 
-        'relevant_signs': relevant_signs, 
+        'total_signs': total_signs,
+        'relevant_signs': relevant_signs,
         'letters': letters,
         'numbers': numbers,
         'special_characters': special_characters,
-        'total_value': total_value, 
+        'total_value': total_value,
         'relevant_values': relevant_values,
         'sum_of_digits': calculate_sum_of_digits(total_value),
         'iterated_sum_of_digits': calculate_iterated_sum_of_digits(total_value),
     }
+
 
 def calculate_sum_of_digits(total_value):
     sum_of_digits = 0
@@ -90,11 +92,13 @@ def calculate_sum_of_digits(total_value):
         total_value //= 10
     return sum_of_digits
 
+
 def calculate_iterated_sum_of_digits(total_value):
-    while (total_value > 9):
+    while total_value > 9:
         total_value = calculate_sum_of_digits(total_value)
     return total_value
-    
+
+
 def extract_extras_dict(extras):
     result_dict = dict()
     if len(extras) == 0:
@@ -104,9 +108,10 @@ def extract_extras_dict(extras):
         splitted_extra = extra.split(':=')
         if len(splitted_extra) == 2 and len(splitted_extra[0]) == 1 and len(splitted_extra[1]) > 0:
             result = re.search('^[-]?[0-9]+$', splitted_extra[1])
-            if result != None and len(result.group(0)) > 0:
+            if result is not None and len(result.group(0)) > 0:
                 result_dict[splitted_extra[0]] = int(splitted_extra[1])
     return result_dict
+
 
 def get_value(sign, extras, offset, direction, include_numeric):
     value = ALPHABET_VALUE_DICT.get(sign, 0)
@@ -119,7 +124,8 @@ def get_value(sign, extras, offset, direction, include_numeric):
         return NUMERIC_VALUE_DICT[sign]
     else:
         return extras.get(sign, 0)
-    
+
+
 def clean_extras(extras):
     cleaned_extras = dict()
     for extra in extras.items():

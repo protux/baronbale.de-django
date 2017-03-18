@@ -4,7 +4,9 @@ import json, traceback, logging, calendar
 
 from .db_definitions import FinyaUser, Profile, db
 from peewee import fn, PostgresqlDatabase
+
 logger = logging.getLogger('django')
+
 
 def index(request):
     response_dict = {
@@ -20,30 +22,37 @@ def index(request):
     }
     return render(request, 'finya/index.html', response_dict)
 
+
 def get_profile_count():
     return Profile.select().count()
 
+
 def get_last_parsed_users(count):
-    return FinyaUser.select(FinyaUser, Profile)\
-                .join(Profile)\
-                .where(FinyaUser.last_updated != None)\
-                .order_by(FinyaUser.last_updated.desc())[:count]
+    return FinyaUser.select(FinyaUser, Profile) \
+               .join(Profile) \
+               .where(FinyaUser.last_updated is not None) \
+               .order_by(FinyaUser.last_updated.desc())[:count]
+
 
 def get_count_by_gender(gender):
     return Profile.select().join(FinyaUser).where(FinyaUser.gender == gender).count()
 
+
 def get_count_by_age(gender):
-    return Profile.select(Profile.age, fn.COUNT(Profile.age).alias('count'))\
-                .join(FinyaUser, on=(FinyaUser.id == Profile.user_id))\
-                .where(FinyaUser.gender == gender)\
-                .group_by(Profile.age)\
-                .order_by(Profile.age)
-    
+    return Profile.select(Profile.age, fn.COUNT(Profile.age).alias('count')) \
+        .join(FinyaUser, on=(FinyaUser.id == Profile.user_id)) \
+        .where(FinyaUser.gender == gender) \
+        .group_by(Profile.age) \
+        .order_by(Profile.age)
+
+
 def get_downloads_per_hour(limit):
     data_list = []
     if isinstance(db, PostgresqlDatabase):
         try:
-            result = db.execute_sql("select count(id) as count, date_trunc('hour', last_updated) as time from finyauser group by date_trunc('hour', last_updated) order by time desc limit {};".format(limit))
+            result = db.execute_sql(
+                "select count(id) as count, date_trunc('hour', last_updated) as time from finyauser " +
+                "group by date_trunc('hour', last_updated) order by time desc limit {};".format(limit))
             for tupel in result:
                 logger.debug('download-count: {}; hour: {}'.format(tupel[0], tupel[1]))
                 if tupel[1] is not None:

@@ -3,10 +3,10 @@ from django.shortcuts import render
 from .forms import LetterValueCalculatorForm
 from .tools import lettervalues
 
+
 def letter_value_calculator(request):
-    
     render_context = dict()
-    
+
     if request.method == 'POST':
         form = LetterValueCalculatorForm(request.POST)
         render_context['form'] = form
@@ -22,6 +22,5 @@ def letter_value_calculator(request):
             render_context['result'] = result
     else:
         render_context['form'] = LetterValueCalculatorForm()
-        
-    
+
     return render(request, 'gc_toolbox/letter_value.html', render_context)
