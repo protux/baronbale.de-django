@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-29 23:45+0200\n"
+"POT-Creation-Date: 2017-03-18 22:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,17 +16,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: homepage/templates/homepage/index.html:3
 msgid "Welcome"
-msgstr ""
+msgstr "Willkommen"
 
 #: homepage/templates/homepage/index.html:5
 msgid "Welcome to baronbale.de"
-msgstr ""
+msgstr "Willkommen auf baronbale.de"
 
 #: homepage/templates/homepage/index.html:7
 msgid "What is this?"
-msgstr ""
+msgstr "Was ist das hier?"
 
 #: homepage/templates/homepage/index.html:9
 #, python-format
@@ -37,15 +37,20 @@ msgid ""
 "want to help to keep things running you can visit <a href=\"%(contribute)s"
 "\">our contribute page</a> to se how to contribute."
 msgstr ""
-
-#: homepage/templates/homepage/index.html:11
-msgid "Trending tools"
-msgstr ""
+"Diese Seite ist ein Versuch zur Community beizutragen. Ich hoffe, dass die "
+"Seite wenigstens ein paar Leuten da draußen hilft. Wenn du hier etwas "
+"vermisst oder du einfach helfen möchtest die Seite am Laufen zu halten "
+"besuch doch einfach <a href=\"%(contribute)s\">unsere Unterstützen Seite</"
+"a>. Dort haben wir ein paar Möglichkeiten aufgelistet."
 
 #: homepage/templates/homepage/index.html:12
-msgid "The following tools are trending at the moment."
-msgstr ""
+msgid "Trending tools"
+msgstr "Beliebte Tools"
 
-#: homepage/templates/homepage/index.html:14
+#: homepage/templates/homepage/index.html:13
+msgid "The following tools are trending at the moment."
+msgstr "Die folgenden Tools werden aktuell häufig genutzt."
+
+#: homepage/templates/homepage/index.html:15
 msgid "Latest Blog-Posts"
-msgstr ""
+msgstr "Neuste Blog-Posts"

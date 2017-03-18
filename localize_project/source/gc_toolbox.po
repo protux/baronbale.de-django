@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-29 23:45+0200\n"
+"POT-Creation-Date: 2017-03-18 22:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,57 +16,89 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: gc_toolbox/forms.py:7
+
+#: gc_toolbox/forms.py:8
 msgid "all"
-msgstr ""
+msgstr "alle"
 
-#: gc_toolbox/forms.py:15 gc_toolbox/forms.py:28 gc_toolbox/forms.py:41
-#: gc_toolbox/forms.py:53 gc_toolbox/forms.py:87 gc_toolbox/forms.py:94
+#: gc_toolbox/forms.py:16 gc_toolbox/forms.py:29 gc_toolbox/forms.py:42
+#: gc_toolbox/forms.py:54 gc_toolbox/forms.py:88 gc_toolbox/forms.py:95
 msgid "Message"
-msgstr ""
+msgstr "Nachricht"
 
-#: gc_toolbox/forms.py:20 gc_toolbox/forms.py:33
+#: gc_toolbox/forms.py:21 gc_toolbox/forms.py:34
 msgid "Key"
-msgstr ""
+msgstr "Schlüssel"
 
-#: gc_toolbox/forms.py:58
+#: gc_toolbox/forms.py:59
 msgid "Extra Values"
-msgstr ""
+msgstr "Zusätzliche Werte"
 
-#: gc_toolbox/forms.py:64
+#: gc_toolbox/forms.py:65
 msgid "Direction"
-msgstr ""
+msgstr "Richtung"
 
-#: gc_toolbox/forms.py:69
+#: gc_toolbox/forms.py:70
 msgid "Offset"
-msgstr ""
+msgstr "Versatz"
 
-#: gc_toolbox/forms.py:74
+#: gc_toolbox/forms.py:75
 msgid "Include numeric values"
-msgstr ""
+msgstr "Zahlen berücksichtigen"
 
-#: gc_toolbox/forms.py:81
+#: gc_toolbox/forms.py:82
 msgid "File to encode"
+msgstr "Datei zum kodieren"
+
+#: gc_toolbox/forms.py:100
+msgid "Is a file"
+msgstr "Ist eine Datei"
+
+#: gc_toolbox/forms.py:107
+msgid "GPX File"
 msgstr ""
 
-#: gc_toolbox/forms.py:99
-msgid "Is a file"
+#: gc_toolbox/templates/gc_toolbox/banner_collector.html:3
+#: gc_toolbox/templates/gc_toolbox/banner_collector.html:5
+msgid "Banner collector"
+msgstr ""
+
+#: gc_toolbox/templates/gc_toolbox/banner_collector.html:6
+msgid ""
+"This tools takes the gpx file with your found caches and collects the "
+"banners from the listings."
+msgstr ""
+
+#: gc_toolbox/templates/gc_toolbox/banner_collector.html:7
+msgid ""
+"The banners are parsed from the \"long_description\" and for some special "
+"cases we need the GC-Code."
+msgstr ""
+
+#: gc_toolbox/templates/gc_toolbox/banner_collector.html:11
+msgid "Collect Banner"
+msgstr ""
+
+#: gc_toolbox/templates/gc_toolbox/banner_collector.html:15
+msgid "Your banners"
 msgstr ""
 
 #: gc_toolbox/templates/gc_toolbox/base64.html:3
 #: gc_toolbox/templates/gc_toolbox/base64.html:5
 msgid "Base64 En-/Decoder"
-msgstr ""
+msgstr "Base64 De-/Kodierer"
 
 #: gc_toolbox/templates/gc_toolbox/base64.html:6
 msgid ""
 "This tool helps you to en- and decode base64. You can encode text or whole "
 "files."
 msgstr ""
+"Dieses Tool hilft dir Base64 zu kodieren und zu dekodieren. Du kannst Texte "
+"oder ganze Dateien kodieren."
 
 #: gc_toolbox/templates/gc_toolbox/base64.html:8
 msgid "Encode file"
-msgstr ""
+msgstr "Datei kodieren"
 
 #: gc_toolbox/templates/gc_toolbox/base64.html:9
 msgid ""
@@ -76,20 +107,24 @@ msgid ""
 "them they need to be saved temporarily but they will be deleted before you "
 "download begins."
 msgstr ""
+"Kodierst du eine Datei wird sie Byteweise eingelesen und diese Bytes werden "
+"dann kodiert. Es werden keine Dateien dauerhaft gespeichert. Um die Datei zu "
+"verarbeiten ist es leider notwendig sie kurz zu speichern, aber sie wird "
+"gelöscht bevor der Download beginnt."
 
 #: gc_toolbox/templates/gc_toolbox/base64.html:13
 #: gc_toolbox/templates/gc_toolbox/base64.html:21
 msgid "Encode"
-msgstr ""
+msgstr "Kodieren"
 
 #: gc_toolbox/templates/gc_toolbox/base64.html:16
 msgid "Encode text"
-msgstr ""
+msgstr "Text kodieren"
 
 #: gc_toolbox/templates/gc_toolbox/base64.html:24
 #: gc_toolbox/templates/gc_toolbox/base64.html:29
 msgid "Decode"
-msgstr ""
+msgstr "Dekodieren"
 
 #: gc_toolbox/templates/gc_toolbox/base64.html:25
 msgid ""
@@ -97,45 +132,51 @@ msgid ""
 "inputfield and check the \"is file\" field. Your file will then be decoded "
 "and offered to download."
 msgstr ""
+"Um Dateien zu dekodieren musst sie in das Feld einfügen und das \"ist eine "
+"Datei\" Feld aktivieren. Die Datei wird dann dekodiert und dir zum Download "
+"angeboten."
 
 #: gc_toolbox/templates/gc_toolbox/cesar_cipher.html:3
 msgid "Cesar Cipher"
-msgstr ""
+msgstr "Cäsar Verschlüsselung"
 
 #: gc_toolbox/templates/gc_toolbox/cesar_cipher.html:5
 msgid "Cesar-Cipher"
-msgstr ""
+msgstr "Cäsar Verschlüsselung"
 
 #: gc_toolbox/templates/gc_toolbox/cesar_cipher.html:6
 msgid ""
 "Cesar-Cipher is an encryption method where the message is encrypted by "
 "rotating the lettervalues between 1 and 25."
 msgstr ""
+"Die Cäsar-Verschlüsselung ist ein Verschlüsselungsalgorithmus bei dem die "
+"Nachricht durch das rotieren (bzw. verschieben) der Buchstaben im Alphabet "
+"verschlüsselt wird."
 
 #: gc_toolbox/templates/gc_toolbox/cesar_cipher.html:9
 msgid "Encryption"
-msgstr ""
+msgstr "Verschlüsselung"
 
 #: gc_toolbox/templates/gc_toolbox/cesar_cipher.html:13
 #: gc_toolbox/templates/gc_toolbox/polybius.html:10
 #: gc_toolbox/templates/gc_toolbox/polybius.html:14
 msgid "Encrypt"
-msgstr ""
+msgstr "Verschlüsseln"
 
 #: gc_toolbox/templates/gc_toolbox/cesar_cipher.html:18
 msgid "Decryption"
-msgstr ""
+msgstr "Entschlüsselung"
 
 #: gc_toolbox/templates/gc_toolbox/cesar_cipher.html:22
 #: gc_toolbox/templates/gc_toolbox/polybius.html:17
 #: gc_toolbox/templates/gc_toolbox/polybius.html:21
 msgid "Decrypt"
-msgstr ""
+msgstr "Entschlüsseln"
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:4
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:7
 msgid "Letter Value Calculator"
-msgstr ""
+msgstr "Buchstabenwertberechner"
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:9
 msgid ""
@@ -144,66 +185,73 @@ msgid ""
 "in the \"extra values\" field. If you tick the \"Include numeric values\" "
 "field the numbers 0-9 are included with their adherent value."
 msgstr ""
+"Dieses Tool nimmt einen Text und berechnet den Wert seiner Buchstaben. Jedes "
+"Zeichen das nicht a-z oder A-Z entspricht wird ignoriert. Du kannst "
+"zusätzliche Werte über das \"Zusätzliche Werte\" Feld bereitstellen. Wenn du "
+"das \"Zahlen berücksichtigen\" Feld aktivierst werden die Zahlen 0-9 mit "
+"ihren dazugehörigen Werten ebenfalls berücksichtigt."
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:11
 msgid ""
 "You can also define own sign/ value pairs. Just type [sign]\\=[value] into "
 "the \"extra values\" field."
 msgstr ""
+"Du kannst auch eigene Zeichen/Wert Parre definieren. Gib dazu einfach "
+"[sign]\\=[value] in das \"Zusätzliche Werte\" Feld ein."
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:12
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:14
 msgid "Example"
-msgstr ""
+msgstr "Beispiel"
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:13
 msgid "Multiple extra values need to be seperated by a line break."
-msgstr ""
+msgstr "Mehrere Extrawerte müssen durch einen Zeilenumbruch getrennt werden."
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:21
 msgid "Letter value"
-msgstr ""
+msgstr "Buchstabenwert"
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:22
 msgid "Total signs"
-msgstr ""
+msgstr "Anzahl Zeichen insgesamt"
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:23
 msgid "Sum of digits"
-msgstr ""
+msgstr "Quersumme des Buchstabenwerts"
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:24
 msgid "Iterated sum of digits"
-msgstr ""
+msgstr "Iterierte Quersumme"
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:25
 msgid "Number of relevant signs"
-msgstr ""
+msgstr "Anzahl relevanter Zeichen"
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:26
 msgid "Number of letters"
-msgstr ""
+msgstr "Anzahl der Buchstaben"
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:27
 msgid "Number of numbers"
-msgstr ""
+msgstr "Anzahl der Zahlen"
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:28
 msgid "Number of special characters"
-msgstr ""
+msgstr "Anzahl der Sonderzeichen"
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:29
 msgid "Values of relevant signs"
-msgstr ""
+msgstr "Werte relevanter Zeichen"
 
 #: gc_toolbox/templates/gc_toolbox/letter_value.html:36
 msgid "Calculate Lettervalues"
-msgstr ""
+msgstr "Buchstabenwerte berechnen"
 
 #: gc_toolbox/templates/gc_toolbox/polybius.html:4
 #: gc_toolbox/templates/gc_toolbox/polybius.html:7
 msgid "Polybius-Cipher"
-msgstr ""
+msgstr "Polybius-Verchlüsselung"
 
 #: gc_toolbox/templates/gc_toolbox/polybius.html:8
 msgid ""
@@ -212,11 +260,15 @@ msgid ""
 "the cesar cipher. But it would not be here if this would not be needed for "
 "geocaching, so here it is. "
 msgstr ""
+"Die Polybius-Verschlüsselung ist ebenfalls ein Algorithmus der nach einem "
+"lange verstorbenem Typen benannt wurde. Er wurde 200 Jahre vor der Cäsar-"
+"Verschlüsselung erfunden, trotzdem ist er viel stärker als dieser. Aber "
+"natürlich wäre er nicht hier wenn er nichts mit Geocaching zu tun hätte. "
 
-#: gc_toolbox/tools/polybius.py:92
+#: gc_toolbox/tools/polybius.py:95
 msgid "Error while splitting the input in pairs of two."
-msgstr ""
+msgstr "Beim Teilen der Eingabe in Zweierpaare trat ein Fehler auf."
 
-#: gc_toolbox/views_cesar.py:59
+#: gc_toolbox/views_cesar.py:63
 msgid "The key needs to be an Integer."
-msgstr ""
+msgstr "Der Schlüssel muss eine Ganzzahl sein."

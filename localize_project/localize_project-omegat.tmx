@@ -9,6 +9,16 @@
       <prop type="file">gc_toolbox.po</prop>
       <prop type="path"></prop>
       <tuv lang="EN">
+        <seg>Banner collector</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170318T213250Z" creationid="nico" creationdate="20170318T213250Z">
+        <seg>Banner-Sammler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">gc_toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
         <seg>Base64 En-/Decoder</seg>
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T193524Z" creationid="nico" creationdate="20160929T193524Z">
@@ -63,6 +73,16 @@
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T194624Z" creationid="nico" creationdate="20160929T194014Z">
         <seg>Die Cäsar-Verschlüsselung ist ein Verschlüsselungsalgorithmus bei dem die Nachricht durch das rotieren (bzw. verschieben) der Buchstaben im Alphabet verschlüsselt wird.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">gc_toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
+        <seg>Collect Banner</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170318T213422Z" creationid="nico" creationdate="20170318T213422Z">
+        <seg>Banner sammeln</seg>
       </tuv>
     </tu>
     <tu>
@@ -203,6 +223,16 @@
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T193505Z" creationid="nico" creationdate="20160929T193505Z">
         <seg>Datei zum kodieren</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">gc_toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
+        <seg>GPX File</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170318T213237Z" creationid="nico" creationdate="20170318T213237Z">
+        <seg>GPX Datei</seg>
       </tuv>
     </tu>
     <tu>
@@ -419,6 +449,16 @@
       <prop type="file">gc_toolbox.po</prop>
       <prop type="path"></prop>
       <tuv lang="EN">
+        <seg>The banners are parsed from the "long_description" and for some special cases we need the GC-Code.</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170318T213416Z" creationid="nico" creationdate="20170318T213416Z">
+        <seg>Die Banner werden aus dem "long_description"-Element gelesen. Für Einzelfälle ist es notwendig den GC-Code zu kennen.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">gc_toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
         <seg>The key needs to be an Integer.</seg>
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T194906Z" creationid="nico" creationdate="20160929T194906Z">
@@ -443,6 +483,16 @@
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T194107Z" creationid="nico" creationdate="20160929T194107Z">
         <seg>Dieses Tool nimmt einen Text und berechnet den Wert seiner Buchstaben.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">gc_toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
+        <seg>This tools takes the gpx file with your found caches and collects the banners from the listings.</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170318T213321Z" creationid="nico" creationdate="20170318T213321Z">
+        <seg>Dieses Tool durchsucht die GPX-Datei deiner Funde nach Bannern.</seg>
       </tuv>
     </tu>
     <tu>
@@ -509,6 +559,16 @@
       <prop type="file">gc_toolbox.po</prop>
       <prop type="path"></prop>
       <tuv lang="EN">
+        <seg>Your banners</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170318T213433Z" creationid="nico" creationdate="20170318T213433Z">
+        <seg>Deine Banner</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">gc_toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
         <seg>Your file will then be decoded and offered to download.</seg>
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T193857Z" creationid="nico" creationdate="20160929T193857Z">
@@ -553,6 +613,36 @@
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T195353Z" creationid="nico" creationdate="20160929T195353Z">
         <seg>Neuste Blog-Posts</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">homepage.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
+        <seg>Project-Id-Version: PACKAGE VERSION
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2017-03-18 22:21+0100
+PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
+Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
+Language-Team: LANGUAGE &lt;LL@li.org&gt;
+Language: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Plural-Forms: nplurals=2; plural=(n != 1);</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170318T213441Z" creationid="nico" creationdate="20170318T213441Z">
+        <seg>Project-Id-Version: PACKAGE VERSION
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2017-03-18 22:21+0100
+PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
+Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
+Language-Team: LANGUAGE &lt;LL@li.org&gt;
+Language: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Plural-Forms: nplurals=2; plural=(n != 1);</seg>
       </tuv>
     </tu>
     <tu>
@@ -729,6 +819,36 @@
       <prop type="file">staticpages.po</prop>
       <prop type="path"></prop>
       <tuv lang="EN">
+        <seg>Project-Id-Version: PACKAGE VERSION
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2017-03-18 22:21+0100
+PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
+Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
+Language-Team: LANGUAGE &lt;LL@li.org&gt;
+Language: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Plural-Forms: nplurals=2; plural=(n != 1);</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170318T213447Z" creationid="nico" creationdate="20170318T213447Z">
+        <seg>Project-Id-Version: PACKAGE VERSION
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2017-03-18 22:21+0100
+PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
+Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
+Language-Team: LANGUAGE &lt;LL@li.org&gt;
+Language: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Plural-Forms: nplurals=2; plural=(n != 1);</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">staticpages.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
         <seg>Responsible in terms of §5 TMG</seg>
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T200036Z" creationid="nico" creationdate="20160929T200036Z">
@@ -869,6 +989,26 @@
       <prop type="file">templates.po</prop>
       <prop type="path"></prop>
       <tuv lang="EN">
+        <seg>Cache-ID</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170318T213457Z" creationid="nico" creationdate="20170318T213457Z">
+        <seg>Cache-ID</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">templates.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
+        <seg>Cache-Name</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170318T213501Z" creationid="nico" creationdate="20170318T213501Z">
+        <seg>Cache-Name</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">templates.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
         <seg>Cesar Cipher</seg>
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T200646Z" creationid="nico" creationdate="20160929T200646Z">
@@ -949,6 +1089,36 @@
       <prop type="file">templates.po</prop>
       <prop type="path"></prop>
       <tuv lang="EN">
+        <seg>Project-Id-Version: PACKAGE VERSION
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2017-03-18 22:21+0100
+PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
+Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
+Language-Team: LANGUAGE &lt;LL@li.org&gt;
+Language: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Plural-Forms: nplurals=2; plural=(n != 1);</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170318T213451Z" creationid="nico" creationdate="20170318T213451Z">
+        <seg>Project-Id-Version: PACKAGE VERSION
+Report-Msgid-Bugs-To: 
+POT-Creation-Date: 2017-03-18 22:21+0100
+PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
+Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
+Language-Team: LANGUAGE &lt;LL@li.org&gt;
+Language: 
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Plural-Forms: nplurals=2; plural=(n != 1);</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">templates.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
         <seg>Show all %(author)s's entries</seg>
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T200818Z" creationid="nico" creationdate="20160929T200818Z">
@@ -1003,6 +1173,16 @@
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T200836Z" creationid="nico" creationdate="20160929T200836Z">
         <seg>Bereits vorhandene Items</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
+        <seg>Clean Items</seg>
+      </tuv>
+      <tuv lang="DE">
+        <seg>Items bereinigen</seg>
       </tuv>
     </tu>
     <tu>

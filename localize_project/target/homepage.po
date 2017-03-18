@@ -6,7 +6,7 @@
 msgid ""
 msgstr "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-29 23:45+0200\n"
+"POT-Creation-Date: 2017-03-18 22:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,14 +37,14 @@ msgid ""
 "\">our contribute page</a> to se how to contribute."
 msgstr "Diese Seite ist ein Versuch zur Community beizutragen. Ich hoffe, dass die Seite wenigstens ein paar Leuten da draußen hilft. Wenn du hier etwas vermisst oder du einfach helfen möchtest die Seite am Laufen zu halten besuch doch einfach <a href=\"%(contribute)s\">unsere Unterstützen Seite</a>. Dort haben wir ein paar Möglichkeiten aufgelistet."
 
-#: homepage/templates/homepage/index.html:11
+#: homepage/templates/homepage/index.html:12
 msgid "Trending tools"
 msgstr "Beliebte Tools"
 
-#: homepage/templates/homepage/index.html:12
+#: homepage/templates/homepage/index.html:13
 msgid "The following tools are trending at the moment."
 msgstr "Die folgenden Tools werden aktuell häufig genutzt."
 
-#: homepage/templates/homepage/index.html:14
+#: homepage/templates/homepage/index.html:15
 msgid "Latest Blog-Posts"
 msgstr "Neuste Blog-Posts"

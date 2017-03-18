@@ -25,7 +25,7 @@ from django.views.generic.base import RedirectView
 from django_xmlrpc.views import handle_xmlrpc
 
 urlpatterns = i18n_patterns(
-	url(r'^tools/gc/', include('gc_toolbox.urls')),
+    url(r'^tools/gc/', include('gc_toolbox.urls')),
     url(r'^tools/', include('toolbox.urls')),
     url(r'^blog/', include('zinnia.urls')),
     url(r'blog/comments/', include('django_comments.urls')),
@@ -38,7 +38,7 @@ urlpatterns = i18n_patterns(
 )
 
 urlpatterns += [
-    url(r'^i18n/', include('django.conf.urls.i18n')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                   url(r'^i18n/', include('django.conf.urls.i18n')),
+               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-#handler404 = 'staticpages.views.error404'
+# handler404 = 'staticpages.views.error404'

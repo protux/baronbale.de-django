@@ -100,3 +100,9 @@ class Base64DecodeForm(forms.Form):
         label=_('Is a file'),
         required=False
     )
+
+
+class UploadGPXForm(forms.Form):
+    gpx_file = forms.FileField(
+        label=_('GPX File')
+    )

@@ -33,7 +33,6 @@ def index(request):
     if FILE_NAME_SESSION_KEY in request.session and request.session[FILE_NAME_SESSION_KEY] is not None:
         file_name = request.session[FILE_NAME_SESSION_KEY]
         request.session[FILE_NAME_SESSION_KEY] = None
-        print(file_name)
         response = return_download(file_name)
         os.remove(file_name)
         return response

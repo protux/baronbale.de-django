@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from . import views_cesar, views_polybius, views_lettervalues, views_base64
+from . import views_cesar, views_polybius, views_lettervalues, views_base64, views_banner_collector
 
 app_name = 'gc_toolbox'
 urlpatterns = [
@@ -18,4 +18,7 @@ urlpatterns = [
     url(r'^polybius/$', views_polybius.index, name='polybius'),
     url(r'^polybius/encrypt/$', views_polybius.encrypt, name='polybius_encrypt'),
     url(r'^polybius/decrypt/$', views_polybius.decrypt, name='polybius_decrypt'),
+
+    url(r'banner/$', views_banner_collector.index, name="banner_collector"),
+    url(r'banner/collect$', views_banner_collector.collect_banners, name="collect_banner"),
 ]

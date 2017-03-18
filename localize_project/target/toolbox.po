@@ -6,7 +6,7 @@
 msgid ""
 msgstr "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-29 23:45+0200\n"
+"POT-Creation-Date: 2017-03-18 22:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,6 +15,7 @@ msgstr "Project-Id-Version: PACKAGE VERSION\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: toolbox/forms.py:7
 msgid "Items to clean"
 msgstr "Zu bereinigende Items"
@@ -63,3 +64,7 @@ msgstr "Anzahl einzigartiger Items"
 #: toolbox/templates/toolbox/duplicate_remover.html:19
 msgid "Unique items"
 msgstr "Einzigartige Items"
+
+#: toolbox/templates/toolbox/duplicate_remover.html:29
+msgid "Clean Items"
+msgstr "Items bereinigen"

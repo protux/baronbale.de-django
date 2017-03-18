@@ -4,10 +4,9 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+msgstr "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-30 01:55+0200\n"
+"POT-Creation-Date: 2017-03-18 22:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +15,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: downloads/models.py:6
+msgid "Cache-ID"
+msgstr "Cache-ID"
+
+#: downloads/models.py:7
+msgid "Cache-Name"
+msgstr "Cache-Name"
+
+#: downloads/models.py:14
+msgid "name"
+msgstr ""
+
+#: downloads/models.py:15
+msgid "Download-File"
+msgstr ""
+
+#: downloads/templates/downloads/downloads.html:7
+msgid "Downloads for"
+msgstr ""
+
+#: downloads/views.py:12
+msgid "Cache not found."
+msgstr ""
 
 #: templates/base.html:29
 msgid "Home"

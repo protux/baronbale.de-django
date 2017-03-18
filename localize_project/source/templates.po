@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-29 23:45+0200\n"
+"POT-Creation-Date: 2017-03-18 22:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,60 +17,84 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: downloads/models.py:6
+msgid "Cache-ID"
+msgstr ""
+
+#: downloads/models.py:7
+msgid "Cache-Name"
+msgstr ""
+
+#: downloads/models.py:14
+msgid "name"
+msgstr ""
+
+#: downloads/models.py:15
+msgid "Download-File"
+msgstr ""
+
+#: downloads/templates/downloads/downloads.html:7
+msgid "Downloads for"
+msgstr ""
+
+#: downloads/views.py:12
+msgid "Cache not found."
+msgstr ""
+
 #: templates/base.html:29
 msgid "Home"
-msgstr ""
+msgstr "Start"
 
 #: templates/base.html:30 templates/zinnia/base.html:4
 #: templates/zinnia/base.html:27
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #: templates/base.html:32 templates/base.html:33
 msgid "GC-Tools"
-msgstr ""
+msgstr "GC-Werkzeuge"
 
 #: templates/base.html:36
 msgid "base64"
-msgstr ""
+msgstr "base64"
 
 #: templates/base.html:37
 msgid "Cesar Cipher"
-msgstr ""
+msgstr "Cäsar Verschlüsselung"
 
 #: templates/base.html:38
 msgid "Lettervalues"
-msgstr ""
+msgstr "Buchstabenwerte"
 
 #: templates/base.html:39
 msgid "Polybius Cipher"
-msgstr ""
+msgstr "Polybius Verschlüsselung"
 
 #: templates/base.html:43 templates/base.html:44 templates/zinnia/base.html:61
 msgid "Tools"
-msgstr ""
+msgstr "Werkzeuge"
 
 #: templates/base.html:47
 msgid "Duplicate Remover"
-msgstr ""
+msgstr "Duplikatenentferner"
 
 #: templates/base.html:50
 msgid "Contribute"
-msgstr ""
+msgstr "Unterstützen"
 
 #: templates/base.html:64
 msgid "Imprint"
-msgstr ""
+msgstr "Impressum"
 
 #: templates/zinnia/_entry_detail_base.html:18
 msgid "Written by"
-msgstr ""
+msgstr "Geschrieben von"
 
 #: templates/zinnia/_entry_detail_base.html:22
 #: templates/zinnia/author_list.html:17 templates/zinnia/tags/authors.html:6
 #, python-format
 msgid "Show all %(author)s's entries"
-msgstr ""
+msgstr "Zeige diel %(author)s's entries"
 
 #: templates/zinnia/_entry_detail_base.html:24
 #: templates/zinnia/entry_detail_base.html:109
