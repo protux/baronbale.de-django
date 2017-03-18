@@ -6,7 +6,7 @@
 msgid ""
 msgstr "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-18 22:21+0100\n"
+"POT-Creation-Date: 2017-03-18 22:55+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,19 +69,23 @@ msgstr "Buchstabenwerte"
 msgid "Polybius Cipher"
 msgstr "Polybius Verschlüsselung"
 
-#: templates/base.html:43 templates/base.html:44 templates/zinnia/base.html:61
+#: templates/base.html:40
+msgid "Banner Collector"
+msgstr "Bannersammler"
+
+#: templates/base.html:44 templates/base.html:45 templates/zinnia/base.html:61
 msgid "Tools"
 msgstr "Werkzeuge"
 
-#: templates/base.html:47
+#: templates/base.html:48
 msgid "Duplicate Remover"
 msgstr "Duplikatenentferner"
 
-#: templates/base.html:50
+#: templates/base.html:51
 msgid "Contribute"
 msgstr "Unterstützen"
 
-#: templates/base.html:64
+#: templates/base.html:65
 msgid "Imprint"
 msgstr "Impressum"
 

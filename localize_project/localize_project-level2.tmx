@@ -619,36 +619,6 @@
       <prop type="file">homepage.po</prop>
       <prop type="path"></prop>
       <tuv xml:lang="EN">
-        <seg>Project-Id-Version: PACKAGE VERSION
-Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2017-03-18 22:21+0100
-PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
-Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
-Language-Team: LANGUAGE &lt;LL@li.org&gt;
-Language: 
-MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-Plural-Forms: nplurals=2; plural=(n != 1);</seg>
-      </tuv>
-      <tuv xml:lang="DE" changeid="nico" changedate="20170318T213441Z" creationid="nico" creationdate="20170318T213441Z">
-        <seg>Project-Id-Version: PACKAGE VERSION
-Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2017-03-18 22:21+0100
-PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
-Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
-Language-Team: LANGUAGE &lt;LL@li.org&gt;
-Language: 
-MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-Plural-Forms: nplurals=2; plural=(n != 1);</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <prop type="file">homepage.po</prop>
-      <prop type="path"></prop>
-      <tuv xml:lang="EN">
         <seg>The following tools are trending at the moment.</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="nico" changedate="20160929T195343Z" creationid="nico" creationdate="20160929T195343Z">
@@ -819,36 +789,6 @@ Plural-Forms: nplurals=2; plural=(n != 1);</seg>
       <prop type="file">staticpages.po</prop>
       <prop type="path"></prop>
       <tuv xml:lang="EN">
-        <seg>Project-Id-Version: PACKAGE VERSION
-Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2017-03-18 22:21+0100
-PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
-Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
-Language-Team: LANGUAGE &lt;LL@li.org&gt;
-Language: 
-MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-Plural-Forms: nplurals=2; plural=(n != 1);</seg>
-      </tuv>
-      <tuv xml:lang="DE" changeid="nico" changedate="20170318T213447Z" creationid="nico" creationdate="20170318T213447Z">
-        <seg>Project-Id-Version: PACKAGE VERSION
-Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2017-03-18 22:21+0100
-PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
-Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
-Language-Team: LANGUAGE &lt;LL@li.org&gt;
-Language: 
-MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-Plural-Forms: nplurals=2; plural=(n != 1);</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <prop type="file">staticpages.po</prop>
-      <prop type="path"></prop>
-      <tuv xml:lang="EN">
         <seg>Responsible in terms of §5 TMG</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="nico" changedate="20160929T200036Z" creationid="nico" creationdate="20160929T200036Z">
@@ -979,6 +919,16 @@ Plural-Forms: nplurals=2; plural=(n != 1);</seg>
       <prop type="file">templates.po</prop>
       <prop type="path"></prop>
       <tuv xml:lang="EN">
+        <seg>Banner Collector</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="nico" changedate="20170318T215602Z" creationid="nico" creationdate="20170318T215602Z">
+        <seg>Bannersammler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">templates.po</prop>
+      <prop type="path"></prop>
+      <tuv xml:lang="EN">
         <seg>Blog</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="nico" changedate="20160929T200617Z" creationid="nico" creationdate="20160929T200617Z">
@@ -1083,36 +1033,6 @@ Plural-Forms: nplurals=2; plural=(n != 1);</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="nico" changedate="20160929T200657Z" creationid="nico" creationdate="20160929T200657Z">
         <seg>Polybius Verschlüsselung</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <prop type="file">templates.po</prop>
-      <prop type="path"></prop>
-      <tuv xml:lang="EN">
-        <seg>Project-Id-Version: PACKAGE VERSION
-Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2017-03-18 22:21+0100
-PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
-Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
-Language-Team: LANGUAGE &lt;LL@li.org&gt;
-Language: 
-MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-Plural-Forms: nplurals=2; plural=(n != 1);</seg>
-      </tuv>
-      <tuv xml:lang="DE" changeid="nico" changedate="20170318T213451Z" creationid="nico" creationdate="20170318T213451Z">
-        <seg>Project-Id-Version: PACKAGE VERSION
-Report-Msgid-Bugs-To: 
-POT-Creation-Date: 2017-03-18 22:21+0100
-PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
-Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;
-Language-Team: LANGUAGE &lt;LL@li.org&gt;
-Language: 
-MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-Plural-Forms: nplurals=2; plural=(n != 1);</seg>
       </tuv>
     </tu>
     <tu>

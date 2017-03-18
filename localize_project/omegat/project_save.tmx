@@ -979,6 +979,16 @@ Plural-Forms: nplurals=2; plural=(n != 1);</seg>
       <prop type="file">templates.po</prop>
       <prop type="path"></prop>
       <tuv lang="EN">
+        <seg>Banner Collector</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170318T215602Z" creationid="nico" creationdate="20170318T215602Z">
+        <seg>Bannersammler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">templates.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
         <seg>Blog</seg>
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T200617Z" creationid="nico" creationdate="20160929T200617Z">
