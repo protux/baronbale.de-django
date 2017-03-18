@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-import json, traceback, logging, time, calendar
+import json, traceback, logging, calendar
 
 from .db_definitions import FinyaUser, Profile, db
 from peewee import fn, PostgresqlDatabase
@@ -24,7 +24,9 @@ def get_profile_count():
     return Profile.select().count()
 
 def get_last_parsed_users(count):
-    return FinyaUser.select(FinyaUser.name, FinyaUser.last_updated)\
+    return FinyaUser.select(FinyaUser, Profile)\
+                .join(Profile)\
+                .where(FinyaUser.last_updated != None)\
                 .order_by(FinyaUser.last_updated.desc())[:count]
 
 def get_count_by_gender(gender):

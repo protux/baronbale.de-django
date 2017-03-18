@@ -34,6 +34,7 @@ $(function() {
     <thead>
         <tr>
             <th>Name</th>
+            <th>Alter</th>
             <th>Hinzugefügt</th>
         </tr>
     </thead>
@@ -41,6 +42,7 @@ $(function() {
         {% for tupel in last_users %}
         <tr>
             <td>{{ tupel.name }}</td>
+            <td>{{ tupel.profile.age }}</td>
             <td>{{ tupel.last_updated }}</td>
         </tr>
         {% endfor %}
