@@ -1,0 +1,24 @@
+Feature-Liste
+- GC-Team in einer "App" zusammenführen
+- Geocaches auflisten
+- Uhrzeiten auflisten
+- Team kann:
+  - GCs ablehnen
+  - GCs bevorzugt annehmen
+  - GCs priorisieren
+  - Termine annehmen
+  - Termine ablehnen
+  - Teamleiter bewerten
+- Teamleiter kann:
+  - Teammitglieder einladen
+  - Teammitglieder aussperren
+  - Zeit festlegen
+  - Caches festlegen
+  - Priorität festlegen
+  - Nicht gewählte Caches als Backup verschicken
+  - Nach der Tour die Tour schließen und markieren welche Caches gemacht wurden
+- Statistik
+  - Wie viele Caches plant ein Teamleiter im Schnitt pro Tour?
+  - Wie viel Prozent der Caches schafft das Team im Schnitt?
+  - Wie groß sind die Teams des Leiters im Schnitt?
+  - Wie zufrieden sind die Teammitglieder mit dem Leiter im Schnitt?
