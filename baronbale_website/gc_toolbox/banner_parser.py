@@ -140,7 +140,7 @@ def collect_banner_urls(path_to_xml):
         elif event == END_TAG and elem.tag == '{}long_description'.format(GS_NAMESPACE):
             description = elem.text
             description = strip_pattern(description, r'((alt|title)=\".*?(>|<).*?\")')
-        elif event == END_TAG and elem.tag == '{}type'.format(GS_NAMESPACE):
+        elif event == END_TAG and elem.tag == '{}type'.format(TOPO_NS):
             type = elem.text
         elif event == END_TAG and elem.tag == '{}wpt'.format(TOPO_NS):
             try:
@@ -153,12 +153,12 @@ def collect_banner_urls(path_to_xml):
                     banner[HREF_TAG] = CACHE_URL.format(gc_code)
                     add_banner_to_dict(banner, banners)
 
-                    coords += [{
-                        GC_CODE_TAG: gc_code,
-                        LATITUDE_TAG: latitude,
-                        LONGITUDE_TAG: longitude,
-                        TYPE_TAG: type
-                    }]
+                coords += [{
+                    GC_CODE_TAG: gc_code,
+                    LATITUDE_TAG: latitude,
+                    LONGITUDE_TAG: longitude,
+                    TYPE_TAG: type
+                }]
             except NameError:
                 pass  # too bad, provide complete gpx
 
@@ -237,13 +237,20 @@ def process_gc_data(coord_list):
         gc_code = coord[GC_CODE_TAG]
         latitude = coord[LATITUDE_TAG]
         longitude = coord[LONGITUDE_TAG]
-        # type = coord[TYPE_TAG]
+        cache_type = coord[TYPE_TAG]
 
-        if gc_code and latitude and longitude:
+        if gc_code and latitude and longitude and gc_code != 'My Finds Pocket Query':
             cache_coordinates = CacheCoordinates()
             cache_coordinates.gc_code = gc_code
             cache_coordinates.latitude = latitude
             cache_coordinates.longitude = longitude
+            try:
+                if cache_type:
+                    cache_type = cache_type.replace('Geocache|', '')
+                    cache_coordinates.type = cache_type
+            except NameError:
+                cache_coordinates.type = None
+
             try:
                 cache_coordinates.save()
             except IntegrityError:
