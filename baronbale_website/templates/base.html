@@ -62,7 +62,8 @@
         </div>
         </main>
         <footer id="pagefooter">
-            <a href="{% url 'staticpages:imprint' %}">{% trans "Imprint" %}</a>
+            <a href="{% url 'staticpages:imprint' %}">{% trans "Imprint" %}</a> |
+            <a href="{% url 'staticpages:privacy' %}">{% trans "Privacy Policy and Cookies" %}</a>
             
             {% block footer_links %}{% endblock footer_links %}
             
