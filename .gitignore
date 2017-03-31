@@ -2,6 +2,8 @@
 **/tmp/**
 **/*.bak
 **/ve_baronbale.de
+**/*.log
+**/*.sqlite3
 
 # local stuff
 **/*geany*
