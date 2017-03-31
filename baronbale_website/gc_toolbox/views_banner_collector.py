@@ -1,8 +1,10 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+from django.utils.translation import ugettext as _
 
 from . import banner_parser
+from . import banner_sorter
 from .forms import UploadGPXForm
 
 BANNERS_SESSION_KEY = 'banners'
@@ -28,6 +30,17 @@ def collect_banners(request):
         form = UploadGPXForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             gpx_file = form.cleaned_data['gpx_file']
-            banner = banner_parser.collect_banner_urls(gpx_file)
-            request.session[BANNERS_SESSION_KEY] = "\n".join(banner)
+            banners = banner_parser.collect_banner_urls(gpx_file)
+            banners = banner_sorter.sort_banner(banners)
+            joined_banners = "\n".join([get_banner_from_dict(banner) for banner in banners]) + '\n'
+            joined_banners += '<p>' + _('Generated on ') + '<a href="https://baronbale.de/tools/gc/banner/">baronbale.de</a></p>'
+            request.session[BANNERS_SESSION_KEY] = joined_banners
+
     return HttpResponseRedirect(reverse('gc_toolbox:banner_collector'))
+
+
+def get_banner_from_dict(banner_dict):
+    return banner_parser.BANNER_TEMPLATE.format(
+        banner_dict[banner_parser.HREF_TAG],
+        banner_dict[banner_parser.SRC_TAG]
+    )
