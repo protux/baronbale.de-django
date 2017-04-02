@@ -10,13 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
-import os, logging
+import os
 
-VERSION = '1.0.2'
+VERSION = '1.1'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -29,10 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'baronbale.de']
 
-#if DEBUG:
 LOGFILE_DJANGO = 'baronbale_django.log'
-#else:
-#    LOGFILE_DJANGO = '/var/log/nginx/baronbale_django.log'
 
 LOGGING = {
     'version': 1,
@@ -52,9 +48,8 @@ LOGGING = {
         },
     },
 }
-    
+
 # Application definition
-SITE_ID = 1
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -64,14 +59,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    
+
     'request',
     'django_xmlrpc',
     'django_comments',
     'mptt',
     'tagging',
     'zinnia',
-    
+
     'staticpages',
     'gc_toolbox',
     'toolbox',
@@ -103,7 +98,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.template.context_processors.i18n',
                 'zinnia.context_processors.version',
-                
+
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -116,19 +111,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'baronbale_website.wsgi.application'
 
 from zinnia.xmlrpc import ZINNIA_XMLRPC_METHODS
+
 XMLRPC_METHODS = ZINNIA_XMLRPC_METHODS
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 if DEBUG:
-	# Development Database
-	DATABASES = {
-		'default': {
-			'ENGINE': 'django.db.backends.sqlite3',
-			'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-		}
-	}
+    # Development Database
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 else:
     #   PRODUCTION DATABASE
     DATABASES = {
@@ -139,11 +135,11 @@ else:
             'PASSWORD': 'QRBgl7Yp4TnzK2DvXAFo',
             'HOST': '127.0.0.1',
             'PORT': '5432',
-#            'OPTIONS': {
-#                'client_encoding': 'UTF8',
-#                'default_transaction_isolation': 'read committed',
-#                'timezone': 'Europe/Berlin'
-#            },
+            #            'OPTIONS': {
+            #                'client_encoding': 'UTF8',
+            #                'default_transaction_isolation': 'read committed',
+            #                'timezone': 'Europe/Berlin'
+            #            },
         }
     }
 
@@ -177,8 +173,8 @@ USE_TZ = True
 USE_THOUSAND_SEPARATOR = True
 
 LANGUAGES = [
-  ('de', 'Deutsch'),
-  ('en', 'English'),
+    ('de', 'Deutsch'),
+    ('en', 'English'),
 ]
 
 # Static files (CSS, JavaScript, Images)
@@ -188,7 +184,7 @@ if DEBUG:
     STATICFILES_DIRS = [
         '/home/nico/projekte/baronbale.de/static/',
     ]
-else: 
+else:
     STATICFILES_DIRS = [
         '/home/nico/web/baronbale.de/static/',
     ]
@@ -214,7 +210,7 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
 
 # E-Mail
-EMAIL_HOST = 'smtp.strato.de'
+EMAIL_HOST = 'nischwan.de'
 EMAIL_PORT = 465
 EMAIL_HOST_PASSWORD = 'nFsCRWVBFxQPfzdHN4AC'
 EMAIL_HOST_USER = 'webmaster@baronbale.de'
@@ -228,4 +224,3 @@ else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'bale@baronbale.de'
 EMAIL_FROM_SERVICE = 'bale@baronbale.de'
-
