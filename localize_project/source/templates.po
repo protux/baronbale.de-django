@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-18 22:55+0100\n"
+"POT-Creation-Date: 2017-04-02 11:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr "Cache-Name"
 
 #: downloads/models.py:14
 msgid "name"
-msgstr ""
+msgstr "Name"
 
 #: downloads/models.py:15
 msgid "Download-File"
@@ -72,7 +72,7 @@ msgstr "Polybius Verschlüsselung"
 
 #: templates/base.html:40
 msgid "Banner Collector"
-msgstr ""
+msgstr "Bannersammler"
 
 #: templates/base.html:44 templates/base.html:45 templates/zinnia/base.html:61
 msgid "Tools"
@@ -89,6 +89,10 @@ msgstr "Unterstützen"
 #: templates/base.html:65
 msgid "Imprint"
 msgstr "Impressum"
+
+#: templates/base.html:66
+msgid "Privacy Policy and Cookies"
+msgstr "Datenschutz und Cookies"
 
 #: templates/zinnia/_entry_detail_base.html:18
 msgid "Written by"

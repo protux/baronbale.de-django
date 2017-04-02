@@ -239,6 +239,26 @@
       <prop type="file">gc_toolbox.po</prop>
       <prop type="path"></prop>
       <tuv xml:lang="EN">
+        <seg>Generated on</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="nico" changedate="20170401T062631Z" creationid="nico" creationdate="20170401T062631Z">
+        <seg>Bannerliste generiert auf</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">gc_toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv xml:lang="EN">
+        <seg>IMPORTANT: Since we also rearrange the banners for a more beautiful shape we need to get the size of all images, that could take a while, please be patient.</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="nico" changedate="20170402T090022Z" creationid="nico" creationdate="20170402T090022Z">
+        <seg>WICHTIG: Da wir die Banner zugunsten eines schöneren Aussehens neu sortieren könnte es eine weile dauern, bitte sei geduldig.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">gc_toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv xml:lang="EN">
         <seg>If you encode a file it will be read byte by byte and then the bytes will be encoded.</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="nico" changedate="20160929T193646Z" creationid="nico" creationdate="20160929T193646Z">
@@ -449,10 +469,10 @@
       <prop type="file">gc_toolbox.po</prop>
       <prop type="path"></prop>
       <tuv xml:lang="EN">
-        <seg>The banners are parsed from the "long_description" and for some special cases we need the GC-Code.</seg>
+        <seg>The banners are parsed from the "long_description" and for some special cases and for generating the link-tags we need the GC-Code and the url.</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="nico" changedate="20170318T213416Z" creationid="nico" creationdate="20170318T213416Z">
-        <seg>Die Banner werden aus dem "long_description"-Element gelesen. Für Einzelfälle ist es notwendig den GC-Code zu kennen.</seg>
+      <tuv xml:lang="DE" changeid="nico" changedate="20170402T085826Z" creationid="nico" creationdate="20170402T085826Z">
+        <seg>Die Banner werden aus dem "long_description"-Element gelesen. Für einige Sonderfälle und zum Generieren der Link-Tags wird der GC-Code und das URL-Element benötigt.</seg>
       </tuv>
     </tu>
     <tu>
@@ -729,6 +749,16 @@
       <prop type="file">staticpages.po</prop>
       <prop type="path"></prop>
       <tuv xml:lang="EN">
+        <seg>For further information see the imprint for contact details.</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="nico" changedate="20170401T072828Z" creationid="nico" creationdate="20170401T072828Z">
+        <seg>Für weitere Informationen schaue ins Impressum für die Kontaktinformationen.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">staticpages.po</prop>
+      <prop type="path"></prop>
+      <tuv xml:lang="EN">
         <seg>If a tool needs to send data to another server it will say so in the description of the tool.</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="nico" changedate="20160929T200454Z" creationid="nico" creationdate="20160929T200454Z">
@@ -783,6 +813,16 @@
       </tuv>
       <tuv xml:lang="DE" changeid="nico" changedate="20160929T200025Z" creationid="nico" creationdate="20160929T200025Z">
         <seg>Impressum</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">staticpages.po</prop>
+      <prop type="path"></prop>
+      <tuv xml:lang="EN">
+        <seg>Privacy Policy and Cookies</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="nico" changedate="20170401T072801Z" creationid="nico" creationdate="20170401T072801Z">
+        <seg>Datenschutz und Cookies</seg>
       </tuv>
     </tu>
     <tu>
@@ -859,10 +899,10 @@
       <prop type="file">staticpages.po</prop>
       <prop type="path"></prop>
       <tuv xml:lang="EN">
-        <seg>You can report bugs and feedback via the contact form.</seg>
+        <seg>You can report bugs and feedback via the e-mail address in the imprint.</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="nico" changedate="20160929T195614Z" creationid="nico" creationdate="20160929T195614Z">
-        <seg>Über das Kontaktformular kannst du Bugs melden und Feedback geben.</seg>
+      <tuv xml:lang="DE" changeid="nico" changedate="20170401T062819Z" creationid="nico" creationdate="20170401T062819Z">
+        <seg>Du kannst gefundene Bugs und Feedback an die im Impressum erwähnte E-Mailadresse senden.</seg>
       </tuv>
     </tu>
     <tu>
@@ -1039,6 +1079,16 @@
       <prop type="file">templates.po</prop>
       <prop type="path"></prop>
       <tuv xml:lang="EN">
+        <seg>Privacy Policy and Cookies</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="nico" changedate="20170401T061942Z" creationid="nico" creationdate="20170401T061942Z">
+        <seg>Datenschutz und Cookies</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">templates.po</prop>
+      <prop type="path"></prop>
+      <tuv xml:lang="EN">
         <seg>Show all %(author)s's entries</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="nico" changedate="20160929T200818Z" creationid="nico" creationdate="20160929T200818Z">
@@ -1073,6 +1123,16 @@
       </tuv>
       <tuv xml:lang="DE" changeid="nico" changedate="20160929T200635Z" creationid="nico" creationdate="20160929T200635Z">
         <seg>base64</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">templates.po</prop>
+      <prop type="path"></prop>
+      <tuv xml:lang="EN">
+        <seg>name</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="nico" changedate="20170401T072834Z" creationid="nico" creationdate="20170401T072834Z">
+        <seg>Name</seg>
       </tuv>
     </tu>
     <tu>

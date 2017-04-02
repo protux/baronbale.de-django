@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-18 22:55+0100\n"
+"POT-Creation-Date: 2017-04-02 11:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,18 +27,18 @@ msgid "You can contribute in different ways:"
 msgstr "Du kannst uns auf unterschiedliche Weise unterstützen:"
 
 #: staticpages/templates/staticpages/contribute.html:10
-msgid "You can report bugs and feedback via the contact form."
-msgstr "Über das Kontaktformular kannst du Bugs melden und Feedback geben."
+msgid "You can report bugs and feedback via the e-mail address in the imprint."
+msgstr ""
+"Du kannst gefundene Bugs und Feedback an die im Impressum erwähnte E-"
+"Mailadresse senden."
 
 #: staticpages/templates/staticpages/contribute.html:11
+#, fuzzy
+#| msgid "If you have an idea for a new tool we could chat about it and we"
 msgid ""
 "If you have an idea for a new tool we could chat about it and we'll see if "
 "it fits on our page."
-msgstr ""
-"Wenn du eine Idee oder einen Wunsch für ein Tool hast können wir uns darüber "
-"gerne unterhalten und ggf. gemeinsam an der Umsetzung arbeiten. Wer einen "
-"Vorschlag einreicht oder die Umsetzung sogar unterstützt wird natürlich auf "
-"der jeweiligen Seite erwähnt."
+msgstr "Wenn du eine Idee für ein neues Tool h"
 
 #: staticpages/templates/staticpages/contribute.html:12
 msgid ""
@@ -83,11 +83,16 @@ msgstr "Impressum"
 msgid "Responsible in terms of §5 TMG"
 msgstr "Verantwortlich im Sinne des §5 TMG"
 
-#: staticpages/templates/staticpages/imprint.html:18
+#: staticpages/templates/staticpages/privacy.html:4
+#: staticpages/templates/staticpages/privacy.html:7
+msgid "Privacy Policy and Cookies"
+msgstr "Datenschutz und Cookies"
+
+#: staticpages/templates/staticpages/privacy.html:9
 msgid "§1 The Data we save"
 msgstr "§1 Daten die wir speichern"
 
-#: staticpages/templates/staticpages/imprint.html:19
+#: staticpages/templates/staticpages/privacy.html:10
 msgid ""
 "We do not save any data. If an error occurs on the page we may turn on "
 "logging which will save IP-Addresses. But due to the lack of further "
@@ -101,11 +106,11 @@ msgstr ""
 "Deswegen und weil wir die Logs löschen sobald wir den Fehler gefunden und "
 "gefixt haben betrachten wir die IP-Adressen nicht als personenbezogene Daten."
 
-#: staticpages/templates/staticpages/imprint.html:21
+#: staticpages/templates/staticpages/privacy.html:12
 msgid "§2 Cookies"
 msgstr "§2 Cookies"
 
-#: staticpages/templates/staticpages/imprint.html:22
+#: staticpages/templates/staticpages/privacy.html:13
 msgid ""
 "We use cookies. Because without cookies the internet does not work. Deal "
 "with it."
@@ -113,11 +118,11 @@ msgstr ""
 "Wir benutzen Cookies. Denn ohne Kekse funktioniert das Internet nicht. Is' "
 "halt so."
 
-#: staticpages/templates/staticpages/imprint.html:24
+#: staticpages/templates/staticpages/privacy.html:15
 msgid "§3 Third parties"
 msgstr "§3 Dritte Parteien"
 
-#: staticpages/templates/staticpages/imprint.html:25
+#: staticpages/templates/staticpages/privacy.html:16
 msgid ""
 "We do not share any data with third parties. We handle it Vegas-Style: "
 "everything you enter on baronbale.de stays on baronbale.de. If a tool needs "
@@ -127,6 +132,11 @@ msgstr ""
 "alles was auf baronbale.de passiert bleibt auf baronbale.de. Sollte es in "
 "der Zukunft doch mal vorkommen, dass ein Tool Datein zu einem anderen Server "
 "senden muss weisen wir in der Beschreibung darauf hin."
+
+#: staticpages/templates/staticpages/privacy.html:18
+msgid "For further information see the imprint for contact details."
+msgstr ""
+"Für weitere Informationen schaue ins Impressum für die Kontaktinformationen."
 
 #: staticpages/templates/staticpages/roadmap.html:4
 #: staticpages/templates/staticpages/roadmap.html:7

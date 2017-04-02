@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-18 22:55+0100\n"
+"POT-Creation-Date: 2017-04-02 11:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,16 +72,26 @@ msgstr "Dieses Tool durchsucht die GPX-Datei deiner Funde nach Bannern."
 #: gc_toolbox/templates/gc_toolbox/banner_collector.html:7
 msgid ""
 "The banners are parsed from the \"long_description\" and for some special "
-"cases we need the GC-Code."
+"cases and for generating the link-tags we need the GC-Code and the url."
 msgstr ""
-"Die Banner werden aus dem \"long_description\"-Element gelesen. Für "
-"Einzelfälle ist es notwendig den GC-Code zu kennen."
+"Die Banner werden aus dem \"long_description\"-Element gelesen. Für einige "
+"Sonderfälle und zum Generieren der Link-Tags wird der GC-Code und das URL-"
+"Element benötigt."
 
-#: gc_toolbox/templates/gc_toolbox/banner_collector.html:11
+#: gc_toolbox/templates/gc_toolbox/banner_collector.html:8
+msgid ""
+"IMPORTANT: Since we also rearrange the banners for a more beautiful shape we "
+"need to get the size of all images, that could take a while, please be "
+"patient."
+msgstr ""
+"WICHTIG: Da wir die Banner zugunsten eines schöneren Aussehens neu sortieren "
+"könnte es eine weile dauern, bitte sei geduldig."
+
+#: gc_toolbox/templates/gc_toolbox/banner_collector.html:12
 msgid "Collect Banner"
 msgstr "Banner sammeln"
 
-#: gc_toolbox/templates/gc_toolbox/banner_collector.html:15
+#: gc_toolbox/templates/gc_toolbox/banner_collector.html:16
 msgid "Your banners"
 msgstr "Deine Banner"
 
@@ -270,6 +280,10 @@ msgstr ""
 #: gc_toolbox/tools/polybius.py:95
 msgid "Error while splitting the input in pairs of two."
 msgstr "Beim Teilen der Eingabe in Zweierpaare trat ein Fehler auf."
+
+#: gc_toolbox/views_banner_collector.py:36
+msgid "Generated on "
+msgstr "Bannerliste generiert auf "
 
 #: gc_toolbox/views_cesar.py:63
 msgid "The key needs to be an Integer."
