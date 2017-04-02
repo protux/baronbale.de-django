@@ -46,8 +46,8 @@ def encrypt(request):
         if encrypt_form.is_valid():
             message = encrypt_form.cleaned_data['plain_message']
             key = encrypt_form.cleaned_data['key']
-            request.session[CIPHER_MESSAGE_SESSION_KEY] = encrypt_form.cleaned_data['plain_message']
-            request.session[PLAINTEXT_MESSAGE_SESSION_KEY] = cesar_cipher.encrypt(key, message)
+            request.session[CIPHER_MESSAGE_SESSION_KEY] = cesar_cipher.encrypt(key, message)
+            request.session[PLAINTEXT_MESSAGE_SESSION_KEY] = message
 
     return HttpResponseRedirect(reverse('gc_toolbox:cesar'))
 
