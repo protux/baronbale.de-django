@@ -6,7 +6,7 @@
 msgid ""
 msgstr "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 11:37+0200\n"
+"POT-Creation-Date: 2017-04-02 19:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,6 @@ msgid "You can report bugs and feedback via the e-mail address in the imprint."
 msgstr "Du kannst gefundene Bugs und Feedback an die im Impressum erwähnte E-Mailadresse senden."
 
 #: staticpages/templates/staticpages/contribute.html:11
-#| msgid "If you have an idea for a new tool we could chat about it and we"
 msgid ""
 "If you have an idea for a new tool we could chat about it and we'll see if "
 "it fits on our page."

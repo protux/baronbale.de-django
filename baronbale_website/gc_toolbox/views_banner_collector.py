@@ -33,7 +33,8 @@ def collect_banners(request):
             banners = banner_parser.collect_banner_urls(gpx_file)
             banners = banner_sorter.sort_banner(banners)
             joined_banners = "\n".join([get_banner_from_dict(banner) for banner in banners]) + '\n'
-            joined_banners += '<p>' + _('Generated on ') + '<a href="https://baronbale.de/tools/gc/banner/">baronbale.de</a></p>'
+            joined_banners += '<p>' + _(
+                'The bannerlist was generated on') + ' <a href="https://baronbale.de/tools/gc/banner/">baronbale.de</a></p>'
             request.session[BANNERS_SESSION_KEY] = joined_banners
 
     return HttpResponseRedirect(reverse('gc_toolbox:banner_collector'))

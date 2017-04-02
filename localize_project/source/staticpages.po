@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 11:37+0200\n"
+"POT-Creation-Date: 2017-04-02 19:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,12 +33,14 @@ msgstr ""
 "Mailadresse senden."
 
 #: staticpages/templates/staticpages/contribute.html:11
-#, fuzzy
-#| msgid "If you have an idea for a new tool we could chat about it and we"
 msgid ""
 "If you have an idea for a new tool we could chat about it and we'll see if "
 "it fits on our page."
-msgstr "Wenn du eine Idee für ein neues Tool h"
+msgstr ""
+"Wenn du eine Idee oder einen Wunsch für ein Tool hast können wir uns darüber "
+"gerne unterhalten und ggf. gemeinsam an der Umsetzung arbeiten. Wer einen "
+"Vorschlag einreicht oder die Umsetzung sogar unterstützt wird natürlich auf "
+"der jeweiligen Seite erwähnt."
 
 #: staticpages/templates/staticpages/contribute.html:12
 msgid ""

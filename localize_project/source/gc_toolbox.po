@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 11:37+0200\n"
+"POT-Creation-Date: 2017-04-02 19:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,7 +85,8 @@ msgid ""
 "patient."
 msgstr ""
 "WICHTIG: Da wir die Banner zugunsten eines schöneren Aussehens neu sortieren "
-"könnte es eine weile dauern, bitte sei geduldig."
+"müssen wir die Größe aller Bilder laden. Dies könnte eine weile dauern, "
+"bitte sei geduldig."
 
 #: gc_toolbox/templates/gc_toolbox/banner_collector.html:12
 msgid "Collect Banner"
@@ -281,9 +282,9 @@ msgstr ""
 msgid "Error while splitting the input in pairs of two."
 msgstr "Beim Teilen der Eingabe in Zweierpaare trat ein Fehler auf."
 
-#: gc_toolbox/views_banner_collector.py:36
-msgid "Generated on "
-msgstr "Bannerliste generiert auf "
+#: gc_toolbox/views_banner_collector.py:37
+msgid "The bannerlist was generated on"
+msgstr ""
 
 #: gc_toolbox/views_cesar.py:63
 msgid "The key needs to be an Integer."

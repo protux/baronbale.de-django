@@ -239,20 +239,10 @@
       <prop type="file">gc_toolbox.po</prop>
       <prop type="path"></prop>
       <tuv lang="EN">
-        <seg>Generated on</seg>
-      </tuv>
-      <tuv lang="DE" changeid="nico" changedate="20170401T062631Z" creationid="nico" creationdate="20170401T062631Z">
-        <seg>Bannerliste generiert auf</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <prop type="file">gc_toolbox.po</prop>
-      <prop type="path"></prop>
-      <tuv lang="EN">
         <seg>IMPORTANT: Since we also rearrange the banners for a more beautiful shape we need to get the size of all images, that could take a while, please be patient.</seg>
       </tuv>
-      <tuv lang="DE" changeid="nico" changedate="20170402T090022Z" creationid="nico" creationdate="20170402T090022Z">
-        <seg>WICHTIG: Da wir die Banner zugunsten eines schöneren Aussehens neu sortieren könnte es eine weile dauern, bitte sei geduldig.</seg>
+      <tuv lang="DE" changeid="nico" changedate="20170402T170108Z" creationid="nico" creationdate="20170402T090022Z">
+        <seg>WICHTIG: Da wir die Banner zugunsten eines schöneren Aussehens neu sortieren müssen wir die Größe aller Bilder laden. Dies könnte eine weile dauern, bitte sei geduldig.</seg>
       </tuv>
     </tu>
     <tu>
@@ -463,6 +453,16 @@
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T194711Z" creationid="nico" creationdate="20160929T194618Z">
         <seg>Die Polybius-Verschlüsselung ist ebenfalls ein Algorithmus der nach einem lange verstorbenem Typen benannt wurde.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">gc_toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
+        <seg>The bannerlist was generated on</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170402T172603Z" creationid="nico" creationdate="20170402T172603Z">
+        <seg>Die Bannerliste wurde generiert auf</seg>
       </tuv>
     </tu>
     <tu>

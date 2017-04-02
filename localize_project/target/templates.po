@@ -6,7 +6,7 @@
 msgid ""
 msgstr "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 11:37+0200\n"
+"POT-Creation-Date: 2017-04-02 19:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,24 +54,24 @@ msgid "GC-Tools"
 msgstr "GC-Werkzeuge"
 
 #: templates/base.html:36
+msgid "Banner Collector"
+msgstr "Bannersammler"
+
+#: templates/base.html:37
 msgid "base64"
 msgstr "base64"
 
-#: templates/base.html:37
+#: templates/base.html:38
 msgid "Cesar Cipher"
 msgstr "Cäsar Verschlüsselung"
 
-#: templates/base.html:38
+#: templates/base.html:39
 msgid "Lettervalues"
 msgstr "Buchstabenwerte"
 
-#: templates/base.html:39
+#: templates/base.html:40
 msgid "Polybius Cipher"
 msgstr "Polybius Verschlüsselung"
-
-#: templates/base.html:40
-msgid "Banner Collector"
-msgstr "Bannersammler"
 
 #: templates/base.html:44 templates/base.html:45 templates/zinnia/base.html:61
 msgid "Tools"
