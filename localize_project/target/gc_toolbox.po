@@ -6,7 +6,7 @@
 msgid ""
 msgstr "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 19:23+0200\n"
+"POT-Creation-Date: 2017-04-07 16:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,6 +57,14 @@ msgstr "Ist eine Datei"
 msgid "GPX File"
 msgstr "GPX Datei"
 
+#: gc_toolbox/forms.py:110
+msgid "Horizontal banners per row"
+msgstr "Horizontale Banner pro Zeile"
+
+#: gc_toolbox/forms.py:115
+msgid "Vertical banners per row"
+msgstr "Vertikale Banner pro Zeile"
+
 #: gc_toolbox/templates/gc_toolbox/banner_collector.html:3
 #: gc_toolbox/templates/gc_toolbox/banner_collector.html:5
 msgid "Banner collector"
@@ -75,11 +83,16 @@ msgid ""
 msgstr "Die Banner werden aus dem \"long_description\"-Element gelesen. Für einige Sonderfälle und zum Generieren der Link-Tags wird der GC-Code und das URL-Element benötigt."
 
 #: gc_toolbox/templates/gc_toolbox/banner_collector.html:8
+#| msgid ""
+#| "IMPORTANT: Since we also rearrange the banners for a more beautiful shape "
+#| "we need to get the size of all images, that could take a while, please be "
+#| "patient."
 msgid ""
 "IMPORTANT: Since we also rearrange the banners for a more beautiful shape we "
 "need to get the size of all images, that could take a while, please be "
-"patient."
-msgstr "WICHTIG: Da wir die Banner zugunsten eines schöneren Aussehens neu sortieren müssen wir die Größe aller Bilder laden. Dies könnte eine weile dauern, bitte sei geduldig."
+"patient. With 89 Banners from ~1.500 founds it takes approximately one "
+"minute."
+msgstr "WICHTIG: Da wir die Banner zugunsten eines schöneren Aussehens neu sortieren müssen wir die Größe aller Bilder laden. Dies könnte eine weile dauern, bitte sei geduldig. Bei 89 Bannern aus ~1.500 Funden dauert es ca. eine Minute."
 
 #: gc_toolbox/templates/gc_toolbox/banner_collector.html:12
 msgid "Collect Banner"
@@ -252,7 +265,7 @@ msgstr "Die Polybius-Verschlüsselung ist ebenfalls ein Algorithmus der nach ein
 msgid "Error while splitting the input in pairs of two."
 msgstr "Beim Teilen der Eingabe in Zweierpaare trat ein Fehler auf."
 
-#: gc_toolbox/views_banner_collector.py:37
+#: gc_toolbox/views_banner_collector.py:41
 msgid "The bannerlist was generated on"
 msgstr "Die Bannerliste wurde generiert auf"
 

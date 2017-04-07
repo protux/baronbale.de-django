@@ -259,6 +259,16 @@
       <prop type="file">gc_toolbox.po</prop>
       <prop type="path"></prop>
       <tuv lang="EN">
+        <seg>Horizontal banners per row</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170407T142542Z" creationid="nico" creationdate="20170407T142542Z">
+        <seg>Horizontale Banner pro Zeile</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">gc_toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
         <seg>IMPORTANT: Since we also rearrange the banners for a more beautiful shape we need to get the size of all images, that</seg>
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20170401T062550Z" creationid="nico" creationdate="20170401T062550Z">
@@ -593,6 +603,26 @@
       </tuv>
       <tuv lang="DE" changeid="nico" changedate="20160929T194459Z" creationid="nico" creationdate="20160929T194459Z">
         <seg>Werte relevanter Zeichen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">gc_toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
+        <seg>Vertical banners per row</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170407T142550Z" creationid="nico" creationdate="20170407T142550Z">
+        <seg>Vertikale Banner pro Zeile</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <prop type="file">gc_toolbox.po</prop>
+      <prop type="path"></prop>
+      <tuv lang="EN">
+        <seg>With 89 Banners from ~1.500 founds it takes approximately one minute.</seg>
+      </tuv>
+      <tuv lang="DE" changeid="nico" changedate="20170407T142612Z" creationid="nico" creationdate="20170407T142612Z">
+        <seg>Bei 89 Bannern aus ~1.500 Funden dauert es ca. eine Minute.</seg>
       </tuv>
     </tu>
     <tu>

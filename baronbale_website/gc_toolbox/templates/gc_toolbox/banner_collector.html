@@ -5,7 +5,7 @@
 <h1>{% trans 'Banner collector' %}</h1>
 <p>{% trans 'This tools takes the gpx file with your found caches and collects the banners from the listings.' %}</p>
 <p>{% trans 'The banners are parsed from the "long_description" and for some special cases and for generating the link-tags we need the GC-Code and the url.' %}</p>
-<p>{% trans 'IMPORTANT: Since we also rearrange the banners for a more beautiful shape we need to get the size of all images, that could take a while, please be patient.' %}</p>
+<p>{% trans 'IMPORTANT: Since we also rearrange the banners for a more beautiful shape we need to get the size of all images, that could take a while, please be patient. With 89 Banners from ~1.500 founds it takes approximately one minute.' %}</p>
 <form method="POST" action="{% url 'gc_toolbox:collect_banner' %}" enctype="multipart/form-data">
     {% csrf_token %}
     {{ gpx_form.as_p }}
