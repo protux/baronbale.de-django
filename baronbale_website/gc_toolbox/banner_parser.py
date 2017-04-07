@@ -18,7 +18,7 @@ SRC_TAG = 'src'
 HREF_TAG = 'href'
 
 CACHE_URL = 'http://coords.info/{}'
-BANNER_TEMPLATE = '<a href="{}">\n    <img src="{}" style="width: 49.8%">\n</a>\n'
+BANNER_TEMPLATE = '<a href="{}">\n    <img src="{}" style="width: {}px">\n</a>\n'
 
 BANNER_ENCODED_PATTERN = re.compile(r'&lt;a[\w\W]*?&gt;[\w\W]*?&lt;img[\w\W]*?&gt;[\w\W]*?&lt;/a&gt;', re.IGNORECASE)
 BANNER_DECODED_PATTERN = re.compile(r'<a[\w\W]*?>[\w\W]*?<img[\w\W]*?>[\w\W]*?</a>', re.IGNORECASE)

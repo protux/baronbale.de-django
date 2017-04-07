@@ -106,3 +106,13 @@ class UploadGPXForm(forms.Form):
     gpx_file = forms.FileField(
         label=_('GPX File')
     )
+    horizontal_banners_per_row = forms.IntegerField(
+        label=_('Horizontal banners per row'),
+        min_value=1,
+        initial=2
+    )
+    vertical_banners_per_row = forms.IntegerField(
+        label=_('Vertical banners per row'),
+        min_value=1,
+        initial=3
+    )
