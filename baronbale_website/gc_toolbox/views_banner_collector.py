@@ -8,8 +8,7 @@ from . import banner_sorter
 from .forms import UploadGPXForm
 
 BANNERS_SESSION_KEY = 'banners'
-MARGIN_BETWEEN_BANNER = 3
-CANVAS_WIDTH = 750
+MARGIN_BETWEEN_BANNER = 0.5
 
 
 def index(request):
@@ -71,4 +70,4 @@ def get_formatted_banner(banner, banner_per_row):
 
 
 def calculate_banner_width(banners_per_row):
-    return int((CANVAS_WIDTH - ((banners_per_row - 1) * MARGIN_BETWEEN_BANNER)) / banners_per_row)
+    return round(100 / banners_per_row - MARGIN_BETWEEN_BANNER, 2)
