@@ -1,17 +1,17 @@
-07.04.17 16:27
+08.04.17 12:17
 Projektstatistik
 
                      	Segmente	Wörter	Zeichen (ohne Leerzeichen)	Zeichen (mit Leerzeichen)	Dateien	
-Gesamt:              	     280	  1631	                      8816	                     9991	      5	
+Gesamt:              	     279	  1620	                      8757	                     9922	      5	
 Verbleibend:         	     151	   723	                      4538	                     4947	      5	
-Einmalig:            	     271	  1452	                      7386	                     8471	      5	
+Einmalig:            	     270	  1441	                      7327	                     8402	      5	
 Verbleibend einmalig:	     146	   552	                      3159	                     3482	      2	
 
 
 Statistik einzelner Dateien:
 
 Dateiname     	Segmente Gesamt	Verbleibende Segmente	Einmalige Segmente	Verbleibende einmalige Segmente	Wörter Gesamt	Verbleibende Wörter:	Einmalige Wörter	Verbleibende einmalige Wörter	Zeichen Gesamt (ohne Leerzeichen)	Verbleibende Zeichen (ohne Leerzeichen)	Einmalige Zeichen (ohne Leerzeichen)	Verbleibende einmalige Zeichen (ohne Leerzeichen)	Zeichen Gesamt (mit Leerzeichen)	Verbleibende Zeichen (mit Leerzeichen)	Einmalige Zeichen (mit Leerzeichen)	Verbleibende einmalige Zeichen (mit Leerzeichen)	
-gc_toolbox.po 	             64	                    1	                64	                              1	          465	                  42	             465	                           42	                             2371	                                    341	                                2371	                                              341	                            2749	                                   362	                               2749	                                             362	
+gc_toolbox.po 	             63	                    1	                63	                              1	          454	                  42	             454	                           42	                             2312	                                    341	                                2312	                                              341	                            2680	                                   362	                               2680	                                             362	
 homepage.po   	             10	                    1	                 9	                              0	          114	                  42	              72	                            0	                              671	                                    341	                                 330	                                                0	                             751	                                   362	                                389	                                               0	
 staticpages.po	             27	                    1	                26	                              0	          329	                  42	             287	                            0	                             1586	                                    341	                                1245	                                                0	                            1860	                                   362	                               1498	                                               0	
 templates.po  	            165	                  147	               159	                            145	          585	                 555	             532	                          510	                             3366	                                   3174	                                2959	                                             2818	                            3702	                                  3499	                               3268	                                            3120	

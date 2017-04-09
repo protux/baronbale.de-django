@@ -9,3 +9,10 @@ class CacheCoordinates(models.Model):
 
     class Meta:
         unique_together = (('gc_code', 'latitude', 'longitude'),)
+
+
+class BannerDimension(models.Model):
+    banner = models.CharField(max_length=64)
+    ratio = models.FloatField(default=0.0)
+    width = models.IntegerField()
+    height = models.IntegerField()

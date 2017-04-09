@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-07 16:24+0200\n"
+"POT-Creation-Date: 2017-04-08 12:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,11 +60,11 @@ msgstr "GPX Datei"
 
 #: gc_toolbox/forms.py:110
 msgid "Horizontal banners per row"
-msgstr ""
+msgstr "Horizontale Banner pro Zeile"
 
 #: gc_toolbox/forms.py:115
 msgid "Vertical banners per row"
-msgstr ""
+msgstr "Vertikale Banner pro Zeile"
 
 #: gc_toolbox/templates/gc_toolbox/banner_collector.html:3
 #: gc_toolbox/templates/gc_toolbox/banner_collector.html:5
@@ -91,16 +91,17 @@ msgstr ""
 #| msgid ""
 #| "IMPORTANT: Since we also rearrange the banners for a more beautiful shape "
 #| "we need to get the size of all images, that could take a while, please be "
-#| "patient."
+#| "patient. With 89 Banners from ~1.500 founds it takes approximately one "
+#| "minute."
 msgid ""
 "IMPORTANT: Since we also rearrange the banners for a more beautiful shape we "
 "need to get the size of all images, that could take a while, please be "
-"patient. With 89 Banners from ~1.500 founds it takes approximately one "
-"minute."
+"patient."
 msgstr ""
 "WICHTIG: Da wir die Banner zugunsten eines schöneren Aussehens neu sortieren "
 "müssen wir die Größe aller Bilder laden. Dies könnte eine weile dauern, "
-"bitte sei geduldig."
+"bitte sei geduldig. Bei 89 Bannern aus ~1.500 Funden dauert es ca. eine "
+"Minute."
 
 #: gc_toolbox/templates/gc_toolbox/banner_collector.html:12
 msgid "Collect Banner"
@@ -296,7 +297,7 @@ msgstr ""
 msgid "Error while splitting the input in pairs of two."
 msgstr "Beim Teilen der Eingabe in Zweierpaare trat ein Fehler auf."
 
-#: gc_toolbox/views_banner_collector.py:41
+#: gc_toolbox/views_banner_collector.py:40
 msgid "The bannerlist was generated on"
 msgstr "Die Bannerliste wurde generiert auf"
 
