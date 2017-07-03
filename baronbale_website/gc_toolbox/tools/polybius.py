@@ -91,8 +91,6 @@ def _split_text(text):
 
 
 def _split_length(text):
-    if len(text) % 2 != 0:
-        raise ValueError(_("Error while splitting the input in pairs of two."))
     index = 0
     items = []
     while index <= len(text) - 2:
