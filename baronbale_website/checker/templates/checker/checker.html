@@ -1,0 +1,18 @@
+{% extends 'checker/checker_base.html' %}
+{% load i18n %}
+{% block title %}O pulchram avem! - Vor Ort Checker{% endblock %}
+{% block content %}
+<h1>O pulchram avem! - Vor Ort Checker</h1>
+<p>
+    Hier könnt ihr überprüfen, ob ihr bereit seid euch mit Calimero zu unterhalten.
+</p>
+
+<form method="POST" action="{% url 'checker:index' %}">
+    {% csrf_token %}
+    <p>
+        <label for="ccode">Welche Noten musst du Calimero vorspielen? (Trenne einzelne Noten mit einem Leerzeichen)</label>
+        <input type="text" id="ccode" name="ccode">
+    </p>
+    <input type="submit">
+</form>
+{% endblock %}

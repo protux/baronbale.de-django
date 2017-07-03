@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static i18n %}
+<html>
+    <head>
+        <title>baronbale.de - {% block title %}{% endblock %}</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="follow, all" />
+        {% block meta %}{% endblock meta %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/big.css' %}" media="screen and (min-width: 800px)"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/small.css' %}" media="all and (max-width: 799px)" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/tiny.css' %}" media="all and (max-width: 330px)" />
+        {% block link %}{% endblock link %}
+
+        <script src="{% static '/js/jquery.js' %}"></script>
+        <script src="{% static '/js/code.js' %}"></script>
+        {% block script %}{% endblock script %}
+    </head>
+    <body>
+        <header>
+            <nav class="nav_bar">
+                <a href="/" id="logo_home"><img src="{% static 'img/logo.png' %}" alt="baronbale.de" title="baronbale.de" id="logo" /></a>
+            </nav>
+        </header>
+        <main>
+        {% block breadcrumbs %}{% endblock %}
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="sidebar">
+            {% block sidebar %}{% endblock %}
+        </div>
+        </main>
+        <footer id="pagefooter">
+            <a href="{% url 'staticpages:imprint' %}">{% trans "Imprint" %}</a> |
+            <a href="{% url 'staticpages:privacy' %}">{% trans "Privacy Policy and Cookies" %}</a>
+
+            {% block footer_links %}{% endblock footer_links %}
+
+            <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}" />
+                <select name="language" onchange="this.form.submit()">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+            </form>
+        </footer>
+    </body>
+</html>

@@ -31,6 +31,7 @@ urlpatterns = i18n_patterns(
     url(r'blog/comments/', include('django_comments.urls')),
     url(r'blog/rss/', RedirectView.as_view(url=reverse_lazy('zinnia:entry_feed')), name='rss_redirect'),
     url(r'^', include('homepage.urls')),
+    url(r'^o_pulchram_avem/', include('checker.urls')),
     url(r'^blog/xmlrpc/$', handle_xmlrpc),
     url(r'^admin/', admin.site.urls),
     url(r'^finya/', include('finya.urls')),

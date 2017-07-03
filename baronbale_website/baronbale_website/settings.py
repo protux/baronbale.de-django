@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     'toolbox',
     'homepage',
     'finya',
+    'checker',
 ]
 
 MIDDLEWARE = [
