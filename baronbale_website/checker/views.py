@@ -8,7 +8,7 @@ def index(request):
 
         checker_code = request.POST.get('ccode')
         checker_code = checker_code.strip().lower()
-        if checker_code == 'h gis fis e fis gis' or checker_code == 'h g# f# e f# g#':
+        if checker_code == 'h gis fis e fis gis' or checker_code == "h'' gis'' fis'' e'' fis'' gis''" or checker_code == 'h" gis" fis" e" fis" gis"':
             return HttpResponseRedirect(reverse('checker:correct'))
         else:
             return HttpResponseRedirect(reverse('checker:incorrect'))
