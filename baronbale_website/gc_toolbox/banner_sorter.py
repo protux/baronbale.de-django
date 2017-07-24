@@ -27,7 +27,7 @@ def sort_banner(banners):
             set_image_data(banner, banner_dimension)
         else:
             try:
-                response = http.request('GET', banner[banner_parser.SRC_TAG])
+                response = http.request('GET', banner[banner_parser.SRC_TAG].strip())
                 if response.status == 200:
                     width, height = load_image_size(response)
                     banner_dimension = BannerDimension()
@@ -42,6 +42,8 @@ def sort_banner(banners):
             except urllib3.exceptions.NewConnectionError:
                 set_fall_back_values(banner)
             except urllib3.exceptions.MaxRetryError:
+                set_fall_back_values(banner)
+            except OSError:
                 set_fall_back_values(banner)
 
     return sorted(banners, key=itemgetter(RATIO_TAG), reverse=True)

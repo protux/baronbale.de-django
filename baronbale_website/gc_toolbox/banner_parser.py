@@ -4,7 +4,8 @@ from .models import CacheCoordinates
 from defusedxml import cElementTree
 import re
 
-GS_NAMESPACE = '{http://www.groundspeak.com/cache/1/0/1}'
+GS_NAMESPACE_OLD = '{http://www.groundspeak.com/cache/1/0/1}'
+GS_NAMESPACE_NEW = '{http://www.groundspeak.com/cache/1/0}'
 TOPO_NS = '{http://www.topografix.com/GPX/1/0}'
 
 START_TAG = 'start'
@@ -25,8 +26,8 @@ BANNER_DECODED_PATTERN = re.compile(r'<a[\w\W]*?>[\w\W]*?<img[\w\W]*?>[\w\W]*?</
 IMAGE_DECODED_PATTERN = re.compile(r'<img[\w\W]*?>', re.IGNORECASE)
 IMAGE_ENCODED_PATTERN = re.compile(r'&lt;img[\w\W]*?&gt;', re.IGNORECASE)
 LINKLESS_IMAGE_PATTERN = re.compile(r' Banner[\w\W]*?<img.*?>', re.IGNORECASE)
-SRC_PATTERN = re.compile(r'src[\w\W]*?=[\w\W]*?\"[\w\W]*?\"', re.IGNORECASE)
-HREF_PATTERN = re.compile(r'href[\w\W]*?=[\w\W]*?\"[\w\W]*?\"', re.IGNORECASE)
+SRC_PATTERN = re.compile(r'src[\w\W]*?=[\w\W]*?[\"\'][\w\W]*?[\"\']', re.IGNORECASE)
+HREF_PATTERN = re.compile(r'href[\w\W]*?=[\w\W]*?[\"\'][\w\W]*?[\"\']', re.IGNORECASE)
 
 SPECIAL_BANNERS = {
     'GC24XB5': {  # Banner on special page
@@ -137,7 +138,10 @@ def collect_banner_urls(path_to_xml):
             gc_code = elem.text
         elif event == END_TAG and elem.tag == '{}url'.format(TOPO_NS):
             url = elem.text
-        elif event == END_TAG and elem.tag == '{}long_description'.format(GS_NAMESPACE):
+        elif event == END_TAG and elem.tag == '{}long_description'.format(GS_NAMESPACE_OLD):
+            description = elem.text
+            description = strip_pattern(description, r'((alt|title)=\".*?(>|<).*?\")')
+        elif event == END_TAG and elem.tag == '{}long_description'.format(GS_NAMESPACE_NEW):
             description = elem.text
             description = strip_pattern(description, r'((alt|title)=\".*?(>|<).*?\")')
         elif event == END_TAG and elem.tag == '{}type'.format(TOPO_NS):
@@ -218,7 +222,7 @@ def parse_banner(description, gc_code, url):
 
 def parse_banner_details(banner):
     href = HREF_PATTERN.search(banner).group()
-    href = re.sub(r'href[\w\W]*?=[\w\W]*?"', '', href).replace('"', '')
+    href = re.sub(r'href[\w\W]*?=[\w\W]*?["\']', '', href).replace('"', '').replace('\'', '')
     return {
         SRC_TAG: parse_banner_details_from_image(banner),
         HREF_TAG: href,
@@ -227,8 +231,8 @@ def parse_banner_details(banner):
 
 def parse_banner_details_from_image(banner):
     src = SRC_PATTERN.search(banner).group()
-    src = re.sub(r'src[\w\W]*?=[\w\W]*?"', '', src)
-    src = src.replace('"', '')
+    src = re.sub(r'src[\w\W]*?=[\w\W]*?["\']', '', src)
+    src = src.replace('"', '').replace('\'', '').replace('<a>', '').replace('</a>', '')
     return src
 
 
