@@ -1,25 +1,33 @@
-import urllib3
-import certifi
 import hashlib
+import logging
 from io import BytesIO
 from operator import itemgetter
-from . import banner_parser
+
+import certifi
+import urllib3
 from PIL import Image
+
+from . import banner_parser
 from .models import BannerDimension
 
 RATIO_TAG = 'ratio'
 WIDTH_TAG = 'width'
 HEIGHT_TAG = 'height'
 
+logger = logging.getLogger(__name__)
+
 
 def sort_banner(banners):
+    logger.info('start to sort banners')
     http = urllib3.PoolManager(
         cert_reqs='CERT_REQUIRED',
         ca_certs=certifi.where(),
         timeout=urllib3.Timeout(connect=2.0, read=10.0)
     )
 
-    for banner in banners:
+    for idx, banner in enumerate(banners):
+        if idx % 25 == 0:
+            logger.info('handling banner no. {}'.format(idx))
         hash = hashlib.sha256(banner[banner_parser.SRC_TAG].encode('UTF-8')).hexdigest()
         banner_dimension = BannerDimension.objects.filter(banner=hash)
         if banner_dimension is not None and len(banner_dimension) > 0:
@@ -46,6 +54,7 @@ def sort_banner(banners):
             except OSError:
                 set_fall_back_values(banner)
 
+    logger.info('sorting banner done')
     return sorted(banners, key=itemgetter(RATIO_TAG), reverse=True)
 
 

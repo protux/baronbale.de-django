@@ -27,7 +27,7 @@ SECRET_KEY = 'n-w+15&03a8srymecq%i_1m&!#19_(qg5&ysezugj+7lm^p_wk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'baronbale.de']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'baronbale.de', '85.214.231.140']
 
 LOGFILE_DJANGO = 'baronbale_django.log'
 
@@ -62,11 +62,11 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     'request',
-    'django_xmlrpc',
-    'django_comments',
-    'mptt',
-    'tagging',
-    'zinnia',
+    # 'django_xmlrpc',
+    # 'django_comments',
+    # 'mptt',
+    # 'tagging',
+    # 'zinnia',
 
     'staticpages',
     'gc_toolbox',
@@ -112,9 +112,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'baronbale_website.wsgi.application'
 
-from zinnia.xmlrpc import ZINNIA_XMLRPC_METHODS
+# from zinnia.xmlrpc import ZINNIA_XMLRPC_METHODS
 
-XMLRPC_METHODS = ZINNIA_XMLRPC_METHODS
+# XMLRPC_METHODS = ZINNIA_XMLRPC_METHODS
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases

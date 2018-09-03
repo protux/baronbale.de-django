@@ -1,8 +1,13 @@
-from django.db import transaction, IntegrityError
+import logging
+import re
+
+from bs4 import BeautifulSoup
+from defusedxml import cElementTree
+from django.db import IntegrityError
 
 from .models import CacheCoordinates
-from defusedxml import cElementTree
-import re
+
+logger = logging.getLogger(__name__)
 
 GS_NAMESPACE_OLD = '{http://www.groundspeak.com/cache/1/0/1}'
 GS_NAMESPACE_NEW = '{http://www.groundspeak.com/cache/1/0}'
@@ -106,6 +111,10 @@ SPECIAL_BANNERS = {
         HREF_TAG: 'http://coord.info/GC5A4X9',
         SRC_TAG: 'http://wampenschleifer.de/Logos/GC5A4X9.jpg',
     },
+    'GCZB0W': {  # Banner before keyword "banner"
+        HREF_TAG: 'http://coord.info/GCZB0W',
+        SRC_TAG: 'http://fs5.directupload.net/images/user/170406/o4c8e44b.png',
+    },
     'GC52VPD': None,  # Zu gut für die Tonne 01 / misleading the parser (refers to banner in another cache)
     'GC52VMR': None,  # Zu gut für die Tonne 02 / misleading the parser (refers to banner in another cache)
     'GC52VNZ': None,  # Zu gut für die Tonne 03 / misleading the parser (refers to banner in another cache)
@@ -117,6 +126,48 @@ SPECIAL_BANNERS = {
     'GC52W7T': None,  # Zu gut für die Tonne 09 / misleading the parser (refers to banner in another cache)
     'GC52W87': None,  # Zu gut für die Tonne 10 / misleading the parser (refers to banner in another cache)
     'GC6BAZ8': None,  # Ost-West-Beziehung / misleading the parser (image refers to cache itself but is no banner)
+    'GC4TCM0': None,  # parsed an emoji as banner
+    'GC28TMR': None,  # misleading by linking the cache from a non banner image
+    'GC28TMN': None,  # misleading by linking the cache from a non banner image
+    'GC28TMW': None,  # misleading by linking the cache from a non banner image
+    'GC28TMK': None,  # misleading by linking the cache from a non banner image
+    'GC4WDV0': None,  # parsed tradi image as banner
+    'GC28TMB': None,  # misleading by linking the cache from a non banner image
+    'GC28TMA': None,  # misleading by linking the cache from a non banner image
+    'GC28TMP': None,  # misleading by linking the cache from a non banner image
+    'GC28TMT': None,  # misleading by linking the cache from a non banner image
+    'GC28TMF': None,  # misleading by linking the cache from a non banner image
+    'GC28TMX': None,  # misleading by linking the cache from a non banner image
+    'GC28TMH': None,  # misleading by linking the cache from a non banner image
+    'GC2JMDK': None,  # ape head as banner
+    'GC2PG8Q': None,  # riddle as banner
+    'GC28TMC': None,  # misleading by linking the cache from a non banner image
+    'GC28TMG': None,  # misleading by linking the cache from a non banner image
+    'GC28TMQ': None,  # misleading by linking the cache from a non banner image
+    'GC28TMY': None,  # misleading by linking the cache from a non banner image
+    'GC28TME': None,  # misleading by linking the cache from a non banner image
+    'GC5DZWP': None,  # emoji as banner
+    'GC6D17N': None,  # image is not a banner
+    'GC5DZWR': None,  # image is not a banner
+    'GC3NZTR': None,  # image is not a banner
+    'GC2PG8R': None,  # image is not a banner
+    'GC3PFZW': None,  # image is not a banner
+    'GC5F7HX': None,  # image is not a banner
+    'GC2PG8P': None,  # image is not a banner
+    'GC1KWDQ': None,  # image is not a banner
+    'GC4RANA': None,  # image is not a banner
+    'GC3P8CH': None,  # image is not a banner
+    'GC5DZT8': None,  # image is not a banner
+    'GC6D15P': None,  # image is not a banner
+    'GC6MJ24': None,  # mistakes linked list as banner
+    'GC2DM44': None,  # no banner
+    'GC1851C': None,  # image is not a banner
+    'GC5DZTZ': None,  # image is not a banner
+    'GC6EJF4': None,  # image is not a banner
+    'GC5DZW6': None,  # no banner
+    'GC1QM7B': None,  # no banner
+    'GC2PG8N': None,  # riddle as banner
+    'GC2PG8M': None,  # riddle as banner
     # Banner was deleted
     'GC4YAEY': {
         HREF_TAG: 'http://coord.info/GC4YAEY',
@@ -191,14 +242,17 @@ def parse_banner(description, gc_code, url):
         banner = normalize_banner(match.group())
         return get_banner_id_not_equal_to_href(parse_banner_details(banner))
 
-    match = IMAGE_ENCODED_PATTERN.search(description)
-    if match:
-        image = normalize_banner(match.group())
-        src = parse_banner_details_from_image(image)
-        return get_banner_id_not_equal_to_href({
-            SRC_TAG: src,
-            HREF_TAG: CACHE_URL.format(gc_code)
-        })
+    soup = BeautifulSoup(description, 'lxml')
+    links = soup.find_all('a')
+    if links:
+        for link in links:
+            image = link.find('img')
+            if image is not None and image.get('src', None) and link.get('href', None) and contains_cache_url(
+                    link.get('href'), gc_code, url):
+                return get_banner_id_not_equal_to_href({
+                    SRC_TAG: image['src'],
+                    HREF_TAG: CACHE_URL.format(gc_code)
+                })
 
     matches = BANNER_DECODED_PATTERN.finditer(description)
     for match in matches:
@@ -233,11 +287,15 @@ def parse_banner_details_from_image(banner):
     src = SRC_PATTERN.search(banner).group()
     src = re.sub(r'src[\w\W]*?=[\w\W]*?["\']', '', src)
     src = src.replace('"', '').replace('\'', '').replace('<a>', '').replace('</a>', '')
+    src = re.sub('\s+', '', src)
     return src
 
 
 def process_gc_data(coord_list):
-    for coord in coord_list:
+    logger.info('processing caches')
+    for idx, coord in enumerate(coord_list):
+        if idx % 50 == 0:
+            logger.info('processing cache no. {}'.format(idx))
         gc_code = coord[GC_CODE_TAG]
         latitude = coord[LATITUDE_TAG]
         longitude = coord[LONGITUDE_TAG]
@@ -289,12 +347,13 @@ def contains_cache_url(banner_probe, gc_code, url):
     short_url = 'http://coord.info/' + gc_code
     long_url = 'geocaching.com/geocache/' + gc_code
 
-    if short_url in banner_probe:
-        return True
-    if long_url in banner_probe:
-        return True
-    if url in banner_probe:
-        return True
+    if banner_probe is not None:
+        if short_url in banner_probe:
+            return True
+        if long_url in banner_probe:
+            return True
+        if url in banner_probe:
+            return True
 
     return False
 

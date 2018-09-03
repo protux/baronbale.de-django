@@ -27,7 +27,6 @@
                 <input type="checkbox" id="drop" />
                 <ul class="menu">
 					<li><a href="/">{% trans 'Home' %}</a></li>
-					<li><a href="{% url 'zinnia:entry_archive_index' %}">{% trans 'Blog' %}</a></li>
 					<li>
 						<label for="drop-1" class="toggle">{% trans 'GC-Tools' %} +</label>
 						<a href="#">{% trans 'GC-Tools' %}</a>
@@ -66,7 +65,7 @@
             <a href="{% url 'staticpages:privacy' %}">{% trans "Privacy Policy and Cookies" %}</a>
             
             {% block footer_links %}{% endblock footer_links %}
-            
+            {% comment %}
             <form action="{% url 'set_language' %}" method="post">
                 {% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}" />
@@ -81,6 +80,7 @@
                     {% endfor %}
                 </select>
             </form>
+            {% endcomment %}
         </footer>
     </body>
 </html>
