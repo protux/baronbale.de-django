@@ -212,17 +212,23 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
 
 # E-Mail
-EMAIL_HOST = 'nischwan.de'
-EMAIL_PORT = 465
-EMAIL_HOST_PASSWORD = 'nFsCRWVBFxQPfzdHN4AC'
-EMAIL_HOST_USER = 'webmaster@baronbale.de'
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.nischwan.de'
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = 'yG0XoQ6ktz1syUxrmQj7'
+EMAIL_HOST_USER = 'admin@baronbale.de'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 EMAIL_SUBJECT_PREFIX = ''
 EMAIL_TIMEOUT = 60
 if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'bale@baronbale.de'
-EMAIL_FROM_SERVICE = 'bale@baronbale.de'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_FROM_SERVICE = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+ADMINS = [
+    ('Nico', 'protux@baronbale.de'),
+]
+MANAGERS = ADMINS

@@ -7,6 +7,8 @@ import certifi
 import urllib3
 from PIL import Image
 
+from django.core import mail
+
 from . import banner_parser
 from .models import BannerDimension
 
@@ -51,7 +53,9 @@ def sort_banner(banners):
                 set_fall_back_values(banner)
             except urllib3.exceptions.MaxRetryError:
                 set_fall_back_values(banner)
-            except OSError:
+            except Exception as e:
+                body = 'Banner: {}\n\nException: {}'.format(str(banner), str(e))
+                mail.mail_admins("Error while sorting banners", body)
                 set_fall_back_values(banner)
 
     logger.info('sorting banner done')

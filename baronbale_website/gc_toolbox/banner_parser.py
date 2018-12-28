@@ -4,6 +4,7 @@ import re
 from bs4 import BeautifulSoup
 from defusedxml import cElementTree
 from django.db import IntegrityError
+from django.core import mail
 
 from .models import CacheCoordinates
 
@@ -202,7 +203,17 @@ def collect_banner_urls(path_to_xml):
                 if gc_code in SPECIAL_BANNERS:
                     banner = SPECIAL_BANNERS[gc_code]
                 else:
-                    banner = parse_banner(description, gc_code, url)
+                    try:
+                        banner = parse_banner(description, gc_code, url)
+                    except Exception as e:
+                        try:
+                            xml_content = ''
+                            with open(path_to_xml, 'r') as xml_file:
+                                xml_content = '\n'.join(xml_file.readlines())
+                        except Exception:
+                            pass  # fuck it
+                        body = 'exception:{}\ngpx:\n{}'.format(str(e), xml_content)
+                        mail.mail_admins("Error while parsing banner", body)
 
                 if banner:
                     banner[HREF_TAG] = CACHE_URL.format(gc_code)
