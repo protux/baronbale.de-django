@@ -35,7 +35,7 @@ def sort_banner(banners):
             set_image_data(banner, banner_dimension)
         else:
             try:
-                response = http.request('GET', banner[banner_parser.SRC_TAG].strip())
+                response = http.request('GET', normalize_url(banner[banner_parser.SRC_TAG]))
                 if response.status == 200:
                     width, height = load_image_size(response)
                     banner_dimension = BannerDimension()
@@ -56,6 +56,18 @@ def sort_banner(banners):
 
     logger.info('sorting banner done')
     return sorted(banners, key=itemgetter(RATIO_TAG), reverse=True)
+
+
+def normalize_url(url):
+    url = url.strip()
+    if not url.startswith('http://') and not url.startswith('https://'):
+        if url.startswith('http:'):
+            url = url.replace('http:', 'http://')
+        elif url.startswith('https:'):
+            url = url.replace('https:', 'https://')
+        else:
+            url = 'http://' + url
+    return url
 
 
 def load_image_size(response):

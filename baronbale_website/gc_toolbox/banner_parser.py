@@ -236,6 +236,7 @@ def get_banner_id_not_equal_to_href(banner_dict):
 
 
 def parse_banner(description, gc_code, url):
+    description = description.lower()
     match = BANNER_ENCODED_PATTERN.search(description)
 
     if match:
