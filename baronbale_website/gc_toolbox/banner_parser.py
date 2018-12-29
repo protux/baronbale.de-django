@@ -38,7 +38,6 @@ HREF_PATTERN = re.compile(r'href[\w\W]*?=[\w\W]*?[\"\'][\w\W]*?[\"\']', re.IGNOR
 
 def collect_banner_urls(path_to_xml):
     banners = dict()
-    coords = []
     special_banners = special_banners_to_dict()
 
     for event, elem in cElementTree.iterparse(path_to_xml, events=[START_TAG, END_TAG]):
@@ -78,16 +77,9 @@ def collect_banner_urls(path_to_xml):
                     banner[HREF_TAG] = CACHE_URL.format(gc_code)
                     add_banner_to_dict(banner, banners)
 
-                coords += [{
-                    GC_CODE_TAG: gc_code,
-                    LATITUDE_TAG: latitude,
-                    LONGITUDE_TAG: longitude,
-                    TYPE_TAG: type
-                }]
             except NameError:
                 pass  # too bad, provide complete gpx
 
-    process_gc_data(coords)
     return banners.values()
 
 
@@ -175,34 +167,6 @@ def parse_banner_details_from_image(banner):
     src = src.replace('"', '').replace('\'', '').replace('<a>', '').replace('</a>', '')
     src = re.sub(r'\s+', '', src)
     return src
-
-
-def process_gc_data(coord_list):
-    logger.info('processing caches')
-    for idx, coord in enumerate(coord_list):
-        if idx % 50 == 0:
-            logger.info('processing cache no. {}'.format(idx))
-        gc_code = coord[GC_CODE_TAG]
-        latitude = coord[LATITUDE_TAG]
-        longitude = coord[LONGITUDE_TAG]
-        cache_type = coord[TYPE_TAG]
-
-        if gc_code and latitude and longitude and gc_code != 'My Finds Pocket Query':
-            cache_coordinates = CacheCoordinates()
-            cache_coordinates.gc_code = gc_code
-            cache_coordinates.latitude = latitude
-            cache_coordinates.longitude = longitude
-            try:
-                if cache_type:
-                    cache_type = cache_type.replace('Geocache|', '')
-                    cache_coordinates.type = cache_type
-            except NameError:
-                cache_coordinates.type = None
-
-            try:
-                cache_coordinates.save()
-            except IntegrityError:
-                pass  # shut up
 
 
 def normalize_banner(banner):
