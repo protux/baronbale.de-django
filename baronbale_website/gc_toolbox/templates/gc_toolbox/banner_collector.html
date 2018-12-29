@@ -3,13 +3,13 @@
 {% block title %}{% trans 'Banner collector' %}{% endblock %}
 {% block content %}
 <h1>{% trans 'Banner collector' %}</h1>
-<h3>ACHTUNG ANFANG</h3>
-<p>Mittlerweile haben ein paar Leute versucht das Tool zu nutzen. Da viele Owner ihre Banner auf merkwürdigste Art und Weise angeben ist es super schwierig alle Banner korrekt zu parsen. Soe wie ich es aktuell mache wird es zu viele Ausnahmen geben. Sobald ich vom Bodensee wiederkomme werde ich dieses Tool noch einmal from scratch schreiben. Bis dahin ist das Tool als experimentell anzusehen.</p>
-<p>Vielen Dank vor Allem an LaMulder, Daxianer und martl für ihr Feedback und für die zur Verfügungstellung von Testdaten!</p>
-<h3>ACHTUNG ENDE</h3>
+<p>Vielen Dank vor Allem an Cetacea91, Daxianer, LaMulder und martl für ihr Feedback und für die zur Verfügungstellung von Testdaten!</p>
+
 <p>{% trans 'This tools takes the gpx file with your found caches and collects the banners from the listings.' %}</p>
 <p>{% trans 'The banners are parsed from the "long_description" and for some special cases and for generating the link-tags we need the GC-Code and the url.' %}</p>
 <p>{% trans 'IMPORTANT: Since we also rearrange the banners for a more beautiful shape we need to get the size of all images, that could take a while, please be patient.' %}</p>
+
+<p style="font-weight: bolder">Jetzt in neu und bunt mit Glitzer: es kann auch direkt die *.zip-Datei hochgeladen werden, die GPX-Datei muss nicht mehr vorher entpackt werden! \o/</p>
 <form method="POST" action="{% url 'gc_toolbox:collect_banner' %}" enctype="multipart/form-data">
     {% csrf_token %}
     {{ gpx_form.as_p }}
