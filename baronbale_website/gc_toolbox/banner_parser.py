@@ -6,7 +6,7 @@ from defusedxml import cElementTree
 from django.db import IntegrityError
 from django.core import mail
 
-from .models import CacheCoordinates
+from .models import CacheCoordinates, SpecialBanner
 
 logger = logging.getLogger(__name__)
 
@@ -35,155 +35,11 @@ LINKLESS_IMAGE_PATTERN = re.compile(r' Banner[\w\W]*?<img.*?>', re.IGNORECASE)
 SRC_PATTERN = re.compile(r'src[\w\W]*?=[\w\W]*?[\"\'][\w\W]*?[\"\']', re.IGNORECASE)
 HREF_PATTERN = re.compile(r'href[\w\W]*?=[\w\W]*?[\"\'][\w\W]*?[\"\']', re.IGNORECASE)
 
-SPECIAL_BANNERS = {
-    'GC24XB5': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC24XB5',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC24XB5.jpg'
-    },
-    'GC2PHWJ': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC2PHWJ',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC2PHWJ.jpg',
-    },
-    'GC2PHWK': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC2PHWK',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC2PHWK.jpg',
-    },
-    'GC2KCRY': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC2KCRY',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC2KCRY.jpg',
-    },
-    'GC2PHWN': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC2PHWN',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC2PHWN.jpg',
-    },
-    'GC2PHWG': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC2PHWG',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC2PHWG.jpg',
-    },
-    'GC2PHWE': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC2PHWE',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC2PHWE.jpg',
-    },
-    'GC2PHWB': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC2PHWB',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC2PHWB.jpg',
-    },
-    'GC3REGY': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC3REGY',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC3REGY.jpg',
-    },
-    'GC2GJY9': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC2GJY9',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC2GJY9.jpg',
-    },
-    'GC2YMKA': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC2YMKA',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC2YMKA.jpg',
-    },
-    'GC2KCRW': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC2KCRW',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC2KCRW.jpg',
-    },
-    'GC26D16': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC26D16',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC26D16.jpg',
-    },
-    'GC2FX2D': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC2FX2D',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC2FX2D.jpg',
-    },
-    'GC3BZ1Q': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC3BZ1Q',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC3BZ1Q.jpg',
-    },
-    'GC47M25': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC47M25',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC47M25.jpg',
-    },
-    'GC511AX': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC511AX',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC511AX.jpg',
-    },
-    'GC537V1': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC537V1',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC537V1.jpg',
-    },
-    'GC5A4X9': {  # Banner on special page
-        HREF_TAG: 'http://coord.info/GC5A4X9',
-        SRC_TAG: 'http://wampenschleifer.de/Logos/GC5A4X9.jpg',
-    },
-    'GCZB0W': {  # Banner before keyword "banner"
-        HREF_TAG: 'http://coord.info/GCZB0W',
-        SRC_TAG: 'http://fs5.directupload.net/images/user/170406/o4c8e44b.png',
-    },
-    'GC52VPD': None,  # Zu gut für die Tonne 01 / misleading the parser (refers to banner in another cache)
-    'GC52VMR': None,  # Zu gut für die Tonne 02 / misleading the parser (refers to banner in another cache)
-    'GC52VNZ': None,  # Zu gut für die Tonne 03 / misleading the parser (refers to banner in another cache)
-    'GC52VQA': None,  # Zu gut für die Tonne 04 / misleading the parser (refers to banner in another cache)
-    'GC52VR5': None,  # Zu gut für die Tonne 05 / misleading the parser (refers to banner in another cache)
-    'GC52W0J': None,  # Zu gut für die Tonne 06 / misleading the parser (refers to banner in another cache)
-    'GC52W10': None,  # Zu gut für die Tonne 07 / misleading the parser (refers to banner in another cache)
-    'GC52W7B': None,  # Zu gut für die Tonne 08 / misleading the parser (refers to banner in another cache)
-    'GC52W7T': None,  # Zu gut für die Tonne 09 / misleading the parser (refers to banner in another cache)
-    'GC52W87': None,  # Zu gut für die Tonne 10 / misleading the parser (refers to banner in another cache)
-    'GC6BAZ8': None,  # Ost-West-Beziehung / misleading the parser (image refers to cache itself but is no banner)
-    'GC4TCM0': None,  # parsed an emoji as banner
-    'GC28TMR': None,  # misleading by linking the cache from a non banner image
-    'GC28TMN': None,  # misleading by linking the cache from a non banner image
-    'GC28TMW': None,  # misleading by linking the cache from a non banner image
-    'GC28TMK': None,  # misleading by linking the cache from a non banner image
-    'GC4WDV0': None,  # parsed tradi image as banner
-    'GC28TMB': None,  # misleading by linking the cache from a non banner image
-    'GC28TMA': None,  # misleading by linking the cache from a non banner image
-    'GC28TMP': None,  # misleading by linking the cache from a non banner image
-    'GC28TMT': None,  # misleading by linking the cache from a non banner image
-    'GC28TMF': None,  # misleading by linking the cache from a non banner image
-    'GC28TMX': None,  # misleading by linking the cache from a non banner image
-    'GC28TMH': None,  # misleading by linking the cache from a non banner image
-    'GC2JMDK': None,  # ape head as banner
-    'GC2PG8Q': None,  # riddle as banner
-    'GC28TMC': None,  # misleading by linking the cache from a non banner image
-    'GC28TMG': None,  # misleading by linking the cache from a non banner image
-    'GC28TMQ': None,  # misleading by linking the cache from a non banner image
-    'GC28TMY': None,  # misleading by linking the cache from a non banner image
-    'GC28TME': None,  # misleading by linking the cache from a non banner image
-    'GC5DZWP': None,  # emoji as banner
-    'GC6D17N': None,  # image is not a banner
-    'GC5DZWR': None,  # image is not a banner
-    'GC3NZTR': None,  # image is not a banner
-    'GC2PG8R': None,  # image is not a banner
-    'GC3PFZW': None,  # image is not a banner
-    'GC5F7HX': None,  # image is not a banner
-    'GC2PG8P': None,  # image is not a banner
-    'GC1KWDQ': None,  # image is not a banner
-    'GC4RANA': None,  # image is not a banner
-    'GC3P8CH': None,  # image is not a banner
-    'GC5DZT8': None,  # image is not a banner
-    'GC6D15P': None,  # image is not a banner
-    'GC6MJ24': None,  # mistakes linked list as banner
-    'GC2DM44': None,  # no banner
-    'GC1851C': None,  # image is not a banner
-    'GC5DZTZ': None,  # image is not a banner
-    'GC6EJF4': None,  # image is not a banner
-    'GC5DZW6': None,  # no banner
-    'GC1QM7B': None,  # no banner
-    'GC2PG8N': None,  # riddle as banner
-    'GC2PG8M': None,  # riddle as banner
-    # Banner was deleted
-    'GC4YAEY': {
-        HREF_TAG: 'http://coord.info/GC4YAEY',
-        SRC_TAG: 'http://imgcdn.geocaching.com/cache/large/55fcadb9-4464-483c-b43a-8152cf51f422.jpg',
-    },
-    'GC4432N': None,  # NighT[131]TraiN : Bonus / reference to main cache looks like a banner
-    'GC469TG': None,  # No banner
-    'GC11JM6': None,  # No banner
-    'GC6PHH7': None,  # No banner
-}
-
 
 def collect_banner_urls(path_to_xml):
     banners = dict()
     coords = []
+    special_banners = special_banners_to_dict()
 
     for event, elem in cElementTree.iterparse(path_to_xml, events=[START_TAG, END_TAG]):
         if event == START_TAG and elem.tag == '{}wpt'.format(TOPO_NS):
@@ -203,8 +59,8 @@ def collect_banner_urls(path_to_xml):
             type = elem.text
         elif event == END_TAG and elem.tag == '{}wpt'.format(TOPO_NS):
             try:
-                if gc_code in SPECIAL_BANNERS:
-                    banner = SPECIAL_BANNERS[gc_code]
+                if gc_code in special_banners:
+                    banner = special_banners[gc_code]
                 else:
                     try:
                         banner = parse_banner(description, gc_code, url)
@@ -233,6 +89,21 @@ def collect_banner_urls(path_to_xml):
 
     process_gc_data(coords)
     return banners.values()
+
+
+def special_banners_to_dict():
+    special_banners = {}
+    for special_banner in SpecialBanner.objects.all():
+        if special_banner.image_url is None:
+            special_banners.update({special_banner.gc_code: None})
+        else:
+            special_banners.update({
+                special_banner.gc_code: {
+                    HREF_TAG: CACHE_URL.format(special_banner.gc_code),
+                    SRC_TAG: special_banner.image_url
+                }
+            })
+    return special_banners
 
 
 def add_banner_to_dict(banner, banner_dict):
@@ -302,7 +173,7 @@ def parse_banner_details_from_image(banner):
     src = SRC_PATTERN.search(banner).group()
     src = re.sub(r'src[\w\W]*?=[\w\W]*?["\']', '', src)
     src = src.replace('"', '').replace('\'', '').replace('<a>', '').replace('</a>', '')
-    src = re.sub('\s+', '', src)
+    src = re.sub(r'\s+', '', src)
     return src
 
 
@@ -371,16 +242,3 @@ def contains_cache_url(banner_probe, gc_code, url):
             return True
 
     return False
-
-
-if __name__ == '__main__':
-    from sys import argv
-
-    if len(argv) < 2:
-        print('you need to specify a path to the xml file.')
-        exit(1)
-
-    banners = collect_banner_urls(argv[1])
-    for banner in banners:
-        print(banner)
-    print(len(banners))
