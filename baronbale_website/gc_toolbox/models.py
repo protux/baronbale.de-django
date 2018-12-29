@@ -16,3 +16,9 @@ class BannerDimension(models.Model):
     ratio = models.FloatField(default=0.0)
     width = models.IntegerField()
     height = models.IntegerField()
+
+
+class SpecialBanner(models.Model):
+    gc_code = models.CharField(max_length=10)
+    image_url = models.CharField(max_length=255, null=True, blank=True)
+    reason = models.CharField(max_length=100)
