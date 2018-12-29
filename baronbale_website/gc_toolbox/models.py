@@ -22,3 +22,6 @@ class SpecialBanner(models.Model):
     gc_code = models.CharField(max_length=10)
     image_url = models.CharField(max_length=255, null=True, blank=True)
     reason = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.gc_code
