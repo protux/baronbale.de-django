@@ -41,10 +41,7 @@ def collect_banner_urls(path_to_xml):
     special_banners = special_banners_to_dict()
 
     for event, elem in cElementTree.iterparse(path_to_xml, events=[START_TAG, END_TAG]):
-        if event == START_TAG and elem.tag == '{}wpt'.format(TOPO_NS):
-            latitude = elem.get('lat')
-            longitude = elem.get('lon')
-        elif event == END_TAG and elem.tag == '{}name'.format(TOPO_NS):
+        if event == END_TAG and elem.tag == '{}name'.format(TOPO_NS):
             gc_code = elem.text
         elif event == END_TAG and elem.tag == '{}url'.format(TOPO_NS):
             url = elem.text
@@ -54,8 +51,6 @@ def collect_banner_urls(path_to_xml):
         elif event == END_TAG and elem.tag == '{}long_description'.format(GS_NAMESPACE_NEW):
             description = elem.text
             description = strip_pattern(description, r'((alt|title)=\".*?(>|<).*?\")')
-        elif event == END_TAG and elem.tag == '{}type'.format(TOPO_NS):
-            type = elem.text
         elif event == END_TAG and elem.tag == '{}wpt'.format(TOPO_NS):
             try:
                 if gc_code in special_banners:
