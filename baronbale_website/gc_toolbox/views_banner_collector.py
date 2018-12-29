@@ -1,3 +1,8 @@
+import tempfile
+import zipfile
+import os
+import shutil
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
@@ -5,6 +10,7 @@ from django.utils.translation import ugettext as _
 
 from . import banner_parser
 from . import banner_sorter
+from . import exceptions
 from .forms import UploadGPXForm
 
 BANNERS_SESSION_KEY = 'banners'
@@ -30,10 +36,14 @@ def collect_banners(request):
     if request.method == 'POST':
         form = UploadGPXForm(request.POST or None, request.FILES or None)
         if form.is_valid():
-            gpx_file = form.cleaned_data['gpx_file']
+            uploaded_file = form.cleaned_data['gpx_file']
             horizontal_banners_per_row = form.cleaned_data['horizontal_banners_per_row']
             vertical_banners_per_row = form.cleaned_data['vertical_banners_per_row']
-            banners = banner_parser.collect_banner_urls(gpx_file)
+            try:
+                gpx_file = extract_gpx_if_needed(uploaded_file)
+                banners = banner_parser.collect_banner_urls(gpx_file)
+            finally:
+                shutil.rmtree(os.path.join(tempfile.gettempdir(), uploaded_file.name), ignore_errors=True)
             banners = banner_sorter.sort_banner(banners)
             joined_banners = join_banners(banners, horizontal_banners_per_row, vertical_banners_per_row)
             joined_banners += '<p>' + _(
@@ -41,6 +51,27 @@ def collect_banners(request):
             request.session[BANNERS_SESSION_KEY] = joined_banners
 
     return HttpResponseRedirect(reverse('gc_toolbox:banner_collector'))
+
+
+def extract_gpx_if_needed(uploaded_file):
+    file_directory = os.path.join(tempfile.gettempdir(), uploaded_file.name)
+    try:
+        os.mkdir(file_directory)
+    except FileExistsError:
+        shutil.rmtree(file_directory, ignore_errors=True)
+        os.mkdir(file_directory)
+
+    output_file = os.path.join(file_directory, uploaded_file.name)
+    if uploaded_file.name.endswith('.zip'):
+        with zipfile.ZipFile(uploaded_file, 'r') as zip_file:
+            zip_file.extractall(file_directory)
+        output_file = os.path.join(file_directory, os.listdir(file_directory)[0])
+    elif uploaded_file.name.endswith('.gpx'):
+        with open(output_file, 'wb') as output:
+            output.write(uploaded_file.read())
+    else:
+        raise exceptions.InvalidFileException("This file type is not allowed.")
+    return output_file
 
 
 def join_banners(banners, horizontal_banners_per_row, vertical_banners_per_row):
