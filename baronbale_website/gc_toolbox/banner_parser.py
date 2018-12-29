@@ -175,6 +175,7 @@ SPECIAL_BANNERS = {
         SRC_TAG: 'http://imgcdn.geocaching.com/cache/large/55fcadb9-4464-483c-b43a-8152cf51f422.jpg',
     },
     'GC4432N': None,  # NighT[131]TraiN : Bonus / reference to main cache looks like a banner
+    'GC469TG': None,  # No banner
 }
 
 
