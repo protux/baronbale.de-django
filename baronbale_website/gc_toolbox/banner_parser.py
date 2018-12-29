@@ -176,6 +176,8 @@ SPECIAL_BANNERS = {
     },
     'GC4432N': None,  # NighT[131]TraiN : Bonus / reference to main cache looks like a banner
     'GC469TG': None,  # No banner
+    'GC11JM6': None,  # No banner
+    'GC6PHH7': None,  # No banner
 }
 
 
@@ -248,7 +250,7 @@ def get_banner_id_not_equal_to_href(banner_dict):
 
 
 def parse_banner(description, gc_code, url):
-    description = description.lower()
+    description = description.replace('SRC=', 'src=')
     match = BANNER_ENCODED_PATTERN.search(description)
 
     if match:
