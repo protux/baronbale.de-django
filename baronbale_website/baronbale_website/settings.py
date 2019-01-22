@@ -62,17 +62,11 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     'request',
-    # 'django_xmlrpc',
-    # 'django_comments',
-    # 'mptt',
-    # 'tagging',
-    # 'zinnia',
 
     'staticpages',
     'gc_toolbox',
     'toolbox',
     'homepage',
-    'finya',
     'checker',
 ]
 
@@ -99,7 +93,6 @@ TEMPLATES = [
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
                 'django.template.context_processors.i18n',
-                'zinnia.context_processors.version',
 
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -111,10 +104,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'baronbale_website.wsgi.application'
-
-# from zinnia.xmlrpc import ZINNIA_XMLRPC_METHODS
-
-# XMLRPC_METHODS = ZINNIA_XMLRPC_METHODS
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
@@ -159,8 +148,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
 ]
-
-ZINNIA_MARKUP_LANGUAGE = 'markdown'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/

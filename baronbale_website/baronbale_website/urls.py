@@ -19,20 +19,13 @@ from django.conf.urls.static import static
 from django.conf.urls import url, include
 from django.conf import settings
 from django.contrib import admin
-# from django.urls import reverse_lazy
-# from django.views.generic.base import RedirectView
 
 urlpatterns = i18n_patterns(
     url(r'^tools/gc/', include('gc_toolbox.urls')),
     url(r'^tools/', include('toolbox.urls')),
-    # url(r'^blog/', include('zinnia.urls')),
-    # url(r'blog/comments/', include('django_comments.urls')),
-    # url(r'blog/rss/', RedirectView.as_view(url=reverse_lazy('zinnia:entry_feed')), name='rss_redirect'),
     url(r'^', include('homepage.urls')),
     url(r'^o_pulchram_avem/', include('checker.urls')),
-    # url(r'^blog/xmlrpc/$', handle_xmlrpc),
     url(r'^admin/', admin.site.urls),
-    url(r'^finya/', include('finya.urls')),
     url(r'^', include('staticpages.urls'))
 )
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 INSTALL_FILE=/home/nico/baronbale.de_install.tar.xz 
 
-source ve_baronbale.de/bin/activate
+source venv/bin/activate
 
 echo 'stopping server...'
 uwsgi --stop /var/run/baronbale.de.pid
