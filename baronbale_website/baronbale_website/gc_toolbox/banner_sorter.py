@@ -16,7 +16,7 @@ RATIO_TAG = 'ratio'
 WIDTH_TAG = 'width'
 HEIGHT_TAG = 'height'
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('django')
 
 
 def sort_banner(banners):

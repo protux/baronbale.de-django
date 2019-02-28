@@ -1,3 +1,4 @@
+import logging
 import tempfile
 import zipfile
 import os
@@ -15,6 +16,8 @@ from .forms import UploadGPXForm
 
 BANNERS_SESSION_KEY = 'banners'
 MARGIN_BETWEEN_BANNER = 0.5
+
+logger = logging.getLogger('django')
 
 
 def index(request):

@@ -1,7 +1,7 @@
 # temporary files for development and debugging
 **/tmp/**
 **/*.bak
-**/ve_baronbale.de
+**/venv/
 **/*.log
 **/*.sqlite3
 

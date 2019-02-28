@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
-VERSION = '1.4.0'
-VERSION_NR = 5
+VERSION = '1.5.0'
+VERSION_NR = 6
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,9 +36,10 @@ LOGGING = {
     'disable_existing_loggers': False,
     'handlers': {
         'file': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.FileHandler',
             'filename': LOGFILE_DJANGO,
+            'formatter': 'verbose',
         },
     },
     'loggers': {
@@ -47,6 +48,10 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': True,
         },
+    }, 'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(funcName)s %(message)s'
+        }
     },
 }
 

@@ -7,7 +7,7 @@ from django.core import mail
 
 from .models import SpecialBanner
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('django')
 
 GS_NAMESPACE_OLD = '{http://www.groundspeak.com/cache/1/0/1}'
 GS_NAMESPACE_NEW = '{http://www.groundspeak.com/cache/1/0}'
