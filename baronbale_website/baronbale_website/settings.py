@@ -63,11 +63,11 @@ INSTALLED_APPS = [
 
     'request',
 
-    'staticpages',
-    'gc_toolbox',
-    'toolbox',
-    'homepage',
-    'checker',
+    'baronbale_website.staticpages',
+    'baronbale_website.gc_toolbox',
+    'baronbale_website.toolbox',
+    'baronbale_website.homepage',
+    'baronbale_website.checker',
 ]
 
 MIDDLEWARE = [
@@ -87,7 +87,7 @@ ROOT_URLCONF = 'baronbale_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'baronbale_website/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -171,7 +171,7 @@ LANGUAGES = [
 
 if DEBUG:
     STATICFILES_DIRS = [
-        '/home/nico/projekte/baronbale.de/static/',
+        '/home/nico/projekte/baronbale.de.django/static/',
     ]
 else:
     STATICFILES_DIRS = [
@@ -179,13 +179,13 @@ else:
     ]
 
 if DEBUG:
-    STATIC_ROOT = '/home/nico/projekte/baronbale.de/tmp/static/'
+    STATIC_ROOT = '/home/nico/projekte/baronbale.de.django/tmp/static/'
 else:
     STATIC_ROOT = '/var/www/baronbale.de/static/'
 STATIC_URL = '/static/'
 
 if DEBUG:
-    MEDIA_ROOT = '/home/nico/projekte/baronbale.de/tmp/media_root/'
+    MEDIA_ROOT = '/home/nico/projekte/baronbale.de.django/tmp/media_root/'
 else:
     MEDIA_ROOT = '/var/www/baronbale.de/media_root/'
 MEDIA_URL = '/media/'

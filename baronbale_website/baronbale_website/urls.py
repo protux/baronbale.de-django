@@ -21,12 +21,12 @@ from django.conf import settings
 from django.contrib import admin
 
 urlpatterns = i18n_patterns(
-    url(r'^tools/gc/', include('gc_toolbox.urls')),
-    url(r'^tools/', include('toolbox.urls')),
-    url(r'^', include('homepage.urls')),
-    url(r'^o_pulchram_avem/', include('checker.urls')),
+    url(r'^tools/gc/', include('baronbale_website.gc_toolbox.urls')),
+    url(r'^tools/', include('baronbale_website.toolbox.urls')),
+    url(r'^', include('baronbale_website.homepage.urls')),
+    url(r'^o_pulchram_avem/', include('baronbale_website.checker.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('staticpages.urls'))
+    url(r'^', include('baronbale_website.staticpages.urls'))
 )
 
 urlpatterns += [
