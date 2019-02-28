@@ -8,4 +8,4 @@
 # local stuff
 **/*geany*
 **/__pycache__
-**/.idea/
+**/.idea/workspace.xml
