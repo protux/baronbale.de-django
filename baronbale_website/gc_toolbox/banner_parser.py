@@ -3,10 +3,9 @@ import re
 
 from bs4 import BeautifulSoup
 from defusedxml import cElementTree
-from django.db import IntegrityError
 from django.core import mail
 
-from .models import CacheCoordinates, SpecialBanner
+from .models import SpecialBanner
 
 logger = logging.getLogger(__name__)
 
