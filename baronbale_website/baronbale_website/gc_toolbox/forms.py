@@ -103,8 +103,8 @@ class Base64DecodeForm(forms.Form):
 
 
 class UploadGPXForm(forms.Form):
-    gpx_file = forms.FileField(
-        label=_('GPX File')
+    banner_file = forms.FileField(
+        label=_('GPX- or zip-File')
     )
     horizontal_banners_per_row = forms.IntegerField(
         label=_('Horizontal banners per row'),

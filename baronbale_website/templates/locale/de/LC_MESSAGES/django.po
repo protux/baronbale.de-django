@@ -1,0 +1,550 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-01 16:26+0100\n"
+"PO-Revision-Date: 2019-03-01 17:01+0100\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.1\n"
+
+#: baronbale_website/checker/templates/checker/checker_base.html:38
+#: baronbale_website/staticpages/templates/staticpages/imprint.html:4
+#: baronbale_website/staticpages/templates/staticpages/imprint.html:7
+msgid "Imprint"
+msgstr "Impressum"
+
+#: baronbale_website/checker/templates/checker/checker_base.html:39
+#: baronbale_website/staticpages/templates/staticpages/privacy.html:4
+#: baronbale_website/staticpages/templates/staticpages/privacy.html:7
+msgid "Privacy Policy and Cookies"
+msgstr "Datenschutz und Cookies"
+
+#: baronbale_website/downloads/models.py:6
+msgid "Cache-ID"
+msgstr "Cache-ID"
+
+#: baronbale_website/downloads/models.py:7
+msgid "Cache-Name"
+msgstr "Cache-Name"
+
+#: baronbale_website/downloads/models.py:14
+msgid "name"
+msgstr "Name"
+
+#: baronbale_website/downloads/models.py:15
+msgid "Download-File"
+msgstr "Download-Datei"
+
+#: baronbale_website/downloads/templates/downloads/downloads.html:7
+msgid "Downloads for"
+msgstr "Downloads für"
+
+#: baronbale_website/downloads/views.py:12
+msgid "Cache not found."
+msgstr "Cache nicht gefunden"
+
+#: baronbale_website/gc_toolbox/banner_parser.py:78
+msgid "It seems your GPX-file was incomplete. Some caches could not be read."
+msgstr ""
+"Es scheint, dass deine GPX-Datei unvollständig ist. Manche Caches konnten "
+"nicht gelesen werden."
+
+#: baronbale_website/gc_toolbox/forms.py:8
+msgid "all"
+msgstr "Alle"
+
+#: baronbale_website/gc_toolbox/forms.py:16
+#: baronbale_website/gc_toolbox/forms.py:29
+#: baronbale_website/gc_toolbox/forms.py:42
+#: baronbale_website/gc_toolbox/forms.py:54
+#: baronbale_website/gc_toolbox/forms.py:88
+#: baronbale_website/gc_toolbox/forms.py:95
+msgid "Message"
+msgstr "Nachricht"
+
+#: baronbale_website/gc_toolbox/forms.py:21
+#: baronbale_website/gc_toolbox/forms.py:34
+msgid "Key"
+msgstr "Schlüssel"
+
+#: baronbale_website/gc_toolbox/forms.py:59
+msgid "Extra Values"
+msgstr "Zusätzliche Werte"
+
+#: baronbale_website/gc_toolbox/forms.py:65
+msgid "Direction"
+msgstr "Richtung"
+
+#: baronbale_website/gc_toolbox/forms.py:70
+msgid "Offset"
+msgstr "Versatz"
+
+#: baronbale_website/gc_toolbox/forms.py:75
+msgid "Include numeric values"
+msgstr "Numerische Werte einschließen"
+
+#: baronbale_website/gc_toolbox/forms.py:82
+msgid "File to encode"
+msgstr "Datei zum enkodieren"
+
+#: baronbale_website/gc_toolbox/forms.py:100
+msgid "Is a file"
+msgstr "Ist eine Datei"
+
+#: baronbale_website/gc_toolbox/forms.py:107
+msgid "GPX- or zip-File"
+msgstr "GPX- oder Zip-Datei"
+
+#: baronbale_website/gc_toolbox/forms.py:110
+msgid "Horizontal banners per row"
+msgstr "Horizontale Banner pro Reihe"
+
+#: baronbale_website/gc_toolbox/forms.py:115
+msgid "Vertical banners per row"
+msgstr "Vertikale Banner pro Reihe"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:3
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:5
+msgid "Banner collector"
+msgstr "Bannersammler"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:8
+msgid ""
+"At first a big thank you to Cetacea91, Daxianer, LaMulder and martl for "
+"their feedback and for providing test data!"
+msgstr ""
+"Zu aller erst vielen Dank an Cetacea91, Daxianer, LaMulder und martl für ihr "
+"Feedback und fürs zur Verfügung stellen von Testdaten!"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:14
+msgid ""
+"This tools takes the gpx file with your found caches and collects the "
+"banners from the listings."
+msgstr "Dieses Tool sucht die Banner aus der GPX-Datei deiner Funde."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:15
+msgid ""
+"The banners are parsed from the \"long_description\" and for some special "
+"cases and for generating the link-tags we need the GC-Code and the url."
+msgstr ""
+"Die Banner werden aus dem \"long_description\"-Element gelesen. Für einige "
+"Sonderfälle und um die Links zu generieren benötigen wir außerdem den GC-"
+"Code und die URL."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:16
+msgid ""
+"IMPORTANT: Since we also rearrange the banners for a more beautiful shape we "
+"need to get the size of all images, that could take a while, please be "
+"patient."
+msgstr ""
+"WICHTIG: da wir die Banner auch zugunsten eines schöneren Aussehens neu "
+"sortieren müssen wir alle Bilder laden. Das dauert bei vielen Caches eine "
+"Weile, bitte sei geduldig."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:18
+msgid "How to use this tool"
+msgstr "Benutzungsanleitung"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:20
+msgid ""
+"You can either upload a single GPX-file (like the \"my finds\" file) or you "
+"can directly upload the zip file you get from Groundspeak. If you are not a "
+"premium member you can collect all GPX-Files of the caches you found "
+"manually and put them in a single zip. You can then upload this zip file and "
+"the tool will look into all of the contained GPX files and will collect all "
+"the banners from those who have one."
+msgstr ""
+"Du kannst entweder eine einzelne GPX-Datei (z.B. die \"meine Funde\"-Datei) "
+"hochladen, oder du lädst direkt die Zip-Datei hoch, die du von Groundspeak "
+"bekommst. Nicht-Premiummember können auch die GPX-Dateien zu jedem einzelnen "
+"Cache nehmen, alle GPX-Dateien in ein einzelnes Zip-Archiv packen und dieses "
+"Zip-Archiv dann hochladen. Das Tool wird durch alle GPX-Dateien gehen und "
+"die Banner heraussuchen."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:30
+msgid "Collect Banner"
+msgstr "Banner sammeln"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:34
+msgid "Your banners"
+msgstr "Deine Banner"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:40
+msgid "I found a bug or the tool behaves funny"
+msgstr "Ich fand einen Bug oder das Tool verhält sich komisch"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:42
+msgid ""
+"If you found a bug, or you know, the tool does not find a banner please "
+"contact me. I cannot test with all caches and some banners are pretty hard "
+"to catch. You can find the contact email in the footer and in the imprint. "
+"It would be great, if you could provide the GPX or zip-file which triggered "
+"the wrong behaviour."
+msgstr ""
+"Wenn du einen Bug gefunden hast oder das Tool z.B. ein Banner nicht findet "
+"von dem du weißt, dass es da sein sollte fühl dich frei mich zu "
+"kontaktieren. Ich kann leider nicht alle Caches testen und manche Banner "
+"sind schwierig zu erwischen. Du kannst meine Kontakt-E-Mailadresse in der "
+"Fußzeile der Seite und im Impressum finden. Es wäre großartig, wenn du mir "
+"auch die GPX-Datei oder das Zip-Archiv zur Verfügung stellen könntest, "
+"welches dir Probleme bereitet."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:49
+msgid ""
+"If you have any question or proposal for improvement we can also talk about "
+"it, of course."
+msgstr ""
+"Solltest du einfach nur eine Frage oder einen Verbesserungsvorschlag haben "
+"kannst du mich natürlich auch jederzeit kontaktieren. "
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:3
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:5
+msgid "Base64 En-/Decoder"
+msgstr "Base64 En-/Decoder"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:6
+msgid ""
+"This tool helps you to en- and decode base64. You can encode text or whole "
+"files."
+msgstr ""
+"Dieses Tool en- und dekodiert Base64. Du kannst entweder nur Text oder ganze "
+"Dateien verarbeiten."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:8
+msgid "Encode file"
+msgstr "Datei enkodieren"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:9
+msgid ""
+"If you encode a file it will be read byte by byte and then the bytes will be "
+"encoded. No files are saved on the server pemanently, in order to process "
+"them they need to be saved temporarily but they will be deleted before you "
+"download begins."
+msgstr ""
+"Wenn du eine Datei enkodierst wird sie Byteweise eingelesen und dann "
+"enkodiert. Dateien werden nicht permanent gespeichert. Um sie verarbeiten zu "
+"können werden sie temporär gespeichert, jedoch werden sie gelöscht, bevor "
+"der Download beginnt."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:13
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:21
+msgid "Encode"
+msgstr "Enkodieren"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:16
+msgid "Encode text"
+msgstr "Text enkodieren"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:24
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:29
+msgid "Decode"
+msgstr "Dekodieren"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:25
+msgid ""
+"To decode files you need to paste the base64 encoded file into the "
+"inputfield and check the \"is file\" field. Your file will then be decoded "
+"and offered to download."
+msgstr ""
+"Um Dateien zu dekodieren musst du die Base64-enkodierte Datei in das "
+"Eingabefeld einfügen und den Haken bei \"ist eine Datei\" machen. Deine "
+"Datei wird dann dekodiert und zum Download angeboten."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/cesar_cipher.html:3
+msgid "Cesar Cipher"
+msgstr "Cäsar-Verschlüsselung"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/cesar_cipher.html:5
+msgid "Cesar-Cipher"
+msgstr "Cäsar-Verschlüsselung"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/cesar_cipher.html:6
+msgid ""
+"Cesar-Cipher is an encryption method where the message is encrypted by "
+"rotating the lettervalues between 1 and 25."
+msgstr ""
+"Die Cäsar-Verschlüsselung (auch als ROT bekannt) verschlüsselt Text, indem "
+"sie die Buchstaben um 1 bis 25 Stellen im Alphabet verschiebt."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/cesar_cipher.html:9
+msgid "Encryption"
+msgstr "Verschlüsselung"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/cesar_cipher.html:13
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/polybius.html:10
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/polybius.html:14
+msgid "Encrypt"
+msgstr "Verschlüsseln"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/cesar_cipher.html:18
+msgid "Decryption"
+msgstr "Entschlüsselung"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/cesar_cipher.html:22
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/polybius.html:17
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/polybius.html:21
+msgid "Decrypt"
+msgstr "Entschlüsseln"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:4
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:7
+msgid "Letter Value Calculator"
+msgstr "Buchstabenwertberechner"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:9
+msgid ""
+"This tool takes a text and calculates the value of its letters. Every sign "
+"which is not a-z or A-Z will be ignored. You can provide additional values "
+"in the \"extra values\" field. If you tick the \"Include numeric values\" "
+"field the numbers 0-9 are included with their adherent value."
+msgstr ""
+"Dieses Tool nimmt einen Text und und berechnet den Buchstabenwert seiner "
+"Zeichen. Jedes Zeichen, welches nicht ein a-z oder ein A-Z ist wird "
+"ignoriert. Du kannst zusätzliche Werte im \"Zusatzwerte\"-Feld eingeben. "
+"Wenn du den Haken bei \"Ziffern einbeziehen\" setzt werden auch Ziffern "
+"(0-9) mit ihrem entsprechenden Wert berücksichtigt."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:11
+msgid ""
+"You can also define own sign/ value pairs. Just type [sign]\\=[value] into "
+"the \"extra values\" field."
+msgstr ""
+"Du kannst auch deine eigenen Zeichen/ Wert-Paare definieren. Gib einfach "
+"[Zeichen]\\=[Wert] in das Zusatzzeichen-Feld ein."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:12
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:14
+msgid "Example"
+msgstr "Beispiel"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:13
+msgid "Multiple extra values need to be seperated by a line break."
+msgstr ""
+"Mehrere Zusatzzeichen müssen durch einen Zeilenumbruch getrennt werden."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:21
+msgid "Letter value"
+msgstr "Buchstabenwert"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:22
+msgid "Total signs"
+msgstr "Zeichen insgesamt"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:23
+msgid "Sum of digits"
+msgstr "Summe der Ziffern"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:24
+msgid "Iterated sum of digits"
+msgstr "Iterierte Summe der Ziffern"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:25
+msgid "Number of relevant signs"
+msgstr "Anzahl relevanter Zeichen"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:26
+msgid "Number of letters"
+msgstr "Anzahl Buchstaben"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:27
+msgid "Number of numbers"
+msgstr "Anzahl Ziffern"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:28
+msgid "Number of special characters"
+msgstr "Anzahl Sonderzeichen"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:29
+msgid "Values of relevant signs"
+msgstr "Werte relevanter Zeichen"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/letter_value.html:36
+msgid "Calculate Lettervalues"
+msgstr "Buchstabenwert berechnen"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/polybius.html:4
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/polybius.html:7
+msgid "Polybius-Cipher"
+msgstr "Polybius-Verschlüsselung"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/polybius.html:8
+msgid ""
+"The Polybius encryption is another encryption named after a guy long gone. "
+"It was invented 200 years before the cesar cipher but is much stronger than "
+"the cesar cipher. But it would not be here if this would not be needed for "
+"geocaching, so here it is. "
+msgstr ""
+"Die Polybius-Verschlüsselung ist eine weiter Verschlüsselung, welche nach "
+"einem lange verstorbenen Typen benannt wurde. Sie wurde 200 Jahre vor der "
+"Cäsar-Verschlüsselung erfunden, ist dabei jedoch \"viel\" sicherer als die "
+"Cäsar-Verschlüsselung. Aber sie wäre nicht hier, wenn man sie nicht zum "
+"Geocachen bräuchte."
+
+#: baronbale_website/gc_toolbox/tools/banner_utils.py:65
+msgid "You uploaded a not supported file type."
+msgstr "Du hast ein nicht unterstütztes Dateiformat hochgeladen."
+
+#: baronbale_website/gc_toolbox/tools/exceptions.py:8
+msgid "The zip-file you provided was empty or did not contain any GPX-files."
+msgstr "Das hochgeladene Zip-Archiv war leer oder enthielt keine GPX-Dateien."
+
+#: baronbale_website/gc_toolbox/views/BannerCollectorView.py:60
+msgid ""
+"While parsing your banners an error occurred. The admin has been informed, "
+"please come back later."
+msgstr ""
+"Während des Parsens deiner Banner trat ein Fehler auf. Der Admin wurde "
+"informiert, bitte versuche es später noch einmal."
+
+#: baronbale_website/gc_toolbox/views/BannerCollectorView.py:73
+msgid "The bannerlist was generated on"
+msgstr "Die Bannerliste wurde generiert auf"
+
+#: baronbale_website/gc_toolbox/views_cesar.py:63
+msgid "The key needs to be an Integer."
+msgstr "Der Schlüssel muss eine Ganzzahl sein."
+
+#: baronbale_website/homepage/templates/homepage/index.html:3
+msgid "Welcome"
+msgstr "Willkommen"
+
+#: baronbale_website/homepage/templates/homepage/index.html:5
+msgid "Welcome to baronbale.de"
+msgstr "Willkommen auf baronbale.de"
+
+#: baronbale_website/homepage/templates/homepage/index.html:7
+msgid "What is this?"
+msgstr "Was ist das hier?"
+
+#: baronbale_website/homepage/templates/homepage/index.html:9
+#, python-format
+msgid ""
+"This page is our attempt to give something to the community. I hope it is "
+"usefull for at least some of you. If you are missing something or if you "
+"want to help to keep things running you can visit <a href=\"%(contribute)s"
+"\">our contribute page</a> to se how to contribute."
+msgstr ""
+"Diese Seite ist unser Versuch etwas zur Community beizutragen. Wir hoffen, "
+"dass wenigstens ein paar Leute Verwendung für diese Seite haben. Falls du "
+"etwas vermisst oder du etwas beisteuern möchtest schau doch mal auf <a href="
+"\"%(contribute)s\">unserer mitmachen Seite</a> oder schreibe uns eine Mail "
+"an die Adresse in der Fußzeile."
+
+#: baronbale_website/staticpages/templates/staticpages/contribute.html:4
+#: baronbale_website/staticpages/templates/staticpages/contribute.html:7
+msgid "Contribute"
+msgstr "Mitmachen"
+
+#: baronbale_website/staticpages/templates/staticpages/contribute.html:8
+msgid "You can contribute in different ways:"
+msgstr "Du kannst auf verschiedene Weisen etwas beisteuern:"
+
+#: baronbale_website/staticpages/templates/staticpages/contribute.html:10
+msgid "You can report bugs and feedback via the e-mail address in the imprint."
+msgstr ""
+"Du kannst Bugs melden und Feedback an die in der Fußzeile und im Impressum "
+"hinterlegte E-Mailadresse senden."
+
+#: baronbale_website/staticpages/templates/staticpages/contribute.html:11
+msgid ""
+"If you have an idea for a new tool we could chat about it and we'll see if "
+"it fits on our page."
+msgstr ""
+"Wenn du eine Idee für ein neues Tool hast können wir uns gerne darüber "
+"unterhalten und wir schauen mal, ob es zur Seite passt."
+
+#: baronbale_website/staticpages/templates/staticpages/contribute.html:12
+msgid ""
+"You could buy something on Amazon via  <a href=\"#\">our affiliate link</a>."
+msgstr ""
+
+#: baronbale_website/staticpages/templates/staticpages/contribute.html:13
+msgid ""
+"You could take a look on <a href=\"https://www.amazon.de/registry/wishlist/"
+"RIVQ9H0VQV1J/\">our Amazon wishlist</a>, you know, Christmas is never far."
+msgstr ""
+
+#: baronbale_website/staticpages/templates/staticpages/contribute.html:14
+msgid "If you like an article or tool you could flattr it."
+msgstr ""
+
+#: baronbale_website/staticpages/templates/staticpages/contribute.html:15
+msgid ""
+"If you have an idea for a blogpost you could tell us or you could even write "
+"it on your own and get it published on our site under your name."
+msgstr ""
+
+#: baronbale_website/staticpages/templates/staticpages/contribute.html:17
+msgid ""
+"But just to see that people are using this site would make us happy too."
+msgstr "Aber wir sind schon zufrieden, wenn jemand die Seite verwendet."
+
+#: baronbale_website/staticpages/templates/staticpages/imprint.html:8
+msgid "Responsible in terms of §5 TMG"
+msgstr "Verantwortlich im Sinne von §5 TMG"
+
+#: baronbale_website/staticpages/templates/staticpages/privacy.html:9
+msgid "§1 The Data we save"
+msgstr "§1 Die Daten, die wir speichern"
+
+#: baronbale_website/staticpages/templates/staticpages/privacy.html:10
+msgid ""
+"We do not save any data. If an error occurs on the page we may turn on "
+"logging which will save IP-Addresses. But due to the lack of further "
+"information we cannot match the user and his IP, therefore and due to the "
+"fact that we delete the logs as soon as we found and fixed the error IP "
+"adresses are no individual related data."
+msgstr ""
+"Wir speichern keine Daten. Der Webserver loggt die Zugriffe, jedoch in "
+"anonymisierter Form."
+
+#: baronbale_website/staticpages/templates/staticpages/privacy.html:12
+msgid "§2 Cookies"
+msgstr "§2 Cookies"
+
+#: baronbale_website/staticpages/templates/staticpages/privacy.html:13
+msgid ""
+"We use cookies. Because without cookies the internet does not work. Deal "
+"with it."
+msgstr ""
+"Ja, wir benutzen Cookies. Denn ohne Cookies funktioniert das Internet nicht. "
+"Wir brauchen sie an manchen Stellen aus technischen Gründen. Wir können die "
+"Sessions (die zu den Cookies gehören) jedoch keiner Person zuordnen. Dafür "
+"müsstet ihr uns sagen, welchen Cookie ihr bei euch habt."
+
+#: baronbale_website/staticpages/templates/staticpages/privacy.html:15
+msgid "§3 Third parties"
+msgstr "§3 Dritte"
+
+#: baronbale_website/staticpages/templates/staticpages/privacy.html:16
+msgid ""
+"We do not share any data with third parties. We handle it Vegas-Style: "
+"everything you enter on baronbale.de stays on baronbale.de. If a tool needs "
+"to send data to another server it will say so in the description of the tool."
+msgstr ""
+"Wir teilen keine Daten mit Dritten. Was auf baronbale.de passiert, bleibt "
+"auf baronbale.de. Sollten wir mal ein Tool einführen, das doch Daten "
+"woanders hinsendet informieren wir darüber im jeweiligen Tool und passen "
+"diesen Text hier an."
+
+#: baronbale_website/staticpages/templates/staticpages/privacy.html:18
+msgid "For further information see the imprint for contact details."
+msgstr ""
+"Für weitere Informationen siehe in der Fußzeile oder im Impressum für "
+"Kontaktdetails."
+
+#: baronbale_website/staticpages/templates/staticpages/roadmap.html:4
+#: baronbale_website/staticpages/templates/staticpages/roadmap.html:7
+msgid "Roadmap"
+msgstr "Roadmap"

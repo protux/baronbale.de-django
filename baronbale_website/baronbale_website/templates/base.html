@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-{% load static i18n %}
+{% load static i18n messaging %}
 <html>
     <head>
         <title>baronbale.de - {% block title %}{% endblock %}</title>
-        
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="follow, all" />
         {% block meta %}{% endblock meta %}
-        
+
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'css/big.css' %}" media="screen and (min-width: 800px)"/>
         <link rel="stylesheet" type="text/css" href="{% static 'css/small.css' %}" media="all and (max-width: 799px)" />
         <link rel="stylesheet" type="text/css" href="{% static 'css/tiny.css' %}" media="all and (max-width: 330px)" />
         {% block link %}{% endblock link %}
-        
+
         <script src="{% static '/js/jquery.js' %}"></script>
         <script src="{% static '/js/code.js' %}"></script>
         {% block script %}{% endblock script %}
@@ -52,6 +52,16 @@
             </nav>
         </header>
         <main>
+        {% get_error_messages request.session as error_messages %}
+        {% if error_messages %}
+            <div class="errorlist">
+                <ul>
+                    {% for error_message in error_messages %}
+                        <li>{{ error_message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
         {% block breadcrumbs %}{% endblock %}
         <div id="content">
             {% block content %}{% endblock %}
@@ -62,8 +72,9 @@
         </main>
         <footer id="pagefooter">
             <a href="{% url 'staticpages:imprint' %}">{% trans "Imprint" %}</a> |
-            <a href="{% url 'staticpages:privacy' %}">{% trans "Privacy Policy and Cookies" %}</a>
-            
+            <a href="{% url 'staticpages:privacy' %}">{% trans "Privacy Policy and Cookies" %}</a> |
+            <a href="ed.elabnorab@elab:otliam" id="contact">{% trans 'Contact us' %}</a>
+
             {% block footer_links %}{% endblock footer_links %}
             {% comment %}
             <form action="{% url 'set_language' %}" method="post">
@@ -82,5 +93,11 @@
             </form>
             {% endcomment %}
         </footer>
+
+    <script type="application/javascript">
+        var mail_to = document.getElementById("contact");
+        var href = mail_to.getAttribute("href");
+        mail_to.setAttribute("href", href.split("").reverse().join(""));
+    </script>
     </body>
 </html>

@@ -176,7 +176,7 @@ LANGUAGES = [
 
 if DEBUG:
     STATICFILES_DIRS = [
-        '/home/nico/projekte/baronbale.de.django/static/',
+        '/home/nico/projekte/baronbale.de/static/',
     ]
 else:
     STATICFILES_DIRS = [
@@ -184,13 +184,13 @@ else:
     ]
 
 if DEBUG:
-    STATIC_ROOT = '/home/nico/projekte/baronbale.de.django/tmp/static/'
+    STATIC_ROOT = '/home/nico/projekte/baronbale.de/tmp/static/'
 else:
     STATIC_ROOT = '/var/www/baronbale.de/static/'
 STATIC_URL = '/static/'
 
 if DEBUG:
-    MEDIA_ROOT = '/home/nico/projekte/baronbale.de.django/tmp/media_root/'
+    MEDIA_ROOT = '/home/nico/projekte/baronbale.de/tmp/media_root/'
 else:
     MEDIA_ROOT = '/var/www/baronbale.de/media_root/'
 MEDIA_URL = '/media/'
@@ -213,8 +213,8 @@ EMAIL_USE_SSL = False
 EMAIL_SUBJECT_PREFIX = ''
 EMAIL_TIMEOUT = 60
 if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

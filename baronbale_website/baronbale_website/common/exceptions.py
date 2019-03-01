@@ -1,0 +1,2 @@
+class BaronBaleException(Exception):
+    pass

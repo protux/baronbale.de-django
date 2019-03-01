@@ -4,8 +4,10 @@ import re
 from bs4 import BeautifulSoup
 from defusedxml import cElementTree
 from django.core import mail
+from django.utils.translation import ugettext as _
 
 from .models import SpecialBanner
+from baronbale_website.common import message_utils
 
 logger = logging.getLogger('django')
 
@@ -35,44 +37,45 @@ SRC_PATTERN = re.compile(r'src[\w\W]*?=[\w\W]*?[\"\'][\w\W]*?[\"\']', re.IGNOREC
 HREF_PATTERN = re.compile(r'href[\w\W]*?=[\w\W]*?[\"\'][\w\W]*?[\"\']', re.IGNORECASE)
 
 
-def collect_banner_urls(path_to_xml):
+def collect_banner_urls(gpx_files, session):
     banners = dict()
     special_banners = special_banners_to_dict()
 
-    for event, elem in cElementTree.iterparse(path_to_xml, events=[START_TAG, END_TAG]):
-        if event == END_TAG and elem.tag == '{}name'.format(TOPO_NS):
-            gc_code = elem.text
-        elif event == END_TAG and elem.tag == '{}url'.format(TOPO_NS):
-            url = elem.text
-        elif event == END_TAG and elem.tag == '{}long_description'.format(GS_NAMESPACE_OLD):
-            description = elem.text
-            description = strip_pattern(description, r'((alt|title)=\".*?(>|<).*?\")')
-        elif event == END_TAG and elem.tag == '{}long_description'.format(GS_NAMESPACE_NEW):
-            description = elem.text
-            description = strip_pattern(description, r'((alt|title)=\".*?(>|<).*?\")')
-        elif event == END_TAG and elem.tag == '{}wpt'.format(TOPO_NS):
-            try:
-                if gc_code in special_banners:
-                    banner = special_banners[gc_code]
-                else:
-                    try:
-                        banner = parse_banner(description, gc_code, url)
-                    except Exception as e:
+    for path_to_xml in gpx_files:
+        for event, elem in cElementTree.iterparse(path_to_xml, events=[START_TAG, END_TAG]):
+            if event == END_TAG and elem.tag == '{}name'.format(TOPO_NS):
+                gc_code = elem.text
+            elif event == END_TAG and elem.tag == '{}url'.format(TOPO_NS):
+                url = elem.text
+            elif event == END_TAG and elem.tag == '{}long_description'.format(GS_NAMESPACE_OLD):
+                description = elem.text
+                description = strip_pattern(description, r'((alt|title)=\".*?(>|<).*?\")')
+            elif event == END_TAG and elem.tag == '{}long_description'.format(GS_NAMESPACE_NEW):
+                description = elem.text
+                description = strip_pattern(description, r'((alt|title)=\".*?(>|<).*?\")')
+            elif event == END_TAG and elem.tag == '{}wpt'.format(TOPO_NS):
+                try:
+                    if gc_code in special_banners:
+                        banner = special_banners[gc_code]
+                    else:
                         try:
-                            xml_content = ''
-                            with open(path_to_xml, 'r') as xml_file:
-                                xml_content = '\n'.join(xml_file.readlines())
-                        except Exception:
-                            pass  # fuck it
-                        body = 'exception:{}\ngpx:\n{}'.format(str(e), xml_content)
-                        mail.mail_admins("Error while parsing banner", body)
+                            banner = parse_banner(description, gc_code, url)
+                        except Exception as e:
+                            try:
+                                with open(path_to_xml, 'r') as xml_file:
+                                    xml_content = '\n'.join(xml_file.readlines())
+                            except Exception as e:
+                                xml_content = str(e)
+                            body = 'exception:{}\ngpx:\n{}'.format(str(e), xml_content)
+                            mail.mail_admins("Error while parsing banner", body)
 
-                if banner:
-                    banner[HREF_TAG] = CACHE_URL.format(gc_code)
-                    add_banner_to_dict(banner, banners)
+                    if banner:
+                        banner[HREF_TAG] = CACHE_URL.format(gc_code)
+                        add_banner_to_dict(banner, banners)
 
-            except NameError:
-                pass  # too bad, provide complete gpx
+                except NameError:
+                    message_utils.add_error_message(session, _(
+                        'It seems your GPX-file was incomplete. Some caches could not be read.'))
 
     return banners.values()
 

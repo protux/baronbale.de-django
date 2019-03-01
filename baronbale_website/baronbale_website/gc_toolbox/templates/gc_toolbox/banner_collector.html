@@ -2,25 +2,52 @@
 {% load i18n %}
 {% block title %}{% trans 'Banner collector' %}{% endblock %}
 {% block content %}
-<h1>{% trans 'Banner collector' %}</h1>
-<p>Vielen Dank vor Allem an Cetacea91, Daxianer, LaMulder und martl für ihr Feedback und für die zur Verfügungstellung von Testdaten!</p>
+    <h1>{% trans 'Banner collector' %}</h1>
 
-<p>{% trans 'This tools takes the gpx file with your found caches and collects the banners from the listings.' %}</p>
-<p>{% trans 'The banners are parsed from the "long_description" and for some special cases and for generating the link-tags we need the GC-Code and the url.' %}</p>
-<p>{% trans 'IMPORTANT: Since we also rearrange the banners for a more beautiful shape we need to get the size of all images, that could take a while, please be patient.' %}</p>
+    <p>
+        {% blocktrans trimmed %}
+            At first a big thank you to Cetacea91, Daxianer, LaMulder and martl for their feedback and for providing
+            test data!
+        {% endblocktrans %}
+    </p>
 
-<p style="font-weight: bolder">Jetzt in neu und bunt mit Glitzer: es kann auch direkt die *.zip-Datei hochgeladen werden, die GPX-Datei muss nicht mehr vorher entpackt werden! \o/</p>
-<form method="POST" action="{% url 'gc_toolbox:collect_banner' %}" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ gpx_form.as_p }}
-    <input type="submit" value="{% trans 'Collect Banner' %}"/>
-</form>
+    <p>{% trans 'This tools takes the gpx file with your found caches and collects the banners from the listings.' %}</p>
+    <p>{% trans 'The banners are parsed from the "long_description" and for some special cases and for generating the link-tags we need the GC-Code and the url.' %}</p>
+    <p>{% trans 'IMPORTANT: Since we also rearrange the banners for a more beautiful shape we need to get the size of all images, that could take a while, please be patient.' %}</p>
 
-{% if banner %}
-<h1>{% trans 'Your banners' %}</h1>
-<form style="display: block;">
-    <textarea style="display: block; width: 100%; min-height: 25em;">{{ banner }}</textarea>
-</form>
-{% endif %}
+    <h2>{% trans 'How to use this tool' %}</h2>
+    <p>
+        {% blocktrans trimmed %}
+            You can either upload a single GPX-file (like the "my finds" file) or you can directly upload the zip file
+            you get from Groundspeak. If you are not a premium member you can collect all GPX-Files of the caches you
+            found manually and put them in a single zip. You can then upload this zip file and the tool will look into
+            all of the contained GPX files and will collect all the banners from those who have one.
+        {% endblocktrans %}
+    </p>
+    <form method="POST" action="{% url 'gc_toolbox:banner_collector' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'Collect Banner' %}"/>
+    </form>
 
+    {% if banner %}
+        <h1>{% trans 'Your banners' %}</h1>
+        <form style="display: block;">
+            <textarea style="display: block; width: 100%; min-height: 25em;">{{ banner }}</textarea>
+        </form>
+    {% endif %}
+
+    <h2>{% trans 'I found a bug or the tool behaves funny' %}</h2>
+    <p>
+        {% blocktrans trimmed %}
+            If you found a bug, or you know, the tool does not find a banner please contact me. I cannot test with all
+            caches and some banners are pretty hard to catch. You can find the contact email in the footer and in the
+            imprint. It would be great, if you could provide the GPX or zip-file which triggered the wrong behaviour.
+        {% endblocktrans %}
+    </p>
+    <p>
+        {% blocktrans trimmed %}
+            If you have any question or proposal for improvement we can also talk about it, of course.
+        {% endblocktrans %}
+    </p>
 {% endblock content %}

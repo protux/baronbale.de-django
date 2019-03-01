@@ -163,3 +163,8 @@ main a {
 hr {
     border-color: #009e00;
 }
+
+.errorlist {
+    border: 1px solid red;
+    background: #FF4545;
+}
