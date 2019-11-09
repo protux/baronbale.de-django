@@ -61,12 +61,7 @@ def collect_banner_urls(gpx_files, session):
                         try:
                             banner = parse_banner(description, gc_code, url)
                         except Exception as e:
-                            try:
-                                with open(path_to_xml, 'r') as xml_file:
-                                    xml_content = '\n'.join(xml_file.readlines())
-                            except Exception as e:
-                                xml_content = str(e)
-                            body = 'exception:{}\ngpx:\n{}'.format(str(e), xml_content)
+                            body = 'exception: {}'.format(str(e))
                             mail.mail_admins("Error while parsing banner", body)
 
                     if banner:
