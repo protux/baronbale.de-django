@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n-w+15&03a8srymecq%i_1m&!#19_(qg5&ysezugj+7lm^p_wk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'baronbale.de', '85.214.231.140']
 
@@ -128,7 +128,7 @@ else:
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'baronbale.de',
             'USER': 'baronbale.de',
-            'PASSWORD': 'QRBgl7Yp4TnzK2DvXAFo',
+            'PASSWORD': os.environ.get('BB_DB_PASSWORD'),
             'HOST': '127.0.0.1',
             'PORT': '5432',
             #            'OPTIONS': {
@@ -180,7 +180,7 @@ if DEBUG:
     ]
 else:
     STATICFILES_DIRS = [
-        '/home/nico/web/baronbale.de/static/',
+        '/opt/baronbale.de/static/',
     ]
 
 if DEBUG:
