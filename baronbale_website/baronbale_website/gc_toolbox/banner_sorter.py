@@ -16,6 +16,8 @@ RATIO_TAG = "ratio"
 WIDTH_TAG = "width"
 HEIGHT_TAG = "height"
 
+DROP_ID = "DROP"
+
 logger = logging.getLogger("django")
 
 
@@ -54,17 +56,17 @@ def sort_banner(banners):
             except (
                 urllib3.exceptions.NewConnectionError,
                 urllib3.exceptions.MaxRetryError,
+                UnidentifiedImageError,
             ):
-                set_fall_back_values(banner)
-            except UnidentifiedImageError:
                 logger.info(f"Banner {banner} has no parsable image")
-                set_fall_back_values(banner)
+                banner[banner_parser.SRC_TAG] = DROP_ID
             except Exception:
                 body = f"Banner: {banner}\n\nException: \n{traceback.format_exc()}"
                 mail.mail_admins("Error while sorting banners", body)
                 set_fall_back_values(banner)
 
     logger.info("sorting banner done")
+    banners = [banner for banner in banners if banner[banner_parser.SRC_TAG] != DROP_ID]
     return sorted(banners, key=itemgetter(RATIO_TAG), reverse=True)
 
 
