@@ -1,12 +1,12 @@
 import hashlib
 import logging
+import traceback
 from io import BytesIO
 from operator import itemgetter
 
 import certifi
 import urllib3
 from PIL import Image, UnidentifiedImageError
-
 from django.core import mail
 
 from . import banner_parser
@@ -57,8 +57,8 @@ def sort_banner(banners):
             except UnidentifiedImageError:
                 logger.info(f'Banner {banner} has no parsable image')
                 set_fall_back_values(banner)
-            except Exception as e:
-                body = 'Banner: {}\n\nException: {}'.format(str(banner), str(e))
+            except Exception:
+                body = f'Banner: {banner}\n\nException: \n{traceback.format_exc()}'
                 mail.mail_admins("Error while sorting banners", body)
                 set_fall_back_values(banner)
 
