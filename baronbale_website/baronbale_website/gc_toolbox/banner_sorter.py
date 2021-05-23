@@ -36,6 +36,10 @@ def sort_banner(banners):
         hash = hashlib.sha256(banner_url.encode("UTF-8")).hexdigest()
         banner_dimension = BannerDimension.objects.filter(banner=hash)
         if banner_dimension is not None and len(banner_dimension) > 0:
+            if banner_dimension.gc_code == '':
+                banner_dimension.gc_code = banner[banner_parser.GC_CODE_TAG]
+                banner_dimension.url = banner_url
+                banner_dimension.save()
             banner_dimension = banner_dimension[0]
             set_image_data(banner, banner_dimension)
         else:
