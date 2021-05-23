@@ -5,7 +5,7 @@ from operator import itemgetter
 
 import certifi
 import urllib3
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 
 from django.core import mail
 
@@ -49,9 +49,13 @@ def sort_banner(banners):
                     set_image_data(banner, banner_dimension)
                 else:
                     set_fall_back_values(banner)
-            except urllib3.exceptions.NewConnectionError:
+            except (
+                    urllib3.exceptions.NewConnectionError,
+                    urllib3.exceptions.MaxRetryError,
+            ):
                 set_fall_back_values(banner)
-            except urllib3.exceptions.MaxRetryError:
+            except UnidentifiedImageError:
+                logger.info(f'Banner {banner} has no parsable image')
                 set_fall_back_values(banner)
             except Exception as e:
                 body = 'Banner: {}\n\nException: {}'.format(str(banner), str(e))
