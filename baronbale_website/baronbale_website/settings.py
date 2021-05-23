@@ -74,6 +74,7 @@ INSTALLED_APPS = [
     "baronbale_website.toolbox",
     "baronbale_website.homepage",
     "baronbale_website.checker",
+    "baronbale_website.banner_parser",
 ]
 
 MIDDLEWARE = [
