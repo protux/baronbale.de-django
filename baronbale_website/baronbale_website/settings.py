@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
-VERSION = '1.5.0'
-VERSION_NR = 6
+
+def comma_separated_string_to_list(string):
+    return string.split(',')
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n-w+15&03a8srymecq%i_1m&!#19_(qg5&ysezugj+7lm^p_wk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
+DEBUG = os.environ.get('DEBUG', 'false').lower() == 'true'
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'baronbale.de', '85.214.231.140']
 
@@ -174,25 +176,12 @@ LANGUAGES = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-if DEBUG:
-    STATICFILES_DIRS = [
-        '/home/nico/projekte/baronbale.de/static/',
-    ]
-else:
-    STATICFILES_DIRS = [
-        '/opt/baronbale.de/static/',
-    ]
-
-if DEBUG:
-    STATIC_ROOT = '/home/nico/projekte/baronbale.de/tmp/static/'
-else:
-    STATIC_ROOT = '/var/www/baronbale.de/static/'
+STATICFILES_DIRS = os.environ.get('STATICFILES_DIRS', ['/opt/baronbale.de/static/'])
+if not isinstance(STATICFILES_DIRS, list):
+    STATICFILES_DIRS = comma_separated_string_to_list(STATICFILES_DIRS)
+STATIC_ROOT = os.environ.get('STATIC_ROOT', '/var/www/baronbale.de/static/')
 STATIC_URL = '/static/'
-
-if DEBUG:
-    MEDIA_ROOT = '/home/nico/projekte/baronbale.de/tmp/media_root/'
-else:
-    MEDIA_ROOT = '/var/www/baronbale.de/media_root/'
+MEDIA_ROOT = os.environ.get('MEDIA_ROOT', '/var/www/baronbale.de/media_root/')
 MEDIA_URL = '/media/'
 
 # Authentication settings
@@ -204,19 +193,16 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
 
 # E-Mail
-EMAIL_HOST = 'smtp.nischwan.de'
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_PORT = 587
-EMAIL_HOST_PASSWORD = 'yG0XoQ6ktz1syUxrmQj7'
-EMAIL_HOST_USER = 'admin@baronbale.de'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_SUBJECT_PREFIX = ''
 EMAIL_TIMEOUT = 60
-if DEBUG:
-    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-else:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
+
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 EMAIL_FROM_SERVICE = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
