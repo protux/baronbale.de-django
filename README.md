@@ -42,7 +42,7 @@ source .env.localDev
 
 To run the site on your local machine just make sure you are in the same directory as `manage.py`.
 
-At first you need to make sure your database is migrated to the latest state, you have a place for your media to live
+At first, you need to make sure your database is migrated to the latest state, you have a place for your media to live
 and the staticfiles are in place.
 
 ```bash
