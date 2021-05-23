@@ -67,7 +67,6 @@ def decrypt_cesar(message, key):
         return cesar_cipher.try_all_keys(message)
 
     try:
-        int_key = int(key)
         return cesar_cipher.decrypt(key, message)
     except ValueError:
         return _("The key needs to be an Integer.")

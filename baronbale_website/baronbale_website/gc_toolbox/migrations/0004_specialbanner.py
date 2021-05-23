@@ -314,7 +314,10 @@ def create_initial_entries(apps, schema_editor):
     )
     SpecialBanner.objects.create(
         gc_code="GC4YAEY",
-        image_url="http://imgcdn.geocaching.com/cache/large/55fcadb9-4464-483c-b43a-8152cf51f422.jpg",
+        image_url=(
+            "http://imgcdn.geocaching.com/"
+            "cache/large/55fcadb9-4464-483c-b43a-8152cf51f422.jpg"
+        ),
         reason="Banner was deleted",
     )
     SpecialBanner.objects.create(

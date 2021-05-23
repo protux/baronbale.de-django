@@ -69,7 +69,8 @@ class BannerCollectorView(FormView):
         message_utils.add_error_message(
             self.request.session,
             _(
-                "While parsing your banners an error occurred. The admin has been informed, please come back later."
+                "While parsing your banners an error occurred. "
+                "The admin has been informed, please come back later."
             ),
         )
         error_text = traceback.format_exc()

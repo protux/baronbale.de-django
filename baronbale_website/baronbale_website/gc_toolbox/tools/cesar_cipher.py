@@ -57,7 +57,7 @@ def decrypt(key, text):
                     ]
                 else:
                     decrypted_text += c
-        except:
+        except Exception:
             decrypted_text += c
     return decrypted_text
 

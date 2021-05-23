@@ -1,7 +1,5 @@
 import re
 
-from django.utils.translation import ugettext as _
-
 DECRYPTION_KEY = {
     "11": "a",
     "12": "b",
