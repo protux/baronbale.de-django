@@ -8,11 +8,10 @@ You want to contribute and run this code locally on your machine? Great! Here is
 
 ### Set Up environment
 
-At first, create a venv. Please be aware, that baronbale.de currently has some dependencies which stick us to python3.7.
-Might be easy to upgrade, might be not. This is a cleanup task for the future.
+At first, create a venv.
 
 ```bash
-python3.7 -m venv venv
+python3 -m venv venv
 ```
 
 Activate venv:
@@ -43,20 +42,18 @@ source .env.localDev
 
 To run the site on your local machine just make sure you are in the same directory as `manage.py`.
 
-At first you need to make sure your database is migrated to the latest state, you have a place for your media to live and the staticfiles are in place.
+At first you need to make sure your database is migrated to the latest state, you have a place for your media to live
+and the staticfiles are in place.
+
 ```bash
 python manage.py migrate
 
 mkdir .media
 python manage.py collectstatic
 ```
+
 After that you can run the server.
+
 ```bash
 python manage.py runserver
 ```
-
-## Technical depts
-
-[] Python Version is stuck to 3.7 because of some dependencies (like Pillow)
-
-- Action Item: Dependencies need to upgraded
