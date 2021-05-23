@@ -7,6 +7,7 @@ echo 'stopping server...'
 uwsgi --stop /var/run/baronbale.de.pid
 
 echo 'updating server...'
+pip install -U pip wheel setuptools
 pip install -r requirements.txt
 tar -xJf $INSTALL_FILE --overwrite
 python baronbale_website/manage.py collectstatic --noinput
