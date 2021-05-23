@@ -12,7 +12,9 @@ class CacheCoordinates(models.Model):
 
 
 class BannerDimension(models.Model):
+    gc_code = models.CharField(max_length=20)
     banner = models.CharField(max_length=64)
+    url = models.CharField(max_length=1024)
     ratio = models.FloatField(default=0.0)
     width = models.IntegerField()
     height = models.IntegerField()

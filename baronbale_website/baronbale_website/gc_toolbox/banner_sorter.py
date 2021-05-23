@@ -32,7 +32,8 @@ def sort_banner(banners):
     for idx, banner in enumerate(banners):
         if idx % 25 == 0:
             logger.info("handling banner no. {}".format(idx))
-        hash = hashlib.sha256(banner[banner_parser.SRC_TAG].encode("UTF-8")).hexdigest()
+        banner_url = banner[banner_parser.SRC_TAG]
+        hash = hashlib.sha256(banner_url.encode("UTF-8")).hexdigest()
         banner_dimension = BannerDimension.objects.filter(banner=hash)
         if banner_dimension is not None and len(banner_dimension) > 0:
             banner_dimension = banner_dimension[0]
@@ -45,7 +46,9 @@ def sort_banner(banners):
                 if response.status == 200:
                     width, height = load_image_size(response)
                     banner_dimension = BannerDimension()
+                    banner_dimension.gc_code = banner[banner_parser.GC_CODE_TAG]
                     banner_dimension.banner = hash
+                    banner_dimension.url = banner_url
                     banner_dimension.ratio = width / height
                     banner_dimension.width = width
                     banner_dimension.height = height
