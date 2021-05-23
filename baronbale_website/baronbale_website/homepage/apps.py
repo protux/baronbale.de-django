@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class HomepageConfig(AppConfig):
-    name = 'homepage'
+    name = 'baronbale_website.homepage'
