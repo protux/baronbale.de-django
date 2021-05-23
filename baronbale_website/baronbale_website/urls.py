@@ -21,16 +21,16 @@ from django.conf import settings
 from django.contrib import admin
 
 urlpatterns = i18n_patterns(
-    url(r'^tools/gc/', include('baronbale_website.gc_toolbox.urls')),
-    url(r'^tools/', include('baronbale_website.toolbox.urls')),
-    url(r'^', include('baronbale_website.homepage.urls')),
-    url(r'^o_pulchram_avem/', include('baronbale_website.checker.urls')),
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('baronbale_website.staticpages.urls'))
+    url(r"^tools/gc/", include("baronbale_website.gc_toolbox.urls")),
+    url(r"^tools/", include("baronbale_website.toolbox.urls")),
+    url(r"^", include("baronbale_website.homepage.urls")),
+    url(r"^o_pulchram_avem/", include("baronbale_website.checker.urls")),
+    url(r"^admin/", admin.site.urls),
+    url(r"^", include("baronbale_website.staticpages.urls")),
 )
 
 urlpatterns += [
-                   url(r'^i18n/', include('django.conf.urls.i18n')),
-               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r"^i18n/", include("django.conf.urls.i18n")),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # handler404 = 'staticpages.views.error404'

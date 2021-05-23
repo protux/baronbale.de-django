@@ -12,19 +12,19 @@ from baronbale_website.gc_toolbox import banner_sorter, banner_parser
 from baronbale_website.gc_toolbox import exceptions
 from baronbale_website.gc_toolbox.tools import exceptions as tool_exceptions
 
-BANNERTOOL_SUBDIRECTORY = os.path.join(settings.MEDIA_ROOT, 'bannertool')
-UPLOADED_FILES_SUBDIRECTORY = os.path.join(BANNERTOOL_SUBDIRECTORY, 'uploads')
+BANNERTOOL_SUBDIRECTORY = os.path.join(settings.MEDIA_ROOT, "bannertool")
+UPLOADED_FILES_SUBDIRECTORY = os.path.join(BANNERTOOL_SUBDIRECTORY, "uploads")
 
 MARGIN_BETWEEN_BANNER = 0.5
 
-logger = logging.getLogger('django')
+logger = logging.getLogger("django")
 
 
 def build_destination_filename(input_file, now=datetime.datetime.utcnow()):
-    timestamp_string = now.strftime('%Y%m%d_%H%M%S')
-    if '.' in input_file:
-        file_ending = input_file.split('.')[-1]
-        file_name = timestamp_string + '.' + file_ending
+    timestamp_string = now.strftime("%Y%m%d_%H%M%S")
+    if "." in input_file:
+        file_ending = input_file.split(".")[-1]
+        file_name = timestamp_string + "." + file_ending
     else:
         file_name = timestamp_string
     return file_name
@@ -48,7 +48,7 @@ def backup_file_to_media(uploaded_file):
 def strip_non_gpx_files_from_zip(file_list: []):
     filtered_list = []
     for file in file_list:
-        if file.endswith('.gpx'):
+        if file.endswith(".gpx"):
             filtered_list += [file]
     return filtered_list
 
@@ -57,24 +57,26 @@ def extract_gpx_if_needed(uploaded_file):
     temp_directory = get_temporary_directory(uploaded_file)
 
     file_path = backup_file_to_media(uploaded_file)
-    if uploaded_file.name.endswith('.zip'):
+    if uploaded_file.name.endswith(".zip"):
         output_files = extract_zip(temp_directory, file_path)
-    elif uploaded_file.name.endswith('.gpx'):
+    elif uploaded_file.name.endswith(".gpx"):
         output_files = [file_path]
     else:
-        raise exceptions.InvalidFileException(_("You uploaded a not supported file type."))
+        raise exceptions.InvalidFileException(
+            _("You uploaded a not supported file type.")
+        )
 
     return output_files
 
 
 def write_uploaded_file(input_file, uploaded_file):
-    with open(input_file, 'wb') as output:
+    with open(input_file, "wb") as output:
         output.write(uploaded_file.read())
     return [input_file]
 
 
 def extract_zip(temp_directory, uploaded_file):
-    with zipfile.ZipFile(uploaded_file, 'r') as zip_file:
+    with zipfile.ZipFile(uploaded_file, "r") as zip_file:
         contained_files = zip_file.namelist()
         gpx_files = strip_non_gpx_files_from_zip(contained_files)
         if len(gpx_files) == 0:
@@ -106,23 +108,33 @@ def join_banners(banners, horizontal_banners_per_row, vertical_banners_per_row):
 
     for idx, banner in enumerate(banners):
         if banner[banner_sorter.RATIO_TAG] > 1.0:  # if horizontal
-            joined_banners += get_formatted_banner(banner, horizontal_banners_per_row) + '\n'
-        elif not balanced_output and idx % horizontal_banners_per_row > 0 and banner[banner_sorter.RATIO_TAG] <= 1.0:
-            joined_banners += get_formatted_banner(banner, horizontal_banners_per_row) + '\n'
+            joined_banners += (
+                get_formatted_banner(banner, horizontal_banners_per_row) + "\n"
+            )
+        elif (
+            not balanced_output
+            and idx % horizontal_banners_per_row > 0
+            and banner[banner_sorter.RATIO_TAG] <= 1.0
+        ):
+            joined_banners += (
+                get_formatted_banner(banner, horizontal_banners_per_row) + "\n"
+            )
             if idx % horizontal_banners_per_row == horizontal_banners_per_row - 1:
                 balanced_output = True
         else:
-            joined_banners += get_formatted_banner(banner, vertical_banners_per_row) + '\n'
+            joined_banners += (
+                get_formatted_banner(banner, vertical_banners_per_row) + "\n"
+            )
             balanced_output = True
 
-    return joined_banners + '\n'
+    return joined_banners + "\n"
 
 
 def get_formatted_banner(banner, banner_per_row):
     return banner_parser.BANNER_TEMPLATE.format(
         banner[banner_parser.HREF_TAG],
         banner[banner_parser.SRC_TAG],
-        calculate_banner_width(banner_per_row)
+        calculate_banner_width(banner_per_row),
     )
 
 

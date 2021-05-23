@@ -8,7 +8,7 @@ class CacheCoordinates(models.Model):
     type = models.CharField(max_length=30, null=True)
 
     class Meta:
-        unique_together = (('gc_code', 'latitude', 'longitude'),)
+        unique_together = (("gc_code", "latitude", "longitude"),)
 
 
 class BannerDimension(models.Model):

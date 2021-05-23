@@ -8,18 +8,26 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('gc_toolbox', '0002_cachecoordinates_type'),
+        ("gc_toolbox", "0002_cachecoordinates_type"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='BannerDimension',
+            name="BannerDimension",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('banner', models.CharField(max_length=64)),
-                ('ratio', models.FloatField(default=0.0)),
-                ('width', models.IntegerField()),
-                ('height', models.IntegerField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("banner", models.CharField(max_length=64)),
+                ("ratio", models.FloatField(default=0.0)),
+                ("width", models.IntegerField()),
+                ("height", models.IntegerField()),
             ],
         ),
     ]

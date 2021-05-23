@@ -1,7 +1,7 @@
 from django.contrib.sessions.models import Session
 
-SUCCESS_MESSAGES_SESSION_KEY = 'SUCCESS_MESSAGES'
-ERROR_MESSAGES_SESSION_KEY = 'ERROR_MESSAGES'
+SUCCESS_MESSAGES_SESSION_KEY = "SUCCESS_MESSAGES"
+ERROR_MESSAGES_SESSION_KEY = "ERROR_MESSAGES"
 
 
 def add_error_message(session: Session, message):

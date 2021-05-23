@@ -8,13 +8,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('gc_toolbox', '0001_initial'),
+        ("gc_toolbox", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='cachecoordinates',
-            name='type',
+            model_name="cachecoordinates",
+            name="type",
             field=models.CharField(max_length=30, null=True),
         ),
     ]

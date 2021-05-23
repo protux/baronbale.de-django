@@ -1,5 +1,5 @@
-CIPHER_MESSAGE_SESSION_KEY = 'cipher_message'
-PLAINTEXT_MESSAGE_SESSION_KEY = 'plain_message'
+CIPHER_MESSAGE_SESSION_KEY = "cipher_message"
+PLAINTEXT_MESSAGE_SESSION_KEY = "plain_message"
 
 
 def remove_messages_from_session(request):

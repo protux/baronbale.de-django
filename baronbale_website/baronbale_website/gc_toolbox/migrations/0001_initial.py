@@ -9,21 +9,28 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='CacheCoordinates',
+            name="CacheCoordinates",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('gc_code', models.CharField(max_length=10)),
-                ('latitude', models.CharField(max_length=15)),
-                ('longitude', models.CharField(max_length=15)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("gc_code", models.CharField(max_length=10)),
+                ("latitude", models.CharField(max_length=15)),
+                ("longitude", models.CharField(max_length=15)),
             ],
         ),
         migrations.AlterUniqueTogether(
-            name='cachecoordinates',
-            unique_together=set([('gc_code', 'latitude', 'longitude')]),
+            name="cachecoordinates",
+            unique_together=set([("gc_code", "latitude", "longitude")]),
         ),
     ]

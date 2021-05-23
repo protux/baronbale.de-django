@@ -3,7 +3,7 @@ ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 
 def encrypt(rot, text):
-    ciphertext = ''
+    ciphertext = ""
     key = int(rot)
     for char in text:
         index = str.find(ALPHABET, char)
@@ -29,7 +29,7 @@ def __get_encrypted_index(index, key):
 
 def try_all_keys(text):
     if isinstance(text, str):
-        text_array = text.split('\n')
+        text_array = text.split("\n")
     else:
         text_array = text
     decrypted_text = ""
@@ -52,7 +52,9 @@ def decrypt(key, text):
             else:
                 index = ALPHABET_CAPITAL.find(c)
                 if index >= 0:
-                    decrypted_text += ALPHABET_CAPITAL[__get_decrypted_index(index, int(key))]
+                    decrypted_text += ALPHABET_CAPITAL[
+                        __get_decrypted_index(index, int(key))
+                    ]
                 else:
                     decrypted_text += c
         except:

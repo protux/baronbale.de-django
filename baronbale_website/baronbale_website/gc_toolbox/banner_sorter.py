@@ -12,32 +12,34 @@ from django.core import mail
 from . import banner_parser
 from .models import BannerDimension
 
-RATIO_TAG = 'ratio'
-WIDTH_TAG = 'width'
-HEIGHT_TAG = 'height'
+RATIO_TAG = "ratio"
+WIDTH_TAG = "width"
+HEIGHT_TAG = "height"
 
-logger = logging.getLogger('django')
+logger = logging.getLogger("django")
 
 
 def sort_banner(banners):
-    logger.info('start to sort banners')
+    logger.info("start to sort banners")
     http = urllib3.PoolManager(
-        cert_reqs='CERT_REQUIRED',
+        cert_reqs="CERT_REQUIRED",
         ca_certs=certifi.where(),
-        timeout=urllib3.Timeout(connect=2.0, read=10.0)
+        timeout=urllib3.Timeout(connect=2.0, read=10.0),
     )
 
     for idx, banner in enumerate(banners):
         if idx % 25 == 0:
-            logger.info('handling banner no. {}'.format(idx))
-        hash = hashlib.sha256(banner[banner_parser.SRC_TAG].encode('UTF-8')).hexdigest()
+            logger.info("handling banner no. {}".format(idx))
+        hash = hashlib.sha256(banner[banner_parser.SRC_TAG].encode("UTF-8")).hexdigest()
         banner_dimension = BannerDimension.objects.filter(banner=hash)
         if banner_dimension is not None and len(banner_dimension) > 0:
             banner_dimension = banner_dimension[0]
             set_image_data(banner, banner_dimension)
         else:
             try:
-                response = http.request('GET', normalize_url(banner[banner_parser.SRC_TAG]))
+                response = http.request(
+                    "GET", normalize_url(banner[banner_parser.SRC_TAG])
+                )
                 if response.status == 200:
                     width, height = load_image_size(response)
                     banner_dimension = BannerDimension()
@@ -50,31 +52,31 @@ def sort_banner(banners):
                 else:
                     set_fall_back_values(banner)
             except (
-                    urllib3.exceptions.NewConnectionError,
-                    urllib3.exceptions.MaxRetryError,
+                urllib3.exceptions.NewConnectionError,
+                urllib3.exceptions.MaxRetryError,
             ):
                 set_fall_back_values(banner)
             except UnidentifiedImageError:
-                logger.info(f'Banner {banner} has no parsable image')
+                logger.info(f"Banner {banner} has no parsable image")
                 set_fall_back_values(banner)
             except Exception:
-                body = f'Banner: {banner}\n\nException: \n{traceback.format_exc()}'
+                body = f"Banner: {banner}\n\nException: \n{traceback.format_exc()}"
                 mail.mail_admins("Error while sorting banners", body)
                 set_fall_back_values(banner)
 
-    logger.info('sorting banner done')
+    logger.info("sorting banner done")
     return sorted(banners, key=itemgetter(RATIO_TAG), reverse=True)
 
 
 def normalize_url(url):
     url = url.strip()
-    if not url.startswith('http://') and not url.startswith('https://'):
-        if url.startswith('http:'):
-            url = url.replace('http:', 'http://')
-        elif url.startswith('https:'):
-            url = url.replace('https:', 'https://')
+    if not url.startswith("http://") and not url.startswith("https://"):
+        if url.startswith("http:"):
+            url = url.replace("http:", "http://")
+        elif url.startswith("https:"):
+            url = url.replace("https:", "https://")
         else:
-            url = 'http://' + url
+            url = "http://" + url
     return url
 
 
