@@ -10,7 +10,7 @@ class UploadListingFilesView(FormView):
     template_name = "banner_parser/upload_files.html"
     form_class = UploadGPXForm
 
-    def form_valid(self, form) -> HttpResponseRedirect:
+    def form_valid(self, form: UploadGPXForm) -> HttpResponseRedirect:
         uploaded_file = form.cleaned_data["banner_file"]
         horizontal_banners_per_row = form.cleaned_data["horizontal_banners_per_row"]
         vertical_banners_per_row = form.cleaned_data["vertical_banners_per_row"]

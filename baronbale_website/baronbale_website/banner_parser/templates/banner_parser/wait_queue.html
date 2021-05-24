@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Waiting for banners...' %}{% endblock %}
+{% block content %}
+    <h1>{% trans 'Your Banners are in progress!' %}</h1>
+    <p>
+        {% blocktrans trimmed %}
+            We received your request and you are now enqueued to get your banners! You can bookmark this page and come
+            back later to fetch your banners. This can take up to a few hours. You could also enter your email address
+            below to get notified when your banners are ready.
+        {% endblocktrans %}
+    </p>
+
+    <form method="post" action="{% url 'banner_parser:queue' ticket_id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update email address">
+    </form>
+{% endblock content %}
