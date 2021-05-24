@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Your Banners are ready!' %}{% endblock title %}
+{% block content %}
+    <h1>{% trans 'Your Banners are ready!' %}</h1>
+    <p>
+        {% blocktrans trimmed %}
+            We went through all of your caches and found the banners listed below. Please note, that there might be
+            broken images, due to some hoster deleting them after some time. If you still have this image at some place
+            you can notify us and we will correct that link for future requests.
+        {% endblocktrans %}
+    </p>
+
+    <h2>{% trans 'Your banners' %}</h2>
+    <form style="display: block;">
+        <textarea style="display: block; width: 100%; min-height: 25em;">{{ banner_parser_job.result }}</textarea>
+    </form>
+{% endblock content %}
