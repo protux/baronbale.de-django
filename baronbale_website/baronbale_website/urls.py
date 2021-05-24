@@ -17,10 +17,12 @@ Including another URLconf
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.conf.urls import url, include
+from django.urls import path
 from django.conf import settings
 from django.contrib import admin
 
 urlpatterns = i18n_patterns(
+    path("banners/", include("baronbale_website.banner_parser.urls")),
     url(r"^tools/gc/", include("baronbale_website.gc_toolbox.urls")),
     url(r"^tools/", include("baronbale_website.toolbox.urls")),
     url(r"^", include("baronbale_website.homepage.urls")),

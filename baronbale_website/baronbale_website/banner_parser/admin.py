@@ -21,6 +21,6 @@ class BannerCacheAdmin(admin.ModelAdmin):
     list_display = ("gc_code", "reason", "image_url", "permanent")
 
 
-admin.site.register(models.EnqueuedBannerParserJob, EnqueuedJobAdmin)
+admin.site.register(models.BannerParserJob, EnqueuedJobAdmin)
 admin.site.register(models.BannerDimension, BannerDimensionAdmin)
 admin.site.register(models.BannerCache, BannerCacheAdmin)
