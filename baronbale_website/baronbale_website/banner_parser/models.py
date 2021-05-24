@@ -17,6 +17,9 @@ class BannerParserJob(models.Model):
     result = models.TextField(null=True, blank=True)
     time_finished = models.DateTimeField(null=True, blank=True)
 
+    def __str__(self) -> str:
+        return f"Banner Parser Job #{self.ticket_id}"
+
 
 class BannerDimension(models.Model):
     gc_code = models.CharField(max_length=20)
@@ -26,9 +29,15 @@ class BannerDimension(models.Model):
     width = models.IntegerField()
     height = models.IntegerField()
 
+    def __str__(self) -> str:
+        return f"Dimensions of {self.gc_code}'s Banner"
+
 
 class BannerCache(models.Model):
     gc_code = models.CharField(max_length=10)
     image_url = models.CharField(max_length=1024, null=True, blank=True)
     reason = models.CharField(max_length=100)
     permanent = models.BooleanField(default=False)
+
+    def __str__(self) -> str:
+        return f"Banner for {self.gc_code}"

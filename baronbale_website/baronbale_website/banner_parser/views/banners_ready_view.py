@@ -11,7 +11,9 @@ class BannersReadyView(TemplateView):
     def get(self, request, *args, **kwargs):
         banner_parser_job = self.fetch_banner_parser_job()
         if banner_parser_job.result is None:
-            return HttpResponseRedirect(reverse('banner_parser:queue', args=[banner_parser_job.ticket_id]))
+            return HttpResponseRedirect(
+                reverse("banner_parser:queue", args=[banner_parser_job.ticket_id])
+            )
 
         return super().get(request, *args, **kwargs)
 
@@ -20,7 +22,7 @@ class BannersReadyView(TemplateView):
 
         banner_parser_job = self.fetch_banner_parser_job()
 
-        context_data['banner_parser_job'] = banner_parser_job
+        context_data["banner_parser_job"] = banner_parser_job
         return context_data
 
     def fetch_banner_parser_job(self):
