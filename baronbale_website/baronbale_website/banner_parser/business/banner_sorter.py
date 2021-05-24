@@ -10,7 +10,7 @@ from PIL import Image, UnidentifiedImageError
 from django.core import mail
 
 from . import banner_parser
-from .models import BannerDimension
+from baronbale_website.banner_parser.models import BannerDimension
 
 RATIO_TAG = "ratio"
 WIDTH_TAG = "width"
@@ -30,8 +30,6 @@ def sort_banner(banners):
     )
 
     for idx, banner in enumerate(banners):
-        if idx % 25 == 0:
-            logger.info("handling banner no. {}".format(idx))
         banner_url = banner[banner_parser.SRC_TAG]
         hash = hashlib.sha256(banner_url.encode("UTF-8")).hexdigest()
         banner_dimension = BannerDimension.objects.filter(banner=hash)
@@ -61,9 +59,9 @@ def sort_banner(banners):
                 else:
                     set_fall_back_values(banner)
             except (
-                urllib3.exceptions.NewConnectionError,
-                urllib3.exceptions.MaxRetryError,
-                UnidentifiedImageError,
+                    urllib3.exceptions.NewConnectionError,
+                    urllib3.exceptions.MaxRetryError,
+                    UnidentifiedImageError,
             ):
                 logger.info(f"Banner {banner} has no parsable image")
                 banner[banner_parser.SRC_TAG] = DROP_ID

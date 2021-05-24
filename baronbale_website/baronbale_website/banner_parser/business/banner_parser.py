@@ -8,7 +8,7 @@ from django.core import mail
 from django.utils.translation import ugettext as _
 
 from baronbale_website.common import message_utils
-from .models import SpecialBanner
+from baronbale_website.banner_parser.models import BannerCache
 
 logger = logging.getLogger("django")
 
@@ -97,7 +97,7 @@ def collect_banner_urls(gpx_files, session):
 
 def special_banners_to_dict():
     special_banners = {}
-    for special_banner in SpecialBanner.objects.all():
+    for special_banner in BannerCache.objects.all():
         if special_banner.image_url is None:
             special_banners.update({special_banner.gc_code: None})
         else:
