@@ -48,7 +48,6 @@ def sort_banner(banners):
                 if response.status == 200:
                     width, height = load_image_size(response)
                     banner_dimension = BannerDimension()
-                    banner_dimension.gc_code = banner[banner_parser.GC_CODE_TAG]
                     banner_dimension.banner = hash
                     banner_dimension.url = banner_url
                     banner_dimension.ratio = width / height
@@ -59,9 +58,9 @@ def sort_banner(banners):
                 else:
                     set_fall_back_values(banner)
             except (
-                    urllib3.exceptions.NewConnectionError,
-                    urllib3.exceptions.MaxRetryError,
-                    UnidentifiedImageError,
+                urllib3.exceptions.NewConnectionError,
+                urllib3.exceptions.MaxRetryError,
+                UnidentifiedImageError,
             ):
                 logger.info(f"Banner {banner} has no parsable image")
                 banner[banner_parser.SRC_TAG] = DROP_ID

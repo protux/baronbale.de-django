@@ -91,7 +91,8 @@ class BannerCollectorView(FormView):
         joined_banners += (
             "<p>"
             + _("The bannerlist was generated on")
-            + ' <a href="https://baronbale.de/tools/gc/banner/">baronbale.de</a></p>'
+            + ' <a href="https://baronbale.de/tools/gc/banner/">baronbale.de</a>'
+            + "</p>"
         )
         self.request.session[BANNERS_SESSION_KEY] = joined_banners
         self.log_duration()

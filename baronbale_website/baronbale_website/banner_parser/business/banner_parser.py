@@ -5,9 +5,7 @@ import traceback
 from bs4 import BeautifulSoup
 from defusedxml import cElementTree
 from django.core import mail
-from django.utils.translation import ugettext as _
 
-from baronbale_website.common import message_utils
 from baronbale_website.banner_parser.models import BannerCache
 
 logger = logging.getLogger("django")
@@ -42,7 +40,7 @@ SRC_PATTERN = re.compile(r"src[\w\W]*?=[\w\W]*?[\"\'][\w\W]*?[\"\']", re.IGNOREC
 HREF_PATTERN = re.compile(r"href[\w\W]*?=[\w\W]*?[\"\'][\w\W]*?[\"\']", re.IGNORECASE)
 
 
-def collect_banner_urls(gpx_files, session):
+def collect_banner_urls(gpx_files):
     banners = dict()
     special_banners = special_banners_to_dict()
 
@@ -84,14 +82,10 @@ def collect_banner_urls(gpx_files, session):
                         add_banner_to_dict(banner, banners)
 
                 except NameError:
-                    message_utils.add_error_message(
-                        session,
-                        _(
-                            "It seems your GPX-file was incomplete. "
-                            "Some caches could not be read."
-                        ),
+                    logger.info(
+                        "It seems a GPX-file was incomplete. "
+                        "Some caches could not be read."
                     )
-
     return banners.values()
 
 

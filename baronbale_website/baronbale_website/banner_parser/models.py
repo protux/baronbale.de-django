@@ -15,6 +15,7 @@ class BannerParserJob(models.Model):
     vertical_banners_per_row = models.IntegerField(validators=[MinValueValidator(1)])
     time_created = models.DateTimeField(auto_now_add=True)
     result = models.TextField(null=True, blank=True)
+    actively_working_on_since = models.DateTimeField(null=True, blank=True)
     time_finished = models.DateTimeField(null=True, blank=True)
 
     def __str__(self) -> str:
