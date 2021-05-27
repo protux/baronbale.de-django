@@ -12,6 +12,21 @@ class WaitingQueueView(FormView):
     template_name = "banner_parser/wait_queue.html"
     form_class = AddEmailAddressForm
 
+    def get(self, request, *args, **kwargs):
+        banner_parser_job = self.fetch_banner_parser_job()
+        if banner_parser_job.result is not None:
+            return HttpResponseRedirect(
+                reverse("banner_parser:show_banners", args=[banner_parser_job.ticket_id])
+            )
+
+        return super().get(request, *args, **kwargs)
+
+    def fetch_banner_parser_job(self):
+        banner_parser_job = BannerParserJob.objects.get(
+            ticket_id=self.get_ticket_id_from_path_param()
+        )
+        return banner_parser_job
+
     def get_ticket_id_from_path_param(self) -> str:
         return self.kwargs["ticket_id"]
 
