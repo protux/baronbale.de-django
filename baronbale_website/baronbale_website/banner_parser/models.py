@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator
 
 from baronbale_website.banner_parser.generators import ticket_id_generator
