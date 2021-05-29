@@ -3,4 +3,4 @@ from django.utils.translation import gettext as _
 
 
 class AddEmailAddressForm(forms.Form):
-    email_address = forms.EmailField(label=_('Email Address'))
+    email_address = forms.EmailField(label=_("Email Address"))

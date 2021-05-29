@@ -70,6 +70,6 @@ def _send_job_finished_mail(banner_parser_job: BannerParserJob) -> None:
         )
 
         banner_parser_job.email_address_to_notify = hashlib.sha256(
-            banner_parser_job.email_address_to_notify.encode('UTF-8')
+            banner_parser_job.email_address_to_notify.encode("UTF-8")
         ).hexdigest()
         banner_parser_job.save()

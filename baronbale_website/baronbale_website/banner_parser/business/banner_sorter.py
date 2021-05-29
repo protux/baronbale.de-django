@@ -60,9 +60,9 @@ def sort_banner(banners):
                 else:
                     set_fall_back_values(banner)
             except (
-                    urllib3.exceptions.NewConnectionError,
-                    urllib3.exceptions.MaxRetryError,
-                    UnidentifiedImageError,
+                urllib3.exceptions.NewConnectionError,
+                urllib3.exceptions.MaxRetryError,
+                UnidentifiedImageError,
             ):
                 logger.info(f"Banner {banner} has no parsable image")
                 banner[banner_parser.SRC_TAG] = DROP_ID

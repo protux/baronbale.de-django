@@ -1,7 +1,7 @@
 from django.conf.urls import url
+from django.views.generic import RedirectView
 
 from . import views_cesar, views_polybius, views_lettervalues, views_base64
-from .views import BannerCollectorView
 
 app_name = "gc_toolbox"
 urlpatterns = [
@@ -22,7 +22,9 @@ urlpatterns = [
     url(r"^polybius/decrypt/$", views_polybius.decrypt, name="polybius_decrypt"),
     url(
         r"banner/$",
-        BannerCollectorView.BannerCollectorView.as_view(),
+        RedirectView.as_view(
+            pattern_name="banner_parser:upload_listing_files", permanent=True
+        ),
         name="banner_collector",
     ),
 ]

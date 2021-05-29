@@ -17,7 +17,8 @@ class WaitingQueueView(FormView):
         if self.banner_parser_job.result is not None:
             return HttpResponseRedirect(
                 reverse(
-                    "banner_parser:show_banners", args=[self.banner_parser_job.ticket_id]
+                    "banner_parser:show_banners",
+                    args=[self.banner_parser_job.ticket_id],
                 )
             )
 

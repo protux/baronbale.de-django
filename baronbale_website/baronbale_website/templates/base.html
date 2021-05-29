@@ -1,82 +1,83 @@
 <!DOCTYPE html>
 {% load static i18n messaging %}
 <html>
-    <head>
-        <title>baronbale.de - {% block title %}{% endblock %}</title>
+<head>
+    <title>baronbale.de - {% block title %}{% endblock %}</title>
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="robots" content="follow, all" />
-        {% block meta %}{% endblock meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="follow, all"/>
+    {% block meta %}{% endblock meta %}
 
-        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'css/big.css' %}" media="screen and (min-width: 800px)"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/small.css' %}" media="all and (max-width: 799px)" />
-        <link rel="stylesheet" type="text/css" href="{% static 'css/tiny.css' %}" media="all and (max-width: 330px)" />
-        {% block link %}{% endblock link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/big.css' %}" media="screen and (min-width: 800px)"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/small.css' %}" media="all and (max-width: 799px)"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tiny.css' %}" media="all and (max-width: 330px)"/>
+    {% block link %}{% endblock link %}
 
-        <script src="{% static '/js/jquery.js' %}"></script>
-        <script src="{% static '/js/code.js' %}"></script>
-        {% block script %}{% endblock script %}
-    </head>
-    <body>
-        <header>
-            <nav class="nav_bar">
-                <a href="/" id="logo_home"><img src="{% static 'img/logo.png' %}" alt="baronbale.de" title="baronbale.de" id="logo" /></a>
-                <label for="drop" class="toggle">Menu</label>
-                <input type="checkbox" id="drop" />
-                <ul class="menu">
-					<li><a href="/">{% trans 'Home' %}</a></li>
-					<li>
-						<label for="drop-1" class="toggle">{% trans 'GC-Tools' %} +</label>
-						<a href="#">{% trans 'GC-Tools' %}</a>
-						<input type="checkbox" id="drop-1"/>
-						<ul>
-							<li><a href="{% url 'gc_toolbox:banner_collector' %}">{% trans 'Banner Collector' %}</a></li>
-							<li><a href="{% url 'gc_toolbox:base64' %}">{% trans 'base64' %}</a></li>
-							<li><a href="{% url 'gc_toolbox:cesar' %}">{% trans 'Cesar Cipher' %}</a></li>
-							<li><a href="{% url 'gc_toolbox:lettervalues' %}">{% trans 'Lettervalues' %}</a></li>
-							<li><a href="{% url 'gc_toolbox:polybius' %}">{% trans 'Polybius Cipher' %}</a></li>
-						</ul>
-					</li>
-                    <li>
-                        <label for="drop-2" class="toggle">{% trans 'Tools' %} +</label>
-                        <a href="#">{% trans 'Tools' %}</a>
-                        <input type="checkbox" id="drop-2" />
-                        <ul>
-                            <li><a href="{% url 'toolbox:duplicate_remover' %}">{% trans 'Duplicate Remover' %}</a></li>
-                        </ul>
-                    </li>
-					<li><a href="{% url 'staticpages:contribute' %}">{% trans 'Contribute' %}</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-        {% get_error_messages request.session as error_messages %}
-        {% if error_messages %}
-            <div class="errorlist">
+    <script src="{% static '/js/jquery.js' %}"></script>
+    <script src="{% static '/js/code.js' %}"></script>
+    {% block script %}{% endblock script %}
+</head>
+<body>
+<header>
+    <nav class="nav_bar">
+        <a href="/" id="logo_home"><img src="{% static 'img/logo.png' %}" alt="baronbale.de" title="baronbale.de"
+                                        id="logo"/></a>
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop"/>
+        <ul class="menu">
+            <li><a href="/">{% trans 'Home' %}</a></li>
+            <li>
+                <label for="drop-1" class="toggle">{% trans 'GC-Tools' %} +</label>
+                <a href="#">{% trans 'GC-Tools' %}</a>
+                <input type="checkbox" id="drop-1"/>
                 <ul>
-                    {% for error_message in error_messages %}
-                        <li>{{ error_message }}</li>
-                    {% endfor %}
+                    <li><a href="{% url 'banner_parser:upload_listing_files' %}">{% trans 'Banner Collector' %}</a></li>
+                    <li><a href="{% url 'gc_toolbox:base64' %}">{% trans 'base64' %}</a></li>
+                    <li><a href="{% url 'gc_toolbox:cesar' %}">{% trans 'Cesar Cipher' %}</a></li>
+                    <li><a href="{% url 'gc_toolbox:lettervalues' %}">{% trans 'Lettervalues' %}</a></li>
+                    <li><a href="{% url 'gc_toolbox:polybius' %}">{% trans 'Polybius Cipher' %}</a></li>
                 </ul>
-            </div>
-        {% endif %}
-        {% block breadcrumbs %}{% endblock %}
-        <div id="content">
-            {% block content %}{% endblock %}
+            </li>
+            <li>
+                <label for="drop-2" class="toggle">{% trans 'Tools' %} +</label>
+                <a href="#">{% trans 'Tools' %}</a>
+                <input type="checkbox" id="drop-2"/>
+                <ul>
+                    <li><a href="{% url 'toolbox:duplicate_remover' %}">{% trans 'Duplicate Remover' %}</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'staticpages:contribute' %}">{% trans 'Contribute' %}</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    {% get_error_messages request.session as error_messages %}
+    {% if error_messages %}
+        <div class="errorlist">
+            <ul>
+                {% for error_message in error_messages %}
+                    <li>{{ error_message }}</li>
+                {% endfor %}
+            </ul>
         </div>
-        <div id="sidebar">
-            {% block sidebar %}{% endblock %}
-        </div>
-        </main>
-        <footer id="pagefooter">
-            <a href="{% url 'staticpages:imprint' %}">{% trans "Imprint" %}</a> |
-            <a href="{% url 'staticpages:privacy' %}">{% trans "Privacy Policy and Cookies" %}</a> |
-            <a href="ed.elabnorab@elab:otliam" id="contact">{% trans 'Contact us' %}</a>
+    {% endif %}
+    {% block breadcrumbs %}{% endblock %}
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <div id="sidebar">
+        {% block sidebar %}{% endblock %}
+    </div>
+</main>
+<footer id="pagefooter">
+    <a href="{% url 'staticpages:imprint' %}">{% trans "Imprint" %}</a> |
+    <a href="{% url 'staticpages:privacy' %}">{% trans "Privacy Policy and Cookies" %}</a> |
+    <a href="ed.elabnorab@elab:otliam" id="contact">{% trans 'Contact us' %}</a>
 
-            {% block footer_links %}{% endblock footer_links %}
-            {% comment %}
+    {% block footer_links %}{% endblock footer_links %}
+    {% comment %}
             <form action="{% url 'set_language' %}" method="post">
                 {% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}" />
@@ -92,12 +93,12 @@
                 </select>
             </form>
             {% endcomment %}
-        </footer>
+</footer>
 
-    <script type="application/javascript">
-        var mail_to = document.getElementById("contact");
-        var href = mail_to.getAttribute("href");
-        mail_to.setAttribute("href", href.split("").reverse().join(""));
-    </script>
-    </body>
+<script type="application/javascript">
+    var mail_to = document.getElementById("contact");
+    var href = mail_to.getAttribute("href");
+    mail_to.setAttribute("href", href.split("").reverse().join(""));
+</script>
+</body>
 </html>
