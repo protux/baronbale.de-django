@@ -1,0 +1,10 @@
+Guten Tag,
+
+Deine Banner wurden eingesammelt und stehen für dich zum Download bereit! Du kannst sie unter folgendem Link finden: https://baronbale.de{% url 'banner_parser:show_banners' ticket_id %}
+
+Wir hoffen, dass du mit dem Ergebnis zufrieden bist. Wenn nicht, würden wir uns freuen wenn du uns sagen würdest was nächstes Mal besser sein könnte. 😎
+
+Mit freundlichen Grüßen,
+dein freundlicher 🤖 von baronbale.de
+
+PS: nachdem wir dir diese E-Mail zugestellt haben wurde deine E-Mailadresse aus unserer Datenbank gelöscht.

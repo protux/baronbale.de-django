@@ -39,7 +39,8 @@ def _get_next_job_ticket_id_to_work_on() -> Optional[str]:
         return (
             BannerParserJob.objects.values_list("ticket_id", flat=True)
             .order_by("id")
-            .get(actively_working_on_since__isnull=True, result__isnull=True)
+            .filter(actively_working_on_since__isnull=True, result__isnull=True)
+            .first()
         )
     except BannerParserJob.DoesNotExist:
         return None

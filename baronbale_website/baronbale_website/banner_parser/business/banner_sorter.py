@@ -32,13 +32,15 @@ def sort_banner(banners):
     for idx, banner in enumerate(banners):
         banner_url = banner[banner_parser.SRC_TAG]
         hash = hashlib.sha256(banner_url.encode("UTF-8")).hexdigest()
-        banner_dimension = BannerDimension.objects.filter(banner=hash)
-        if banner_dimension is not None and len(banner_dimension) > 0:
-            if banner_dimension.gc_code == "":
-                banner_dimension.gc_code = banner[banner_parser.GC_CODE_TAG]
-                banner_dimension.url = banner_url
-                banner_dimension.save()
-            banner_dimension = banner_dimension[0]
+        banner_dimensions = BannerDimension.objects.filter(banner=hash)
+        if banner_dimensions is not None and len(banner_dimensions) > 0:
+            for banner_dimension in banner_dimensions:
+                if banner_dimension.gc_code == "":
+                    # TODO get GC Code from somewhere else
+                    # banner_dimension.gc_code = banner[banner_parser.GC_CODE_TAG]
+                    banner_dimension.url = banner_url
+                    banner_dimension.save()
+            banner_dimension = banner_dimensions[0]
             set_image_data(banner, banner_dimension)
         else:
             try:
@@ -58,9 +60,9 @@ def sort_banner(banners):
                 else:
                     set_fall_back_values(banner)
             except (
-                urllib3.exceptions.NewConnectionError,
-                urllib3.exceptions.MaxRetryError,
-                UnidentifiedImageError,
+                    urllib3.exceptions.NewConnectionError,
+                    urllib3.exceptions.MaxRetryError,
+                    UnidentifiedImageError,
             ):
                 logger.info(f"Banner {banner} has no parsable image")
                 banner[banner_parser.SRC_TAG] = DROP_ID

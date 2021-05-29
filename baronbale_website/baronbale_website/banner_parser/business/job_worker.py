@@ -1,14 +1,21 @@
-from datetime import datetime
+import hashlib
 import logging
+from datetime import datetime
 from typing import List
 
-from baronbale_website.banner_parser.models import BannerParserJob
-from baronbale_website.banner_parser.business.utils import file_extractor
+from django.conf import settings
+from django.core import mail
+
 from baronbale_website.banner_parser.business import (
     banner_parser,
     banner_result_renderer,
     banner_sorter,
 )
+from baronbale_website.banner_parser.business.utils import (
+    file_extractor,
+    mail_renderer,
+)
+from baronbale_website.banner_parser.models import BannerParserJob
 
 logger = logging.getLogger(__name__)
 
@@ -21,6 +28,7 @@ def find_banners_from_banner_parser_job(ticket_id: str) -> None:
         banner_parser_job = BannerParserJob.objects.get(ticket_id=ticket_id)
         banners_html = _parse_banners(banner_parser_job)
         _persist_result(banner_parser_job, banners_html)
+        _send_job_finished_mail(banner_parser_job)
     except Exception:
         logger.exception("Error while parsing banners.")
         BannerParserJob.objects.filter(ticket_id=ticket_id).update(
@@ -46,3 +54,22 @@ def _persist_result(banner_parser_job: BannerParserJob, banners_html: str) -> No
     banner_parser_job.time_finished = datetime.utcnow()
     banner_parser_job.result = banners_html
     banner_parser_job.save()
+
+
+def _send_job_finished_mail(banner_parser_job: BannerParserJob) -> None:
+    if banner_parser_job.email_address_to_notify:
+        mail_body: str = mail_renderer.render_mail_body(banner_parser_job)
+        subject: str = "Deine Banner von baronbale.de sind fertig!"
+
+        mail.send_mail(
+            subject=subject,
+            message=mail_body,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[banner_parser_job.email_address_to_notify],
+            fail_silently=True,
+        )
+
+        banner_parser_job.email_address_to_notify = hashlib.sha256(
+            banner_parser_job.email_address_to_notify.encode('UTF-8')
+        ).hexdigest()
+        banner_parser_job.save()
