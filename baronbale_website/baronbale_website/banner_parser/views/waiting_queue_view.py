@@ -13,11 +13,11 @@ class WaitingQueueView(FormView):
     form_class = AddEmailAddressForm
 
     def get(self, request, *args, **kwargs):
-        banner_parser_job = self.fetch_banner_parser_job()
-        if banner_parser_job.result is not None:
+        self.banner_parser_job = self.fetch_banner_parser_job()
+        if self.banner_parser_job.result is not None:
             return HttpResponseRedirect(
                 reverse(
-                    "banner_parser:show_banners", args=[banner_parser_job.ticket_id]
+                    "banner_parser:show_banners", args=[self.banner_parser_job.ticket_id]
                 )
             )
 
@@ -34,7 +34,8 @@ class WaitingQueueView(FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context_data = super().get_context_data(**kwargs)
-        context_data["ticket_id"] = self.get_ticket_id_from_path_param()
+        context_data["ticket_id"] = self.banner_parser_job.ticket_id
+        context_data["current_email"] = self.banner_parser_job.email_address_to_notify
         return context_data
 
     def form_valid(self, form: AddEmailAddressForm) -> HttpResponseRedirect:
