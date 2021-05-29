@@ -7,133 +7,119 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-01 16:26+0100\n"
-"PO-Revision-Date: 2019-03-01 17:01+0100\n"
+"POT-Creation-Date: 2021-05-29 12:26+0200\n"
+"PO-Revision-Date: 2021-05-29 12:28+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
-#: baronbale_website/checker/templates/checker/checker_base.html:38
-#: baronbale_website/staticpages/templates/staticpages/imprint.html:4
-#: baronbale_website/staticpages/templates/staticpages/imprint.html:7
-msgid "Imprint"
-msgstr "Impressum"
+#: baronbale_website/banner_parser/business/banner_result_renderer.py:21
+#: baronbale_website/gc_toolbox/views/BannerCollectorView.py:93
+msgid "The bannerlist was generated on"
+msgstr "Die Bannerliste wurde generiert auf"
 
-#: baronbale_website/checker/templates/checker/checker_base.html:39
-#: baronbale_website/staticpages/templates/staticpages/privacy.html:4
-#: baronbale_website/staticpages/templates/staticpages/privacy.html:7
-msgid "Privacy Policy and Cookies"
-msgstr "Datenschutz und Cookies"
+#: baronbale_website/banner_parser/business/utils/exceptions.py:9
+#: baronbale_website/gc_toolbox/tools/exceptions.py:9
+msgid "The zip-file you provided was empty or did not contain any GPX-files."
+msgstr "Das hochgeladene Zip-Archiv war leer oder enthielt keine GPX-Dateien."
 
-#: baronbale_website/downloads/models.py:6
-msgid "Cache-ID"
-msgstr "Cache-ID"
+#: baronbale_website/banner_parser/business/utils/file_extractor.py:27
+#: baronbale_website/gc_toolbox/tools/banner_utils.py:66
+msgid "You uploaded a not supported file type."
+msgstr "Du hast ein nicht unterstütztes Dateiformat hochgeladen."
 
-#: baronbale_website/downloads/models.py:7
-msgid "Cache-Name"
-msgstr "Cache-Name"
+#: baronbale_website/banner_parser/forms/add_email_address_form.py:6
+msgid "Email Address"
+msgstr "E-Mail Adresse"
 
-#: baronbale_website/downloads/models.py:14
-msgid "name"
-msgstr "Name"
-
-#: baronbale_website/downloads/models.py:15
-msgid "Download-File"
-msgstr "Download-Datei"
-
-#: baronbale_website/downloads/templates/downloads/downloads.html:7
-msgid "Downloads for"
-msgstr "Downloads für"
-
-#: baronbale_website/downloads/views.py:12
-msgid "Cache not found."
-msgstr "Cache nicht gefunden"
-
-#: baronbale_website/gc_toolbox/banner_parser.py:78
-msgid "It seems your GPX-file was incomplete. Some caches could not be read."
-msgstr ""
-"Es scheint, dass deine GPX-Datei unvollständig ist. Manche Caches konnten "
-"nicht gelesen werden."
-
-#: baronbale_website/gc_toolbox/forms.py:8
-msgid "all"
-msgstr "Alle"
-
-#: baronbale_website/gc_toolbox/forms.py:16
-#: baronbale_website/gc_toolbox/forms.py:29
-#: baronbale_website/gc_toolbox/forms.py:42
-#: baronbale_website/gc_toolbox/forms.py:54
-#: baronbale_website/gc_toolbox/forms.py:88
-#: baronbale_website/gc_toolbox/forms.py:95
-msgid "Message"
-msgstr "Nachricht"
-
-#: baronbale_website/gc_toolbox/forms.py:21
-#: baronbale_website/gc_toolbox/forms.py:34
-msgid "Key"
-msgstr "Schlüssel"
-
-#: baronbale_website/gc_toolbox/forms.py:59
-msgid "Extra Values"
-msgstr "Zusätzliche Werte"
-
-#: baronbale_website/gc_toolbox/forms.py:65
-msgid "Direction"
-msgstr "Richtung"
-
+#: baronbale_website/banner_parser/forms/upload_gpx_form.py:9
 #: baronbale_website/gc_toolbox/forms.py:70
-msgid "Offset"
-msgstr "Versatz"
-
-#: baronbale_website/gc_toolbox/forms.py:75
-msgid "Include numeric values"
-msgstr "Numerische Werte einschließen"
-
-#: baronbale_website/gc_toolbox/forms.py:82
-msgid "File to encode"
-msgstr "Datei zum enkodieren"
-
-#: baronbale_website/gc_toolbox/forms.py:100
-msgid "Is a file"
-msgstr "Ist eine Datei"
-
-#: baronbale_website/gc_toolbox/forms.py:107
 msgid "GPX- or zip-File"
 msgstr "GPX- oder Zip-Datei"
 
-#: baronbale_website/gc_toolbox/forms.py:110
+#: baronbale_website/banner_parser/forms/upload_gpx_form.py:13
+#: baronbale_website/gc_toolbox/forms.py:72
 msgid "Horizontal banners per row"
 msgstr "Horizontale Banner pro Reihe"
 
-#: baronbale_website/gc_toolbox/forms.py:115
+#: baronbale_website/banner_parser/forms/upload_gpx_form.py:16
+#: baronbale_website/gc_toolbox/forms.py:75
 msgid "Vertical banners per row"
 msgstr "Vertikale Banner pro Reihe"
 
+#: baronbale_website/banner_parser/models.py:13
+msgid "GPX-File or Zip Archive"
+msgstr "GPX- oder Zip-Datei"
+
+#: baronbale_website/banner_parser/templates/banner_parser/banners_ready.html:3
+#: baronbale_website/banner_parser/templates/banner_parser/banners_ready.html:5
+msgid "Your Banners are ready!"
+msgstr "Deine Banner sind fertig!"
+
+#: baronbale_website/banner_parser/templates/banner_parser/banners_ready.html:7
+msgid ""
+"We went through all of your caches and found the banners listed below. "
+"Please note, that there might be broken images, due to some hoster deleting "
+"them after some time. If you still have this image at some place you can "
+"notify us and we will correct that link for future requests."
+msgstr ""
+"Wir haben uns alle deine Caches angesehen und fanden die unten aufgelisteten "
+"Banner. Bitte beachte, dass dort kaputte Bilder enthalten sein könnten, da "
+"gewisse Hoster hochgeladene Bilder nach einer gewissen Zeit löschen. "
+"Solltest du das Bild noch irgendwo bei dir rumliegen haben schicke es uns "
+"gerne, wir verlinken oder hosten es gerne um es der Community wieder zur "
+"Verfügung zu stellen."
+
+#: baronbale_website/banner_parser/templates/banner_parser/banners_ready.html:14
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:51
+msgid "Your banners"
+msgstr "Deine Banner"
+
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:3
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:5
 #: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:3
 #: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:5
 msgid "Banner collector"
 msgstr "Bannersammler"
 
-#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:8
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:8
 msgid ""
-"At first a big thank you to Cetacea91, Daxianer, LaMulder and martl for "
-"their feedback and for providing test data!"
+"At first a big thank you to all the people who reached out and gave some "
+"feedback or provided test data!"
 msgstr ""
-"Zu aller erst vielen Dank an Cetacea91, Daxianer, LaMulder und martl für ihr "
-"Feedback und fürs zur Verfügung stellen von Testdaten!"
+"Zu aller erst vielen Dank an alle die sich mit Feedback gemeldet haben, "
+"Verbesserungsvorschläge hatten oder Testdaten zur Verfügung gestellt haben!"
 
-#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:14
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:13
+msgid "Feedback welcome!"
+msgstr "Feedback willkommen!"
+
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:15
+msgid ""
+"If you see some room for improvement regarding the banner parser please feel "
+"free to reach out any time! 😎 You can reach me via email, just send an email "
+"to <a href=\"mailto:protux@baronbale.de\">protux@baronbale.de</a>. My "
+"response might take some time, but I will respond!"
+msgstr ""
+"Solltest du einen Verbesserungsvorschlag haben kontaktiere uns gerne "
+"jederzeit! 😎 Du kannst uns via E-Mail erreichen, sende deine E-Mail einfach "
+"an <a href=\"mailto:protux@baronbale.de\">protux@baronbale.de</a>. Es könnte "
+"etwas dauern bis eine Antwort kommt, aber es kommt ganz bestimmt eine!"
+
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:23
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:31
 msgid ""
 "This tools takes the gpx file with your found caches and collects the "
 "banners from the listings."
 msgstr "Dieses Tool sucht die Banner aus der GPX-Datei deiner Funde."
 
-#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:15
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:24
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:32
 msgid ""
 "The banners are parsed from the \"long_description\" and for some special "
 "cases and for generating the link-tags we need the GC-Code and the url."
@@ -142,21 +128,23 @@ msgstr ""
 "Sonderfälle und um die Links zu generieren benötigen wir außerdem den GC-"
 "Code und die URL."
 
-#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:16
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:25
 msgid ""
-"IMPORTANT: Since we also rearrange the banners for a more beautiful shape we "
-"need to get the size of all images, that could take a while, please be "
-"patient."
+"<b>IMPORTANT</b>: Since we also rearrange the banners for a more beautiful "
+"shape we need to get the size of all images, that could take a while, please "
+"be patient."
 msgstr ""
-"WICHTIG: da wir die Banner auch zugunsten eines schöneren Aussehens neu "
-"sortieren müssen wir alle Bilder laden. Das dauert bei vielen Caches eine "
-"Weile, bitte sei geduldig."
+"<b>WICHTIG</b>: da wir die Banner auch zugunsten eines schöneren Aussehens "
+"neu sortieren müssen wir alle Bilder laden. Das dauert bei vielen Caches "
+"eine Weile, bitte sei geduldig."
 
-#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:18
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:27
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:35
 msgid "How to use this tool"
 msgstr "Benutzungsanleitung"
 
-#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:20
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:29
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:37
 msgid ""
 "You can either upload a single GPX-file (like the \"my finds\" file) or you "
 "can directly upload the zip file you get from Groundspeak. If you are not a "
@@ -172,19 +160,18 @@ msgstr ""
 "Zip-Archiv dann hochladen. Das Tool wird durch alle GPX-Dateien gehen und "
 "die Banner heraussuchen."
 
-#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:30
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:39
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:47
 msgid "Collect Banner"
 msgstr "Banner sammeln"
 
-#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:34
-msgid "Your banners"
-msgstr "Deine Banner"
-
-#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:40
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:42
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:57
 msgid "I found a bug or the tool behaves funny"
 msgstr "Ich fand einen Bug oder das Tool verhält sich komisch"
 
-#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:42
+#: baronbale_website/banner_parser/templates/banner_parser/upload_files.html:44
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:59
 msgid ""
 "If you found a bug, or you know, the tool does not find a banner please "
 "contact me. I cannot test with all caches and some banners are pretty hard "
@@ -200,13 +187,132 @@ msgstr ""
 "auch die GPX-Datei oder das Zip-Archiv zur Verfügung stellen könntest, "
 "welches dir Probleme bereitet."
 
-#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:49
+#: baronbale_website/banner_parser/templates/banner_parser/wait_queue.html:3
+msgid "Waiting for banners..."
+msgstr "Warte auf Banner…"
+
+#: baronbale_website/banner_parser/templates/banner_parser/wait_queue.html:5
+msgid "Your Banners are in progress!"
+msgstr "Deine Banner sind in Bearbeitung!"
+
+#: baronbale_website/banner_parser/templates/banner_parser/wait_queue.html:7
+msgid ""
+"We received your request and you are now enqueued to get your banners! You "
+"can bookmark this page and come back later to fetch your banners. This can "
+"take up to a few hours. You could also enter your email address below to get "
+"notified when your banners are ready."
+msgstr ""
+"Wir haben deine Anfrage erhalten und du bist zur Bearbeitung eingereiht! Du "
+"kannst dir ein Lesezeichen für diese Seite einrichten und später "
+"wiederkommen. Das kann bis zu ein paar Stunden dauern. Du kannst aber auch "
+"unten deine E-Mailadresse eintragen um eine Benachrichtigung zu erhalten, "
+"sobald deine Banner fertig sind."
+
+#: baronbale_website/banner_parser/templates/banner_parser/wait_queue.html:15
+msgid ""
+"As soon as we sent you the result we will delete your email address from our "
+"database."
+msgstr ""
+"Sobald wir dir die E-Mail geschickt haben löschen wir deine E-Mailadresse "
+"wieder aus unserem System."
+
+#: baronbale_website/banner_parser/templates/banner_parser/wait_queue.html:19
+msgid "Currently, your email address is "
+msgstr "Deine aktuell eingestellte E-Mailadresse lautet "
+
+#: baronbale_website/banner_parser/templates/banner_parser/wait_queue.html:25
+msgid "Update email address"
+msgstr "E-Mail Adresse aktualisieren"
+
+#: baronbale_website/banner_parser/validators/validate_file_extension.py:9
+msgid "You need to provide either a *.gpx or a *.zip file."
+msgstr "Du musst entweder eine *.gpx oder eine *.zip Datei hochladen."
+
+#: baronbale_website/checker/templates/checker/checker_base.html:38
+#: baronbale_website/staticpages/templates/staticpages/imprint.html:4
+#: baronbale_website/staticpages/templates/staticpages/imprint.html:7
+msgid "Imprint"
+msgstr "Impressum"
+
+#: baronbale_website/checker/templates/checker/checker_base.html:39
+#: baronbale_website/staticpages/templates/staticpages/privacy.html:4
+#: baronbale_website/staticpages/templates/staticpages/privacy.html:7
+msgid "Privacy Policy and Cookies"
+msgstr "Datenschutz und Cookies"
+
+#: baronbale_website/gc_toolbox/banner_parser.py:90
+msgid "It seems your GPX-file was incomplete. Some caches could not be read."
+msgstr ""
+"Es scheint, dass deine GPX-Datei unvollständig ist. Manche Caches konnten "
+"nicht gelesen werden."
+
+#: baronbale_website/gc_toolbox/forms.py:8
+msgid "all"
+msgstr "Alle"
+
+#: baronbale_website/gc_toolbox/forms.py:15
+#: baronbale_website/gc_toolbox/forms.py:23
+#: baronbale_website/gc_toolbox/forms.py:31
+#: baronbale_website/gc_toolbox/forms.py:40
+#: baronbale_website/gc_toolbox/forms.py:60
+#: baronbale_website/gc_toolbox/forms.py:64
+msgid "Message"
+msgstr "Nachricht"
+
+#: baronbale_website/gc_toolbox/forms.py:18
+#: baronbale_website/gc_toolbox/forms.py:26
+msgid "Key"
+msgstr "Schlüssel"
+
+#: baronbale_website/gc_toolbox/forms.py:43
+msgid "Extra Values"
+msgstr "Zusätzliche Werte"
+
+#: baronbale_website/gc_toolbox/forms.py:46
+msgid "Direction"
+msgstr "Richtung"
+
+#: baronbale_website/gc_toolbox/forms.py:48
+msgid "Offset"
+msgstr "Versatz"
+
+#: baronbale_website/gc_toolbox/forms.py:51
+msgid "Include numeric values"
+msgstr "Numerische Werte einschließen"
+
+#: baronbale_website/gc_toolbox/forms.py:56
+msgid "File to encode"
+msgstr "Datei zum enkodieren"
+
+#: baronbale_website/gc_toolbox/forms.py:66
+msgid "Is a file"
+msgstr "Ist eine Datei"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:8
+msgid ""
+"At first a big thank you to Cetacea91, Daxianer, LaMulder and martl for "
+"their feedback and for providing test data!"
+msgstr ""
+"Zu aller erst vielen Dank an Cetacea91, Daxianer, LaMulder und martl für ihr "
+"Feedback und fürs zur Verfügung stellen von Testdaten!"
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:33
+msgid ""
+"IMPORTANT: Since we also rearrange the banners for a more beautiful shape we "
+"need to get the size of all images, that could take a while, please be "
+"patient."
+msgstr ""
+"WICHTIG: da wir die Banner auch zugunsten eines schöneren Aussehens neu "
+"sortieren müssen wir alle Bilder laden. Das dauert bei vielen Caches eine "
+"Weile, bitte sei geduldig."
+
+#: baronbale_website/gc_toolbox/templates/gc_toolbox/banner_collector.html:66
 msgid ""
 "If you have any question or proposal for improvement we can also talk about "
 "it, of course."
 msgstr ""
-"Solltest du einfach nur eine Frage oder einen Verbesserungsvorschlag haben "
-"kannst du mich natürlich auch jederzeit kontaktieren. "
+"Solltest du eine Frage oder einen Verbesserungsvorschlag haben kannst du uns "
+"natürlich auch jederzeit kontaktieren."
 
 #: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:3
 #: baronbale_website/gc_toolbox/templates/gc_toolbox/base64.html:5
@@ -389,17 +495,9 @@ msgstr ""
 "einem lange verstorbenen Typen benannt wurde. Sie wurde 200 Jahre vor der "
 "Cäsar-Verschlüsselung erfunden, ist dabei jedoch \"viel\" sicherer als die "
 "Cäsar-Verschlüsselung. Aber sie wäre nicht hier, wenn man sie nicht zum "
-"Geocachen bräuchte."
+"Geocachen bräuchte. "
 
-#: baronbale_website/gc_toolbox/tools/banner_utils.py:65
-msgid "You uploaded a not supported file type."
-msgstr "Du hast ein nicht unterstütztes Dateiformat hochgeladen."
-
-#: baronbale_website/gc_toolbox/tools/exceptions.py:8
-msgid "The zip-file you provided was empty or did not contain any GPX-files."
-msgstr "Das hochgeladene Zip-Archiv war leer oder enthielt keine GPX-Dateien."
-
-#: baronbale_website/gc_toolbox/views/BannerCollectorView.py:60
+#: baronbale_website/gc_toolbox/views/BannerCollectorView.py:72
 msgid ""
 "While parsing your banners an error occurred. The admin has been informed, "
 "please come back later."
@@ -407,11 +505,7 @@ msgstr ""
 "Während des Parsens deiner Banner trat ein Fehler auf. Der Admin wurde "
 "informiert, bitte versuche es später noch einmal."
 
-#: baronbale_website/gc_toolbox/views/BannerCollectorView.py:73
-msgid "The bannerlist was generated on"
-msgstr "Die Bannerliste wurde generiert auf"
-
-#: baronbale_website/gc_toolbox/views_cesar.py:63
+#: baronbale_website/gc_toolbox/views_cesar.py:72
 msgid "The key needs to be an Integer."
 msgstr "Der Schlüssel muss eine Ganzzahl sein."
 
@@ -467,23 +561,23 @@ msgstr ""
 #: baronbale_website/staticpages/templates/staticpages/contribute.html:12
 msgid ""
 "You could buy something on Amazon via  <a href=\"#\">our affiliate link</a>."
-msgstr ""
+msgstr "  "
 
 #: baronbale_website/staticpages/templates/staticpages/contribute.html:13
 msgid ""
 "You could take a look on <a href=\"https://www.amazon.de/registry/wishlist/"
 "RIVQ9H0VQV1J/\">our Amazon wishlist</a>, you know, Christmas is never far."
-msgstr ""
+msgstr "  "
 
 #: baronbale_website/staticpages/templates/staticpages/contribute.html:14
 msgid "If you like an article or tool you could flattr it."
-msgstr ""
+msgstr "  "
 
 #: baronbale_website/staticpages/templates/staticpages/contribute.html:15
 msgid ""
 "If you have an idea for a blogpost you could tell us or you could even write "
 "it on your own and get it published on our site under your name."
-msgstr ""
+msgstr "  "
 
 #: baronbale_website/staticpages/templates/staticpages/contribute.html:17
 msgid ""
@@ -548,3 +642,21 @@ msgstr ""
 #: baronbale_website/staticpages/templates/staticpages/roadmap.html:7
 msgid "Roadmap"
 msgstr "Roadmap"
+
+#~ msgid "Cache-ID"
+#~ msgstr "Cache-ID"
+
+#~ msgid "Cache-Name"
+#~ msgstr "Cache-Name"
+
+#~ msgid "name"
+#~ msgstr "Name"
+
+#~ msgid "Download-File"
+#~ msgstr "Download-Datei"
+
+#~ msgid "Downloads for"
+#~ msgstr "Downloads für"
+
+#~ msgid "Cache not found."
+#~ msgstr "Cache nicht gefunden"
