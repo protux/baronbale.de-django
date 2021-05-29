@@ -5,6 +5,7 @@ from typing import List
 
 from django.conf import settings
 from django.core import mail
+from smtplib import SMTPException
 
 from baronbale_website.banner_parser.business import (
     banner_parser,
@@ -61,15 +62,16 @@ def _send_job_finished_mail(banner_parser_job: BannerParserJob) -> None:
         mail_body: str = mail_renderer.render_mail_body(banner_parser_job)
         subject: str = "Deine Banner von baronbale.de sind fertig!"
 
-        mail.send_mail(
-            subject=subject,
-            message=mail_body,
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[banner_parser_job.email_address_to_notify],
-            fail_silently=True,
-        )
-
-        banner_parser_job.email_address_to_notify = hashlib.sha256(
-            banner_parser_job.email_address_to_notify.encode("UTF-8")
-        ).hexdigest()
-        banner_parser_job.save()
+        try:
+            mail.send_mail(
+                subject=subject,
+                message=mail_body,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[banner_parser_job.email_address_to_notify],
+                fail_silently=False,
+            )
+        finally:
+            banner_parser_job.email_address_to_notify = hashlib.sha256(
+                banner_parser_job.email_address_to_notify.encode("UTF-8")
+            ).hexdigest()
+            banner_parser_job.save()
