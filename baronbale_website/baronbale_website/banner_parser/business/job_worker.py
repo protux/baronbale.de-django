@@ -71,7 +71,7 @@ def _send_job_finished_mail(banner_parser_job: BannerParserJob) -> None:
                 fail_silently=False,
             )
         except SMTPException:
-            logger.exception('Could not send email after banners finished.')
+            logger.exception("Could not send email after banners finished.")
         finally:
             banner_parser_job.email_address_to_notify = hashlib.sha256(
                 banner_parser_job.email_address_to_notify.encode("UTF-8")
