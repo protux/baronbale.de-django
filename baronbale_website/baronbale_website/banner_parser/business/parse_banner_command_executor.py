@@ -1,3 +1,4 @@
+import logging
 from typing import Optional
 from datetime import (
     datetime,
@@ -7,10 +8,13 @@ from datetime import (
 from baronbale_website.banner_parser.business import job_worker
 from baronbale_website.banner_parser.models import BannerParserJob
 
+logger = logging.getLogger("django")
+
 
 def parse_banners() -> None:
     if not _is_job_active():
         next_job_ticket_id_to_work_on_query_set = _get_next_job_ticket_id_to_work_on()
+        logger.info(f"No job active => starting {next_job_ticket_id_to_work_on_query_set}!")
         if next_job_ticket_id_to_work_on_query_set:
             job_worker.find_banners_from_banner_parser_job(
                 next_job_ticket_id_to_work_on_query_set
@@ -30,7 +34,7 @@ def _is_job_active() -> bool:
 
 def _get_earliest_as_active_accepted_datetime() -> datetime:
     now = datetime.utcnow()
-    earliest_as_active_accepted_datetime = now - timedelta(hours=3)
+    earliest_as_active_accepted_datetime = now - timedelta(hours=12)
     return earliest_as_active_accepted_datetime
 
 
@@ -38,9 +42,9 @@ def _get_next_job_ticket_id_to_work_on() -> Optional[str]:
     try:
         return (
             BannerParserJob.objects.values_list("ticket_id", flat=True)
-            .order_by("id")
-            .filter(actively_working_on_since__isnull=True, result__isnull=True)
-            .first()
+                .order_by("id")
+                .filter(actively_working_on_since__isnull=True, result__isnull=True)
+                .first()
         )
     except BannerParserJob.DoesNotExist:
         return None

@@ -41,26 +41,27 @@ HREF_PATTERN = re.compile(r"href[\w\W]*?=[\w\W]*?[\"\'][\w\W]*?[\"\']", re.IGNOR
 
 
 def collect_banner_urls(gpx_files):
+    logger.info("Start collecting Banner information...")
     banners = dict()
     special_banners = special_banners_to_dict()
 
     for path_to_xml in gpx_files:
         for event, elem in cElementTree.iterparse(
-            path_to_xml, events=[START_TAG, END_TAG]
+                path_to_xml, events=[START_TAG, END_TAG]
         ):
             if event == END_TAG and elem.tag == "{}name".format(TOPO_NS):
                 gc_code = elem.text
             elif event == END_TAG and elem.tag == "{}url".format(TOPO_NS):
                 url = elem.text
             elif event == END_TAG and elem.tag == "{}long_description".format(
-                GS_NAMESPACE_OLD
+                    GS_NAMESPACE_OLD
             ):
                 description = elem.text
                 description = strip_pattern(
                     description, r"((alt|title)=\".*?(>|<).*?\")"
                 )
             elif event == END_TAG and elem.tag == "{}long_description".format(
-                GS_NAMESPACE_NEW
+                    GS_NAMESPACE_NEW
             ):
                 description = elem.text
                 description = strip_pattern(
@@ -69,23 +70,26 @@ def collect_banner_urls(gpx_files):
             elif event == END_TAG and elem.tag == "{}wpt".format(TOPO_NS):
                 try:
                     if gc_code in special_banners:
+                        logger.info(f"Served {gc_code} from cache.")
                         banner = special_banners[gc_code]
                     else:
                         try:
+                            logger.info(f"Investigating {gc_code}...")
                             banner = parse_banner(description, gc_code, url)
                         except Exception:
+                            logger.exception("Error while parsing banner")
                             body = f"exception: \n{traceback.format_exc()}"
                             mail.mail_admins("Error while parsing banner", body)
 
                     if banner:
                         banner[HREF_TAG] = CACHE_URL.format(gc_code)
                         add_banner_to_dict(banner, banners)
-
                 except NameError:
                     logger.info(
                         "It seems a GPX-file was incomplete. "
                         "Some caches could not be read."
                     )
+    logger.info("...finished collecting Banner information")
     return banners.values()
 
 
@@ -134,10 +138,10 @@ def parse_banner(description, gc_code, url):
         for link in links:
             image = link.find("img")
             if (
-                image is not None
-                and image.get("src", None)
-                and link.get("href", None)
-                and contains_cache_url(link.get("href"), gc_code, url)
+                    image is not None
+                    and image.get("src", None)
+                    and link.get("href", None)
+                    and contains_cache_url(link.get("href"), gc_code, url)
             ):
                 return get_banner_id_not_equal_to_href(
                     {SRC_TAG: image["src"], HREF_TAG: CACHE_URL.format(gc_code)}
@@ -169,8 +173,8 @@ def parse_banner_details(banner):
     href = HREF_PATTERN.search(banner).group()
     href = (
         re.sub(r'href[\w\W]*?=[\w\W]*?["\']', "", href)
-        .replace('"', "")
-        .replace("'", "")
+            .replace('"', "")
+            .replace("'", "")
     )
     return {
         SRC_TAG: parse_banner_details_from_image(banner),

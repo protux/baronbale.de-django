@@ -18,7 +18,7 @@ from baronbale_website.banner_parser.business.utils import (
 )
 from baronbale_website.banner_parser.models import BannerParserJob
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("django")
 
 
 def find_banners_from_banner_parser_job(ticket_id: str) -> None:
