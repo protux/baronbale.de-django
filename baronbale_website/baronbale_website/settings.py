@@ -31,7 +31,7 @@ DEBUG = os.environ.get("DEBUG", "false").lower() == "true"
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "baronbale.de", "85.214.231.140"]
 
-LOGFILE_DJANGO = "baronbale_django.log"
+LOGFILE_DJANGO = os.environ.get("LOGFILE_DJANGO", "/opt/baronbale.de/logs/baronbale.log")
 
 LOGGING = {
     "version": 1,
