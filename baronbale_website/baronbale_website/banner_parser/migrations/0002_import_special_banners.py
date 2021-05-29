@@ -5,22 +5,22 @@ from django.db import migrations
 
 
 def import_special_banners(apps, schema_editor) -> None:
-    SpecialBanner = apps.get_model('gc_toolbox', 'SpecialBanner')
+    SpecialBanner = apps.get_model("gc_toolbox", "SpecialBanner")
     special_banners: List[SpecialBanner] = SpecialBanner.objects.all()
 
-    BannerCache = apps.get_model('banner_parser', 'BannerCache')
+    BannerCache = apps.get_model("banner_parser", "BannerCache")
     for special_banner in special_banners:
         BannerCache.objects.create(
             gc_code=special_banner.gc_code,
             image_url=special_banner.image_url,
             reason=special_banner.reason,
-            permanent=True
+            permanent=True,
         )
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('banner_parser', '0001_initial'),
+        ("banner_parser", "0001_initial"),
     ]
 
     operations = [
