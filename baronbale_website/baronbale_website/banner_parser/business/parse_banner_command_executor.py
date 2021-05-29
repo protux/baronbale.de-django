@@ -14,7 +14,9 @@ logger = logging.getLogger("django")
 def parse_banners() -> None:
     if not _is_job_active():
         next_job_ticket_id_to_work_on_query_set = _get_next_job_ticket_id_to_work_on()
-        logger.info(f"No job active => starting {next_job_ticket_id_to_work_on_query_set}!")
+        logger.info(
+            f"No job active => starting {next_job_ticket_id_to_work_on_query_set}!"
+        )
         if next_job_ticket_id_to_work_on_query_set:
             job_worker.find_banners_from_banner_parser_job(
                 next_job_ticket_id_to_work_on_query_set
@@ -42,9 +44,9 @@ def _get_next_job_ticket_id_to_work_on() -> Optional[str]:
     try:
         return (
             BannerParserJob.objects.values_list("ticket_id", flat=True)
-                .order_by("id")
-                .filter(actively_working_on_since__isnull=True, result__isnull=True)
-                .first()
+            .order_by("id")
+            .filter(actively_working_on_since__isnull=True, result__isnull=True)
+            .first()
         )
     except BannerParserJob.DoesNotExist:
         return None

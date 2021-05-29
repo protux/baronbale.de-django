@@ -57,7 +57,7 @@ def sort_banner(banners):
             success = request_image(banner, banner_url, hash, http)
             logger.info(f"request was {'not ' if not success else ''}successful")
             if not success and retry_http:
-                logger.info('Retry for http')
+                logger.info("Retry for http")
                 banner_url = banner_url.replace(HTTPS_PREFIX, HTTPS_PREFIX)
                 success = request_image(banner, banner_url, hash, http)
                 logger.info(f"http retry was {'not ' if not success else ''}successful")
@@ -86,9 +86,9 @@ def request_image(banner, banner_url, hash, http):
         else:
             set_fall_back_values(banner)
     except (
-            urllib3.exceptions.NewConnectionError,
-            urllib3.exceptions.MaxRetryError,
-            UnidentifiedImageError,
+        urllib3.exceptions.NewConnectionError,
+        urllib3.exceptions.MaxRetryError,
+        UnidentifiedImageError,
     ):
         logger.info(f"Banner {banner} has no parsable image")
         banner[banner_parser.SRC_TAG] = DROP_ID
