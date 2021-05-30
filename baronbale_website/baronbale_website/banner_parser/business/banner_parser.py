@@ -1,5 +1,7 @@
 import logging
 import multiprocessing
+from multiprocessing import Queue
+from queue import Empty
 import re
 import traceback
 
@@ -95,18 +97,22 @@ def collect_banner_urls(gpx_files):
 
 
 def _parse_banners(description, gc_code, url):
-    banner = dict()
+    banner_list = Queue()
     process = multiprocessing.Process(
         target=killable_banner_parser.parse_banner,
-        args=(description, gc_code, url, banner),
+        args=(description, gc_code, url, banner_list),
     )
     process.start()
     process.join(15)
     if process.is_alive():
         logger.warning(f"Parsing took too long, killing parser for {gc_code}")
-        process.kill()
+        process.terminate()
         process.join(1)
-    return banner
+
+    try:
+        return banner_list.get(block=False, timeout=1)
+    except Empty:
+        return None
 
 
 def special_banners_to_dict():

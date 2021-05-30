@@ -1,4 +1,5 @@
 import re
+from multiprocessing import Queue
 
 from bs4 import BeautifulSoup
 
@@ -32,15 +33,15 @@ SRC_PATTERN = re.compile(r"src[\w\W]*?=[\w\W]*?[\"\'][\w\W]*?[\"\']", re.IGNOREC
 HREF_PATTERN = re.compile(r"href[\w\W]*?=[\w\W]*?[\"\'][\w\W]*?[\"\']", re.IGNORECASE)
 
 
-def parse_banner(description, gc_code, url, banner_return_dict: dict):
+def parse_banner(description, gc_code, url, banner_return_list: Queue):
     description = description.replace("SRC=", "src=")
     match = BANNER_ENCODED_PATTERN.search(description)
 
     if match:
         banner = normalize_banner(match.group())
-        banner_return_dict.update(
-            get_banner_id_not_equal_to_href(parse_banner_details(banner))
-        )
+        normalized_banner = get_banner_id_not_equal_to_href(parse_banner_details(banner))
+        banner_return_list.put(normalized_banner)
+        return
 
     soup = BeautifulSoup(description, "lxml")
     links = soup.find_all("a")
@@ -53,11 +54,11 @@ def parse_banner(description, gc_code, url, banner_return_dict: dict):
                     and link.get("href", None)
                     and contains_cache_url(link.get("href"), gc_code, url)
             ):
-                banner_return_dict.update(
-                    get_banner_id_not_equal_to_href(
-                        {SRC_TAG: image["src"], HREF_TAG: CACHE_URL.format(gc_code)}
-                    )
+                banner = get_banner_id_not_equal_to_href(
+                    {SRC_TAG: image["src"], HREF_TAG: CACHE_URL.format(gc_code)}
                 )
+                banner_return_list.put(banner)
+                return
 
     matches = BANNER_DECODED_PATTERN.finditer(description)
     for match in matches:
@@ -65,20 +66,21 @@ def parse_banner(description, gc_code, url, banner_return_dict: dict):
         if contains_cache_url(banner_probe, gc_code, url):
             banner = parse_banner_details(banner_probe)
             if get_banner_id_not_equal_to_href(banner):
-                banner_return_dict.update(banner)
+                banner_return_list.put(banner)
+                return
 
     description = description.replace("bannertype", "")
     match = LINKLESS_IMAGE_PATTERN.search(description)
     if match:
         image = IMAGE_DECODED_PATTERN.search(match.group()).group()
-        banner_return_dict.update(
-            get_banner_id_not_equal_to_href(
-                {
-                    SRC_TAG: parse_banner_details_from_image(image),
-                    HREF_TAG: CACHE_URL.format(gc_code),
-                }
-            )
+        banner = get_banner_id_not_equal_to_href(
+            {
+                SRC_TAG: parse_banner_details_from_image(image),
+                HREF_TAG: CACHE_URL.format(gc_code),
+            }
         )
+        banner_return_list.put(banner)
+        return
 
     return None
 
