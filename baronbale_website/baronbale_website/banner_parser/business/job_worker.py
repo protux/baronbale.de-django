@@ -52,6 +52,7 @@ def _parse_banners(banner_parser_job: BannerParserJob) -> str:
 
 
 def _persist_result(banner_parser_job: BannerParserJob, banners_html: str) -> None:
+    banner_parser_job.refresh_from_db()
     banner_parser_job.time_finished = datetime.utcnow()
     banner_parser_job.result = banners_html
     banner_parser_job.save()
