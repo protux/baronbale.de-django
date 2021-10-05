@@ -1,4 +1,4 @@
-# baronbale.de ist tot - lang lebe baronbale.de!
+# baronbale.de is dead, long live baronbale.de
 
 Hey there. Thank you for your interest in baronbale.de - unfortunately, the banner parser is hard to maintain. I'm extracting zip files and parse arbitrary XML files - who would have guessed this would cause problems? Ok, me, but I thought I'm nice to you so you would be nice to me. This was not the case.
 
