@@ -1,37 +1,14 @@
-## Welcome to GitHub Pages
+# baronbale.de ist tot - lang lebe baronbale.de!
 
-You can use the [editor on GitHub](https://github.com/protux/baronbale.de-django/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Hey there. Thank you for your interest in baronbale.de - unfortunately, the banner parser is hard to maintain. I'm extracting zip files and parse arbitrary XML files - who would have guessed this would cause problems? Ok, me, but I thought I'm nice to you so you would be nice to me. This was not the case.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Someone started to upload bombs - little zip files extracting into multiple GB of data so the whole servers file system was used and other service running on this server died, too.
 
-### Markdown
+This project was started 100 years ago when I was still a student. Today I don't have the time to take care of things. So I have to unfortunately shut this down. But please, if you have more time than me then please go on - use this code, reupload this service under your own domain on your own server. This is GPLv3 Software, go out and have fun.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+BEWARE: this was a hobby and no professional software. Test coverage sucks and I started refactoring the code to be more readable and more maintainable, but I never finished.
 
-```markdown
-Syntax highlighted code block
+**If you like to take over this project:** please feel free to reach out. I will help to onboard you. I will guide you through everything and will do some pair programming session to get you going. Would be great to see someone picking up this project.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/protux/baronbale.de-django/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+So long and thanks for all the fish.
+- Nico aka protux (former member of Team baronbale)
