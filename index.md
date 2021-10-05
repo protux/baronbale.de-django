@@ -12,3 +12,5 @@ BEWARE: this was a hobby and no professional software. Test coverage sucks and I
 
 So long and thanks for all the fish.
 - Nico aka protux (former member of Team baronbale)
+
+my email address is <my first name (see above)> -at- baronbale.de
