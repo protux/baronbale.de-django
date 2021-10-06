@@ -14,4 +14,5 @@ So long and thanks for all the fish.
 \- Nico aka protux (former member of Team baronbale)
 
 my email address is <my first name (see above)> -at- baronbale.de
+
 Check out [baronbale.de on github](https://github.com/protux/baronbale.de-django)!
