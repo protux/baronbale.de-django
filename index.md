@@ -11,6 +11,7 @@ BEWARE: this was a hobby and no professional software. Test coverage sucks and I
 **If you like to take over this project:** please feel free to reach out. I will help to onboard you. I will guide you through everything and will do some pair programming session to get you going. Would be great to see someone picking up this project.
 
 So long and thanks for all the fish.
-- Nico aka protux (former member of Team baronbale)
+\- Nico aka protux (former member of Team baronbale)
 
 my email address is <my first name (see above)> -at- baronbale.de
+Check out [baronbale.de on github](https://github.com/protux/baronbale.de-django)!
